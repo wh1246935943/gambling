@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="user-scalable=no,width=device-width"/>
+<meta name="baidu-site-verification" content="W8Wrhmg6wj" />
+<meta content="telephone=no" name="format-detection">
+<meta content="1" name="jfz_login_status">
+    <link rel="stylesheet" type="text/css" href="/static/css/H-ui.min.css" />
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<title>{if isset($title)}{$title}{/if}</title>
+<style>
+.pk_01, .pk_02, .pk_03, .pk_04, .pk_05, .pk_06, .pk_07, .pk_08, .pk_09, .pk_10, .pk{   
+width: 40px;
+height: 40px;
+float:left;
+line-height:40px;
+color:#e1e1e1;
+font-weight:normal;
+font-size:26px;
+text-align:center;
+font-weight:bold;
+border-radius:5px;
+margin:0 2px 2px 0;
+text-align:center;
+text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+-webkit-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+-moz-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+*filter: Glow(color=#000, strength=1);
+}
+.pk{ color: #333;font-size:33px;font-weight: normal;font-weight: bold;color:#8E3D20;}
+.pk_01{ background:#FFFF00;}
+.pk_02{ background:#0099FF;}
+.pk_03{ background:#666666;}
+.pk_04{ background:#FF9900;}
+.pk_05{ background:#66CCCC;}
+.pk_06{ background:#3300FF;}
+.pk_07{ background:#CCCCCC;}
+.pk_08{ background:#FF0000;}
+.pk_09{ background:#CC0000;}
+.pk_10{ background:#009900;}
+.pk_he{ color: #CC0000;}
+.pk_dan{ color: #0099FF;}
+.pk_shuang{color: #CC0000;}
+.pk ,.pk_he,.pk_dan,.pk_shuang{
+    text-shadow:none;
+    -webkit-text-shadow:none;
+    -moz-text-shadow:none;
+    font-weight: bold;
+    font-size: 26px;
+}
+.pagination{display: flex;}
+.pagination li{flex: 1;}
+.pagination li .active span{color: red;}
+
+.table-border.table-bordered thead tr{background: #e7e7e7;border-left: 1px solid #333;}
+
+/* .table-border.table-bordered thead tr th{border-left: 1px solid #333;} */
+
+.dan{background: #e7e7e7;}
+.shuang{ background: #FFF;}
+.text-c th,.yanse{ color:#8E3D20;}
+.mt-20{margin-top: 0;}
+.table .text-c th, .table .text-c td{padding: 7px;}
+.pagination a { display: block; }
+</style>
+<body>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-bg table-hover">
+            <thead>
+                <tr class="text-c" style="background: #e7e7e7;">
+                    <th style="font-size:34px;">期号</th>
+                    <th style="font-size:34px;" >
+                        <div style="margin:0 auto;width:450px;">
+                            <span class="pk">1</span>
+                            <span class="pk">2</span>
+                            <span class="pk">3</span>
+                            <span class="pk">4</span>
+                            <span class="pk">5</span>
+                            <span class="pk">6</span>
+                            <span class="pk">7</span>
+                            <span class="pk">8</span>
+                            <span class="pk">9</span>
+                            <span class="pk">10</span>
+                        </div>
+                    </th>
+                    <th style="font-size:34px;" colspan="3">冠亚</th>
+                    <th style="font-size:34px;" colspan="5">1-5球龙虎</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $a=0; ?>
+                {volist name="list" id="vo"}
+                    <tr class="text-c {if $a%2 == 1} dan {else/} shuang {/if}">
+                        <td class="yanse"><div style="margin:0 auto;width:100px;font-size:26px;"><?php echo substr($vo['sequencenum'],-3); ?>期</div></td>
+                        <td>
+                            <div style="margin:0 auto;width:450px;">
+                                <?php $tmp_arr = explode('-',$vo['outcome']); ?>
+                                {volist name="tmp_arr" id="v"}
+                                    <span class="pk_{$v}"><?php echo (int)$v; ?></span>
+                                {/volist}
+                            </div>
+                        </td>
+                        <td><span class="pk_he"><?php echo $he = $tmp_arr['0'] + $tmp_arr['1']; ?></span></td>
+                        <td> <?php  if($he>=12 and $he<=19){ ?> <span class="pk_shuang">大</span> <?php }else{ ?> <span class="pk_dan">小</span> <?php } ?> </td>
+                        <td> <?php if($he%2 == 1){ ?> <span class="pk_dan">单</span> <?php }else{ ?> <span class="pk_shuang">双</span> <?php } ?> </td>
+                        
+                        <?php $num = count($tmp_arr)-1; for($i=0;$i<=4;$i++){ ?>
+                            <td style="font-size:26px;">
+                                <?php if($tmp_arr[$i] > $tmp_arr[$num-$i]){ ?>
+                                    <span class="pk_shuang">龙</span>
+                                <?php }else{ ?>
+                                    <span class="pk_dan">虎</span>
+                                <?php } ?>
+                            </td>
+                        <?php } $a++; ?>
+                    </tr>
+                {/volist}
+            </tbody>
+            <tbody>
+                <tr class="text-c">
+                    <td colspan="10" style="font-size:32px;">
+                        {$list->render()}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

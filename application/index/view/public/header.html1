@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="user-scalable=no,width=device-width" />
+    <meta name="baidu-site-verification" content="W8Wrhmg6wj" />
+    <meta content="telephone=no" name="format-detection">
+    <meta content="1" name="jfz_login_status">
+    <link rel="stylesheet" type="text/css" href="/static/css/user.css?v=1.2" />
+    <link rel="stylesheet" type="text/css" href="/static/css/common_user.css?v=1.2">
+    <link href="/static/layer2.7.6/css/layui.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/static/layui2.7.6/layui.js"></script>
+
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <title>{if isset($title)}{$title}{/if}</title>
+    <script type="text/javascript">
+        //自定义弹出
+        function zdy_tips(msg) {
+            $("#zdy_tips").html(msg);
+            z_tips_w = $("#zdy_tips").outerWidth();
+            $("#zdy_tips").css({ "margin-left": -parseInt(z_tips_w / 2) + "px" });
+            $("#zdy_tips").show();
+            setTimeout(function () {
+                $("#zdy_tips").hide();
+                $("#zdy_tips").html("");
+            }, 2000);
+        }
+
+        layui.use('upload', function () {
+            var upload = layui.upload;
+
+            //执行实例
+            var uploadInst = upload.render({
+                elem: '#imgbutton' //绑定元素
+                , url: '{:url('user/ changeheaderimg')}' //上传接口
+                , done: function (res) {
+                    $("#imgbutton").attr("src", res.data.src);
+                }
+                , error: function () {
+                    //请求异常回调
+                }
+      });
+});;
+
+
+    </script>
+    <style>
+        #zdy_tips {
+            max-width: 80%;
+            padding: 0.6em 1em;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            line-height: 1.8em;
+            display: block;
+            background: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            left: 50%;
+            bottom: 50%;
+            transform: translate(0, 50%);
+            z-index: 999999;
+        }
+
+        .wx_cfb_container .kv_tb_list {
+            display: flex;
+        }
+
+        .wx_cfb_container .kv_tb_list .kv_item {
+            flex: 1;
+            align-items: center;
+            text-align: center;
+        }
+
+        .wx_cfb_container .kv_tb_list .kv_item:first-child,
+        .wx_cfb_container .kv_tb_list .kv_item:last-child {
+            text-align: center;
+        }
+
+        .layui-upload-file {
+            display: none;
+        }
+        .val{
+            color: #6D530D !important;
+        }
+        .key{
+            color: #000 !important;
+        }
+        .layui-layer-dialog .layui-layer-content{
+            color: #000 !important;
+        }
+    </style>
+</head>
+
+<body style="background: #000">
+    <div id="zdy_tips" style="display:none;"><!--消息框--></div>
+    <div class="wx_cfb_container wx_cfb_account_center_container" style="padding-top: 0.5rem">
+        <div class="userinfo" style="margin: 0 1em;">
+            <div class="left">
+                <!-- <img src="{$usermore['headimgurl']|default='/static/images/default.jpg'}" alt="" id="imgbutton"
+                    class="layui-btn" /> -->
+                <img src="{$usermore['headimgurl']|default='/static/images/default.png'}" alt=""/>
+            </div>
+            <div class="right" style="color: #FFFFFF">
+                {$usermore.username}
+            </div>
+        </div>
+        <div class="wx_cfb_account_center_wrap">
+            <div class="wx_cfb_ac_fund_detail">
+                <div class="user_info"  style="border-top-left-radius: 1rem;border-top-right-radius: 1rem">
+                    <div class="money">
+                        <p style="font-size: 1.5rem;color: #6D530D;font-weight: bold;">总资产</span>
+                        <p style="font-size: 2rem;margin-top: .6rem;color: #FFFFFF">￥{$usermore.money}</span>
+
+                    </div>
+                    <div class="manipulate">
+                        <a href="/index/user/recharge.php" title="">
+                            <img src="/static/images/1013.png" alt="">
+                            <!--<p>上分</p>-->
+                        </a>
+                        <a href="/index/user/tx.php">
+                            <img src="/static/images/1012.png" alt="">
+                            <!--<p>下分</p>-->
+                        </a>
+                    </div>
+                </div>
+                <div class="fund_info" style="padding-bottom:2em;border-bottom-left-radius: 1rem;border-bottom-right-radius: 1rem">
+                    <div class="kv_tb_list clearfix">
+
+                        <div class="kv_item">
+                            <span class="val">{$usermore.jfmoney}</span>
+                            <span class="key">我的积分</span>
+                        </div>
+                        <div class="kv_item">
+                            <span class="val">{$usermore.money_zj-$usermore.money_tz}</span>
+                            <span class="key">今日盈亏</span>
+                        </div>
+
+                        <div class="kv_item">
+                            <span class="val">{$usermore.money_tz}</span>
+                            <span class="key">今日流水</span>
+                        </div>
+                    </div>
+                </div>
+            </div>

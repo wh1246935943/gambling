@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title data-translate="choose_select_room">选择房间</title>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+    <script src="https://unpkg.com/i18next@20.3.1/dist/umd/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.2/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: 100%;
+            font-weight: normal;
+        }
+
+        .room {
+            display: block;
+            overflow: hidden;
+            clear: both;
+            margin-top: 15px;
+            background: #607D8B;
+            margin: 15px 10px 0;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+            height: 10rem;
+        }
+
+        .room a {
+            color: #fff;
+            text-decoration: none
+        }
+
+        .room .r_top {
+            font-size: 14px;
+            padding-left: 1em;
+            line-height: 2.4em;
+        }
+
+        .room .r_title {
+            text-align: center;
+            font-size: 2.5rem;
+            line-height: 10rem;
+        }
+
+        .room .r_bottom {
+            font-size: 12px;
+            padding-left: 1em;
+            line-height: 2.4em;
+        }
+
+        .room_1 {
+            background: url(/static/images/room_bg1.png) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .room_2 {
+            background: url(/static/images/room_bg2.png) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .room_3 {
+            background: url(/static/images/room_bg3.png) no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .guizhe {
+            padding: 0 15px;
+        }
+
+        .guizhe li {
+            height: 8em;
+            width: 100%;
+            margin-top: 3em;
+            position: relative;
+            border-radius: 15px;
+        }
+
+
+        .guizhe li .txt1 {
+            position: absolute;
+            top: .5em;
+            right: 1.3em;
+            color: white;
+            font-size: 1.4em;
+        }
+
+        .guizhe li .txt2 {
+            position: absolute;
+            top: 6.5em;
+            right: 2.5em;
+            color: white;
+            font-size: .9em;
+
+        }
+
+        .guizhe li .txt3 {
+            position: absolute;
+            top: 4em;
+            right: 1.3em;
+            color: white;
+            width: 6em;
+            height: 2em;
+            text-align: center;
+            line-height: 2em;
+            background: rgba(210, 175, 133, 1);
+            border-radius: 4em;
+            font-size: .9em;
+        }
+
+        .layer-bg {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 99;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+
+        }
+
+        .room-01 {
+            background: #121116 url(/static/img3/pic1.jpg) no-repeat;
+            background-size: contain;
+        }
+
+        .room-02 {
+            background: #121116 url(/static/img3/pic2.jpg) no-repeat;
+            background-size: contain;
+        }
+
+        .room-03 {
+            background: #121116 url(/static/img3/pic3.jpg) no-repeat;
+            background-size: contain;
+        }
+
+        .text-introduce {
+            overflow: auto;
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 8%;
+            top: 20%;
+            z-index: 888;
+            width: 80%;
+
+            max-height: 20em;
+            background: #fff;
+            border-radius: 6px;
+            padding: 0 2%;
+            word-wrap: break-word;
+        }
+
+        .text-introduce h2 {
+            line-height: 32px;
+            font-size: 16px;
+            color: #f3ae28;
+        }
+
+        .text-introduce p {
+            font-size: 14px;
+            color: #333333;
+        }
+
+        .text-introduce1 {
+            display: none;
+        }
+
+        .text-introduce2 {
+            display: none;
+        }
+
+        .text-introduce3 {
+            display: none;
+
+        }
+
+        .room-bg {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 48em;
+            background: url("/static/images/room_bg.jpg") no-repeat;
+            background-size: cover;
+
+        }
+
+        .alpha {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .alpha body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .back {
+            background-color: rgba(21, 19, 20, 1);
+            height: 3rem;
+            text-align: center;
+            margin: 1em 10px;
+            color: #D2AF85;
+            font-size: 1.3em;
+            line-height: 2em;
+            position: relative;
+        }
+
+        .back a {
+
+            width: 2em;
+            height: 2em;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: .5em;
+            background: url(/static/img3/u31.png) 30% 74%/70% no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="layer-bg" id="test"></div>
+    <div class="text-introduce text-introduce1">
+        <h2 data-translate="choose_game_introduce">[游戏介绍]</h2>
+        <p>{$youxi['game_js']}</p>
+        <h2 data-translate="choose_related_data">[相关资料]</h2>
+        <p>{$youxi['game_zl']}</p>
+        <h2 data-translate="choose_play_method">[玩法]</h2>
+        <p>{$youxi['game_wf']}</p>
+    </div>
+    <div class="text-introduce text-introduce2">
+        <h2 data-translate="choose_game_introduce">[游戏介绍]</h2>
+        <p>{$youxi['two_game_js']}</p>
+        <h2 data-translate="choose_related_data">[相关资料]</h2>
+        <p>{$youxi['two_game_zl']}</p>
+        <h2 data-translate="choose_play_method">[玩法]</h2>
+        <p>{$youxi['two_game_wf']}</p>
+    </div>
+    <div class="text-introduce text-introduce3">
+        <h2 data-translate="choose_game_introduce">[游戏介绍]</h2>
+        <p>{$youxi['three_game_js']}</p>
+        <h2 data-translate="choose_related_data">[相关资料]</h2>
+        <p>{$youxi['three_game_zl']}</p>
+        <h2 data-translate="choose_play_method">[玩法]</h2>
+        <p>{$youxi['three_game_wf']}</p>
+    </div>
+    <div class="room-bg">
+        <div class="back">
+            <a href="javascript:history.back(-1);"></a>
+            <span data-translate="choose_select_room">选择房间</span>
+        </div>
+        {if $one_min!=-1}
+        <ul class="guizhe">
+            <li class="room-01">
+                <a class="txt1">{$youxi['one_room_name']}</a>
+                <a class="bg5 txt2" data-translate="choose_rules_description">规则说明</a>
+                <a class="txt3" style="text-decoration:none;"
+                    href="{:url('game/jump',array('video'=>$video,'room'=>'one'))}?room=one"
+                    data-translate="choose_enter_immediately">
+                    立即进入
+                </a>
+            </li>
+        </ul>
+        {/if}
+        {if $two_min!=-1}
+        <ul class="guizhe">
+            <li class="room-02">
+                <a class="txt1">{$youxi['two_room_name']}</a>
+                <a class="bg6 txt2" data-translate="choose_rules_description">规则说明</a>
+                <a class="txt3" style="text-decoration:none;"
+                    href="{:url('game/jump',array('video'=>$video,'room'=>'two'))}?room=two"
+                    data-translate="choose_enter_immediately">
+                    立即进入
+                </a>
+            </li>
+        </ul>
+        {/if}
+        {if $three_min!=-1}
+        <ul class="guizhe">
+            <li class="room-03">
+                <a class="txt1">{$youxi['three_room_name']}</a>
+                <a class="bg7 txt2" data-translate="choose_rules_description">规则说明</a>
+                <a class="txt3" style="text-decoration:none;"
+                    href="{:url('game/jump',array('video'=>$video,'room'=>'three'))}?room=three"
+                    data-translate="choose_enter_immediately">
+                    立即进入
+                </a>
+            </li>
+        </ul>
+        {/if}
+    </div>
+    <script>
+        $(".bg5").click(function () {
+            $(".layer-bg").css({ display: "block" });
+            $('html').addClass('alpha');
+            $(".room-bg").css({ position: "fixed" });
+            $(".text-introduce1").css({ display: "block" });
+        });
+        $(".bg6").click(function () {
+            $(".layer-bg").css({ display: "block" });
+            $(".text-introduce2").css({ display: "block" });
+        });
+        $(".bg7").click(function () {
+            $(".layer-bg").css({ display: "block" });
+            $(".text-introduce3").css({ display: "block" });
+        });
+        $(".layer-bg").click(function () {
+            $('html').removeClass('alpha');
+            $(".room-bg").css({ position: "absolute" })
+            $(this).css({
+                display: 'none'
+            });
+            $(".text-introduce1,.text-introduce2,.text-introduce3").css({
+                display: 'none'
+            });
+        });
+
+        $('.layer-bg').bind("touchmove", function (e) {
+            e.preventDefault();
+        });
+
+    </script>
+</body>
+
+</html>

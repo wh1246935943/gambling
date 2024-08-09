@@ -1,0 +1,246 @@
+
+<script src="/locales/trans.js"></script>
+<div style="height: 100vh">
+  <div class="top-title" style="margin: 0;">
+    <a href="javascript:history.back(-1)" title=""></a>
+    <p data-translate="recharge_recharge">充值</p>
+  </div>
+  {include file="public/header" /}
+  <style>
+    input,
+    select {
+      -webkit-appearance: none;
+      outline: none;
+    }
+
+    .userinfo {
+      display: none;
+    }
+
+    .wx_cfb_entry_list {
+      background: #fff;
+      padding: 15px 15px 0;
+    }
+
+    .row {
+      display: block;
+      overflow: hidden;
+      margin-bottom: 10px;
+      font-size: 12px;
+      line-height: 44px;
+      color: #888888;
+    }
+
+    .row .row-left {
+      width: 20%;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .row .row-right {
+      width: 100%;
+      display: inline-block;
+      color: #888888;
+      margin-top: 2em;
+    }
+
+    .row .row-right select {
+      border: 1px solid #cfcfcf;
+      background: #fff;
+      line-height: 32px;
+      height: 34px;
+      text-indent: 10px;
+      width: 98%;
+      border-radius: 4px;
+    }
+
+    .row .row-right .iinput {
+      width: 90%;
+      border-bottom: 1.2px solid #ffffff;
+      color: #ffffff;
+      margin-left: 5%;
+      font-size: 1.5em;
+      
+    }
+    .iinput:-webkit-autofill {
+        -webkit-animation: autofill-fix 1s infinite !important;
+        -webkit-text-fill-color: #ffffff;
+        -webkit-transition: background-color 50000s ease-in-out 0s !important;
+        -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+        transition: background-color 50000s ease-in-out 0s !important;
+        background-color: transparent !important;
+        background-image: none !important;
+      }
+    .row .row-right .iinput::placeholder {
+      color: #ffffff;
+    }
+    .row .row-right img {
+      width: 50%;
+      margin-bottom: 10px;
+    }
+
+    .row .row-right p {
+      color: red;
+      font-size: 12px;
+      line-height: 24px;
+    }
+
+    .row .sub {
+      background: #59c365;
+      padding: 7px 0;
+      font-size: 14px;
+      border-radius: 4px;
+      display: block;
+      color: #fff;
+      width: 100%;
+    }
+
+    .demo--label {
+      color: #333;
+    }
+
+    .demo--radio {
+      display: none;
+    }
+
+    .demo--radioInput {
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 100%;
+      display: inline-block;
+      height: 16px;
+      margin-right: 10px;
+      margin-top: -1px;
+      vertical-align: middle;
+      width: 16px;
+      line-height: 1;
+    }
+
+    .demo--radio:checked + .demo--radioInput:after {
+      background-color: #57ad68;
+      border-radius: 100%;
+      content: "";
+      display: inline-block;
+      height: 12px;
+      margin: 2px;
+      width: 12px;
+    }
+
+    .demo--checkbox.demo--radioInput,
+    .demo--radio:checked + .demo--checkbox.demo--radioInput:after {
+      border-radius: 0;
+    }
+
+    .tip-title {
+      color: #59c365;
+      font-size: 1.4rem;
+      font-weight: bold;
+      padding-left: 1.2rem;
+    }
+
+    .use-list li {
+      height: 3.6rem;
+      line-height: 3.6rem;
+      color: #888888;
+      font-size: 1.4rem;
+      padding: 0 0.8rem;
+      border-bottom: 1px solid #e5e5e5;
+      border-top: 1px solid #e5e5e5;
+      margin-top: 0.6rem;
+    }
+
+    .qrcode-area {
+      width: 80%;
+
+      margin: 7% auto 0;
+    }
+
+    .qrcode-area img {
+      display: block;
+      width: 100%;
+
+      margin: 0 auto;
+    }
+
+    .qrcode-area p {
+      font-size: 1.5rem;
+      color: #ffffff;
+      line-height: 3rem;
+      text-align: center;
+      font-weight: 550;
+    }
+  </style>
+  <div class="qrcode-area">
+    <img src="{$yuming['weixin_erweima']}" alt="" title="" />
+    <p data-translate="recharge_scan_qrcode">扫描上面的二维码充值</p>
+  </div>
+  <div class="row">
+    <span class="row-right" style="position: relative">
+      <img src="/static/img3/u125.png" style="
+                      width: 1.5em;
+                      height: 1.5em;
+                      position: absolute;
+                      left: 1.8em;
+                      top: 5px;
+                  " alt="" />
+      <input type="number" data-translate-attr="placeholder:recharge_enter_amount" name="money"
+        class="iinput money" style="text-indent: 2em" id="money" />
+    </span>
+  </div>
+  <div class="row">
+    <input
+      class="sub"
+      onclick="check()"
+      type="button"
+      value=""
+      data-translate-attr="value:recharge_submit"
+      style="
+      width: 80%;
+      margin: 0 auto 3rem;
+      background: linear-gradient(90deg, #ddbb65, #e7d9b4);
+      height: 5rem;
+      border-radius: 2em;
+      margin-top: 2em;
+      text-align: center;
+      font-weight: 550;
+  " />
+  </div>
+</div>
+
+<script>
+  function check() {
+    var money = $("#money").val();
+    if (money == "") {
+      zdy_tips(i18next.getTranslation('recharge_amount_empty'));
+      return false;
+    }
+    if (money < 1) {
+      zdy_tips(i18next.getTranslation('recharge_amount_less_than_min'));
+      return false;
+    }
+
+    layer.open({
+      content: i18next.getTranslation('recharge_confirmation_message'),
+      btn: [i18next.getTranslation('recharge_confirm'), i18next.getTranslation('recharge_cancel')],
+      yes: function (index) {
+        var postdata = {
+          money: $("#money").val(),
+          remarks: "{$user.username}",
+          paytype: "wx",
+        };
+        $.ajax({
+          type: "POST",
+          url: "{:url('user/recharge')}",
+          data: postdata,
+          success: function (msg) {
+            zdy_tips(msg);
+          },
+        });
+        layer.close(index);
+      },
+    });
+  }
+</script>
+<iframe name="sendBox" frameborder="0" width="0" height="0" marginheight="0" marginwidth="0" scrolling="no"
+  style="display: none"></iframe>
+</div>

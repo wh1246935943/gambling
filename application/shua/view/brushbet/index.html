@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+      <meta http-equiv="refresh" content="5" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <iframe name="window" src="{:url('Brushbet/index2')}?time={:time()}" border="0" scrolling="no"></iframe>
+        {volist name="substation" id="vo"}
+            <iframe name="window" src="https://{$vo['domain_name']}/shua/brushbet/index2.html?time={:time()}" border="0" scrolling="no"></iframe>
+        {/volist}
+    </body>
+</html>

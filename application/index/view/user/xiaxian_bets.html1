@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="user-scalable=no,width=device-width"/>
+<meta name="baidu-site-verification" content="W8Wrhmg6wj" />
+<meta content="telephone=no" name="format-detection">
+<meta content="1" name="jfz_login_status">
+    <link rel="stylesheet" type="text/css" href="/static/css/user.css?v=1.2" />
+    <link rel="stylesheet" type="text/css" href="/static/css/common_user.css?v=1.2">
+    
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<title>{if isset($title)}{$title}{/if}</title>
+<script type="text/javascript">
+
+</script>
+<style>
+li{list-style:none;}
+td, th {
+    text-align: center;
+        font-size: 1.3rem;
+    line-height: 3rem;
+}
+.pagination{
+    display: flex;
+}
+.pagination li{
+    flex: 1;
+}
+.disabled{
+    
+}
+.wx_cfb_entry_list table tbody tr{
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 1.2rem;
+    height: 2.5rem;
+}
+.wx_cfb_entry_list table tbody td{
+    color:#000;
+}
+.wx_cfb_entry_list table thead th{
+    line-height: 3rem;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+.tab-list {
+    height: 5rem;
+    background: #fff;
+    padding-left: 1.2rem;
+     border-bottom: 1px solid #e5e5e5;
+       -webkit-display:flex;
+        display:flex;
+        -webkit-align-items:center;
+        align-items:center;
+        -webkit-justify-content:center;
+        justify-content:center;
+}
+.tab-list li{
+    flex:1;
+    width: 5.8rem;
+    height: 2.8rem;
+    background: #59c365;
+    color: #fff;
+    text-align: center;
+    line-height: 2.6rem;
+    border-radius: 4px;
+    margin-right: .7rem;
+    font-size: 1.3rem;
+
+}
+.total-lis{
+    padding: 0 1.2rem;
+    color: #333;
+     font-size: 1.3rem;
+     line-height: 4.2rem;
+}
+.data-list-active{
+    background: #f2a253 !important;
+}
+.total-lis li{
+    float: left;
+    margin-right: 0.8rem;
+}
+.total-lis li em{
+    color: #d12c25;
+
+}
+.tile {
+    line-height: 2.5rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 0.16rem;
+    background: #fff;
+    border-collapse: collapse;
+    font-weight: bold;
+    color: #333;
+    border-spacing: 0;
+    height:2.5rem;
+}
+.zwjl{
+    text-align: center;
+    font-size: 1.5rem;
+    background: #fff;
+    padding: 1rem 0;
+}
+</style>
+    <div class="top-title">
+        <a href="javascript:history.back(-1)" title="">返回上页</a>
+    </div>
+    <div class="top-tip" style="margin-bottom:1rem;">
+        |&nbsp;&nbsp;{$user.username}投注记录
+    </div>
+<div class="wx_cfb_entry_list" >
+    <ul class="tab-list ">
+        <li onClick="betlog(3)"><?php echo date("m-d",strtotime("-3 day")) ?></li>
+        <li onClick="betlog(2)"><?php echo date("m-d",strtotime("-2 day")) ?></li>
+        <li onClick="betlog(1)"><?php echo date("m-d",strtotime("-1 day")) ?></li>
+        <li onClick="betlog(0)" class="data-list-active"><?php echo date("m-d") ?></li>
+    </ul>
+    <div id="betlog">
+
+
+    </div>
+
+    <div class="total-lis clearfix">
+        <li>进项流水：&nbsp;<em id="ying"></em></li>
+        <li>出项流水：&nbsp;<em id="shu"></em></li>
+        <li>输赢：&nbsp;<em id="shuying"></em></li>
+    </div>
+</div>
+    <script>
+        $(".tab-list li").click(function() {
+            $(this).siblings('li').removeClass('data-list-active');  // 删除其他兄弟元素的样式
+            $(this).addClass('data-list-active');                            // 添加当前元素的样式
+        });
+
+        Date.prototype.format = function(format) {
+            var date = {
+                "M+": this.getMonth() + 1,
+                "d+": this.getDate(),
+                "h+": this.getHours(),
+                "m+": this.getMinutes(),
+                "s+": this.getSeconds(),
+                "q+": Math.floor((this.getMonth() + 3) / 3),
+                "S+": this.getMilliseconds()
+            };
+            if (/(y+)/i.test(format)) {
+                format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+            }
+            for (var k in date) {
+                if (new RegExp("(" + k + ")").test(format)) {
+                    format = format.replace(RegExp.$1, RegExp.$1.length == 1
+                        ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+                }
+            }
+            return format;
+        }
+        function betlog(index){
+            console.log(1);
+            $.ajax({
+                type: 'get',
+                url: "/index/user/xiaxianbetsJson.php?index="+index+"&userid={$user.userid}",
+                success:function (data) {
+                    if(data){
+                        var shu = data.shu;
+                        var ying = data.ying;
+                        $("#ying").html(ying);
+                        $("#shu").html(shu);
+                        $("#shuying").html(shu+ying);
+                        var data_array = data.list.data;
+                        $("#betlog").empty();
+                        var li = '';
+                        for(var i =0;i<data_array.length;i++){
+                            var outcomearr='';
+                            if(data_array[i].outcome){
+                                outcomearr = data_array[i].outcome.split("-");
+                            }
+                            var newDate = new Date();
+                            newDate.setTime(data_array[i].addtime * 1000);
+                            li = li+ '<table align="center" width="100%" border="1" cellpadding="0" cellspacing="0" >'+
+                                ' <caption class="tile">'+ (data_array[i].type=="jld28"?"加拿大28":data_array[i].type=="pc28"?"南澳28":data_array[i].type=="bjsc"?"财澳28":"")+'期号：'+data_array[i].sequencenum+'（'+(outcomearr?(outcomearr[0]+","+outcomearr[1]+","+outcomearr[2]):'')+'）</caption>'+
+                                ' <thead><tr>'+
+                                ' <th>竞猜时间</th>'+
+                                ' <th>竞猜单号</th>'+
+                                ' <th>内容</th>'+
+                                ' <th>点数</th>'+
+                                ' <th style="color:#d12c25;">输赢</th>'+
+                                '    </tr></thead>'+
+                                '  <tbody><tr>'+
+                                '     <td>'+newDate.format('h:m:ss')+'</td>'+
+                                '<td>'+data_array[i].id+'</td>'+
+                                ' <td>'+data_array[i].content+'</td>'+
+                                ' <td>'+Math.abs(data_array[i].money)+'</td>'+
+                                ' <td style="color:#d12c25;">'+data_array[i].money+'</td>'+
+                                '    </tr></tbody>'+
+                                '    </table>';
+                        }
+                        if(li!=''){
+                            $("#betlog").append(li);
+                        }else{
+                            $("#betlog").append("<p class='zwjl'>暂无记录</p>");
+                        }
+                    }
+                }
+            });
+        }
+        betlog(0);
+    </script>

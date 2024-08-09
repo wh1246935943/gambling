@@ -1,0 +1,129 @@
+<!-- <link href="/static/css/cms.css" rel="stylesheet" type="text/css" /> -->
+<style>
+  .nav-com1 {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 100%;
+	background: #1c2641;
+	/* box-shadow: inset 0 0 4px 0 #fff; */
+	filter: drop-shadow(0 .12rem .24rem rgba(15, 91, 206, .15));
+}
+* {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+      }
+.nav-com1 li {
+	float: left;
+	width: 25%;
+	list-style: none;
+}
+
+.nav-com1 a {
+	display: block;
+	width: 100%;
+	padding: 10px 0;
+	color: #646566;
+	font-size: 20px;
+	text-align: center;
+}
+.nav-com1 a p{
+	font-size: 12px;
+}
+.nav-com1 .deault1 {
+	/* background: url("../images/1003.png") center 3px no-repeat;
+	background-size: 25px 25px; */
+}
+
+.nav-com1 li:nth-child(1) .active {
+	/* background: url("../images/1002.png") center 3px no-repeat; */
+	color: #eac88e;
+	/* background-size: 25px 25px; */
+}
+
+.nav-com1 .deault2 {
+	/* background: url("../images/1004.png") center 3px no-repeat; */
+	/* background-size: 25px 25px; */
+}
+
+.nav-com1 li:nth-child(2) .active {
+	/* background: url("../images/1005.png") center 3px no-repeat;
+	background-size: 25px 25px; */
+	color: #eac88e;
+}
+
+
+.nav-com1 .deault3 {
+	/* background: url("../images/1006.png") center 3px no-repeat;
+	background-size: 25px 25px; */
+}
+
+.nav-com1 li:nth-child(3) .active {
+	/* background: url("../images/1007.png") center 3px no-repeat;
+	background-size: 25px 25px; */
+	color: #eac88e;
+}
+
+.nav-com1 .deault4 {
+	/* background: url("../images/1008.png") center 3px no-repeat;
+	background-size: 25px 25px; */
+
+}
+
+.nav-com1 li:nth-child(3) .active {
+	/* background: url("../images/1009.png") center 3px no-repeat;
+	background-size: 25px 25px; */
+	color: #eac88e;
+}
+
+.nav-com1 .deault5 {
+	/* background: url("../images/1010.png") center 3px no-repeat;
+	background-size: 25px 25px; */
+}
+
+.nav-com1 li:nth-child(4) .active {
+	/* background: url("../images/1011.png") center 3px no-repeat;
+	background-size: 25px 25px; */
+	color: #eac88e;
+}
+</style>
+<link rel="stylesheet" href="/static/font/iconfont.css" />
+<ul class="nav-com1" style="max-width: 640px;margin: 0 auto;">
+  <li>
+    <a href="/index/game/index.php" title="" class="deault1 iconfont icon-home">
+      <p data-translate="footer_home">首页</p>
+    </a>
+  </li>
+  <li>
+    <a href="/index/user/agent.php" title="" class="deault2 iconfont icon-dailiguanligongju">
+      <p data-translate="footer_agent">代理</p>
+    </a>
+  </li>
+  <li>
+    <a href="/index/user/service.php" title="" class="deault4 iconfont icon-kefu">
+      <p data-translate="footer_service">客服</p>
+    </a>
+  </li>
+  <li>
+    <a href="/index/user/index.php" title="" class="deault5 iconfont icon-wode">
+      <p data-translate="footer_mine">我的</p>
+    </a>
+  </li>
+</ul>
+
+</body>
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script>
+     $(function () {
+        //获取当前路径
+        var url = window.location.pathname;
+        //获取a标签href属性为url的a标签
+        var a = $("a[href='" + url + "']");
+        //给a标签添加active类
+        a.addClass("active");
+      });
+</script>
+</html>

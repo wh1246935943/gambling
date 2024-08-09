@@ -1,0 +1,142 @@
+{
+  "id": "4347726",
+  "name": "suxun",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4562784",
+      "name": "总代理账号",
+      "font_class": "zongdailizhanghao",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "21758107",
+      "name": "代理管理工具",
+      "font_class": "dailiguanligongju",
+      "unicode": "e6ae",
+      "unicode_decimal": 59054
+    },
+    {
+      "icon_id": "29276285",
+      "name": "代理商管理",
+      "font_class": "dailishangguanli",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "3614474",
+      "name": "我的推广",
+      "font_class": "wodetuiguang",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "577345",
+      "name": "客服",
+      "font_class": "kefu",
+      "unicode": "e741",
+      "unicode_decimal": 59201
+    },
+    {
+      "icon_id": "1471615",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "3033370",
+      "name": "我的下线",
+      "font_class": "wodexiaxian",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "6528212",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "12730740",
+      "name": "投注记录",
+      "font_class": "touzhujilu",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "13515725",
+      "name": "提现记录",
+      "font_class": "tixianjilu",
+      "unicode": "e62c",
+      "unicode_decimal": 58924
+    },
+    {
+      "icon_id": "7592572",
+      "name": "24gf-headset",
+      "font_class": "24gf-headset",
+      "unicode": "ea0e",
+      "unicode_decimal": 59918
+    },
+    {
+      "icon_id": "145492",
+      "name": "金币兑换",
+      "font_class": "jinbiduihuan",
+      "unicode": "e663",
+      "unicode_decimal": 58979
+    },
+    {
+      "icon_id": "14151857",
+      "name": "刷新",
+      "font_class": "shuaxin",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "5387967",
+      "name": "金币_o",
+      "font_class": "jinbi_o",
+      "unicode": "eba1",
+      "unicode_decimal": 60321
+    },
+    {
+      "icon_id": "12773454",
+      "name": "返回",
+      "font_class": "fanhui",
+      "unicode": "e648",
+      "unicode_decimal": 58952
+    },
+    {
+      "icon_id": "39638048",
+      "name": "返回-copy",
+      "font_class": "fanhui-copy",
+      "unicode": "e649",
+      "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "201560",
+      "name": "喇叭",
+      "font_class": "laba",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "12662036",
+      "name": "谷歌",
+      "font_class": "guge",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "1305047",
+      "name": "网络",
+      "font_class": "wangluo",
+      "unicode": "e62e",
+      "unicode_decimal": 58926
+    }
+  ]
+}

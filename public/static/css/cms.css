@@ -1,0 +1,471 @@
+* {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+a {
+	outline: none;
+	-moz-outline-style: none;
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+.clearfix:after {
+	content: "\200B";
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.clearfix {
+	*zoom: 1;
+}
+
+@media (min-width: 320px) {
+	body {
+		min-width: 320px;
+		margin: 0 auto;
+	}
+}
+
+body {
+	font-family: "\5FAE\8F6F\96C5\9ED1", Helvetica, sans-serif;
+	position: relative;
+	max-width: 640px;
+	margin: 0 auto;
+	background: #151e34;
+
+}
+
+.mian {}
+
+.ye-bottom {
+	padding: 0.5rem;
+	position: relative;
+	padding-bottom: 0.25rem;
+	background: #fff;
+}
+
+.yz-rs {
+	position: relative;
+	height: 0.5rem;
+}
+
+.yz-rs img {
+	width: 0.4rem;
+	height: 0.4rem;
+	position: absolute;
+	top: 0;
+	margin-top: 0.05rem;
+}
+
+.yz-rs .yz-rs-1 {
+	height: 0.5rem;
+	line-height: 0.5rem;
+	position: absolute;
+	top: 0;
+	left: 0.6rem;
+	font-size: 0.25rem;
+	color: #999;
+}
+
+.yz-rs-2 {
+	color: #000;
+}
+
+.yz-rs:nth-child(1) {
+	margin-bottom: 0.3rem;
+}
+
+.zxl {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	height: 1.3rem;
+}
+
+.zxl-1 {
+	font-size: 0.25rem;
+	color: #999;
+}
+
+.zxl>span {
+	color: #999;
+	display: block;
+	position: absolute;
+	bottom: 0;
+	font-size: 0.25rem;
+}
+
+.zxl-1 .zxl-2 {
+	font-size: 0.8rem;
+	color: #1296DB;
+}
+
+.ye-2 {
+	padding: 0.3rem 0.16rem 1rem;
+	display: flex;
+
+}
+
+.ye-2 ul {
+	/* overflow: hidden; */
+}
+
+.you-xi {
+	width: .6rem;
+	height: .8rem;
+	margin-bottom: 0.16rem;
+	border-radius: 5px;
+	background: #393939;
+}
+
+.room {
+	/* flex: 1; */
+	/* margin-left: .2rem; */
+}
+
+
+
+.room ul {
+	display: none;
+}
+
+.room ul:nth-of-type(1) {
+	display: block;
+}
+
+.room ul li {
+	margin-bottom: .12rem;
+	height: 2rem;
+	border-radius: .16rem;
+}
+
+.room ul li .txt1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+}
+
+.room ul li a {
+	align-items: flex-end;
+	background-color:#404143;
+	font-size: .24rem;
+	color: gold;
+	display: block;
+	width: 1rem;
+	height: .4rem;
+	line-height: .4rem;
+	border-radius: .4rem;
+	padding: 0 .12rem;
+	margin: .2rem 0;
+	border: solid 1px goldenrod;
+	
+}
+
+.room .txt1 p {
+	font-size: .24rem;
+	color: #000000;
+	font-weight: 550;
+}
+
+.guizhe {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	font-size: .24rem;
+	width: 100vw;
+	height: 100vh;
+	z-index: 99999999999;
+}
+
+.guizhe .bg {
+	margin: 30% auto;
+	background-color: #fff;
+	padding: .2rem .1rem;
+	border-radius: .1rem;
+	box-sizing: border-box;
+}
+
+.bjsc {
+	background: url(../images/TIM_11.png)no-repeat;
+	background-size: 100% 100%;
+}
+
+.xyft {
+	background: url(../images/TIM_10.png)no-repeat;
+	background-size: 100% 100%;
+}
+
+.pc28 {
+	background: url(../images/TIM_06.png)no-repeat;
+	background-size: 100% 100%;
+}
+
+.jld28 {
+	background: url(../images/ic_canada28.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.you-xi>a {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+}
+
+.you-xi .jr-yx {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+.tanchukuang {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	display: none;
+}
+
+.xiansuy {
+	position: absolute;
+	top: 40%;
+	margin-left: 10%;
+	background: #FFF;
+	text-align: center;
+	width: 70%;
+	padding: 5%;
+}
+
+.xiansuy span {
+	display: block;
+	font-size: 0.5rem;
+	text-align: center;
+	margin-bottom: 0.5rem;
+}
+
+.xiansuy a {
+	height: 50%;
+	font-size: 0.4rem;
+	background: rgb(255, 255, 255);
+	display: block;
+	width: 39.5%;
+	float: left;
+	padding: 0 5%;
+	color: #000;
+
+}
+
+.xiansuy a.one {
+	border-right: 1px solid #999;
+}
+
+
+.xiansuy a div img {
+	width: 40%;
+}
+
+.xiansuy a div span {
+	margin: 0;
+	font-size: 0.25rem;
+}
+
+/*改版乐彩国际移动端  */
+.head-show {
+	position: relative;
+	width: 100%;
+	height: 1.8rem;
+	/*      background: url("../images/home_page_banner.png") no-repeat;
+background-size: 100% 100%; */
+}
+
+.swiper-wrapper img {
+	display: block;
+	width: 100%;
+	height: 2.04rem;
+}
+
+.bg-black {
+	transform: translateY(.12rem);
+	padding-top: 0.1rem;
+	/* background: #fff; */
+}
+
+.scroll-tip {
+	margin: 0 auto;
+	font-size: 0.28rem;
+	color: rgb(255, 255, 255);
+	height: 0.4rem;
+	line-height: 0.4rem;
+	border-radius: .2rem;
+	/* background: url("../images/show_box_big.png") no-repeat; */
+
+}
+
+.usercard {
+	color: rgb(81, 88, 125);
+}
+
+.user-account {
+	padding: 0.24rem;
+
+}
+
+.user-account dt,
+dd {
+	float: left;
+}
+
+.user-account dt {
+	margin-right: 0.36rem;
+}
+
+.user-account dt img {
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	border-radius: 8px;
+}
+
+.user-account dd {
+	font-size: 0.26rem;
+	color: #fff;
+}
+
+.user-account dd p {
+	line-height: 0.36rem;
+	margin-bottom: 0.1rem;
+}
+
+.user-account dd p strong,
+em {
+	float: left;
+	font-style: normal;
+	color: #fff;
+}
+
+.user-account dd p em {
+	width: 2.9rem;
+	padding-left: 0.1rem;
+	background: url("../images/show_box_small.png") no-repeat;
+	background-size: 100% 0.4rem;
+}
+
+
+
+
+/*
+	.ye-quan {
+		width: 100%;
+		margin: 0 auto;
+		height: auto;
+	}
+	.ye-bottom{
+		border-bottom: 1px solid #999;
+		padding-bottom: 0.5rem;
+	}
+	.yz-rs {
+		width: 70%;
+		height: auto;
+		margin-top: 0.7rem;
+		padding-left: 0.7rem;
+		padding-right: 0.7rem;
+	}
+	.yz-rs img {
+		width: 50px;
+		height: 50px;
+	}
+	.yz-rs-1 {
+    margin-top: -0.95rem;
+    margin-left: 1rem;
+    font-size: 0.5rem;
+    color: #666;
+	}
+	.yz-rs-2 {
+		margin-left: 10px;
+		color: #000;
+	}
+	.zxl {
+		width: 150px;
+		height: 150px;
+		float: right;
+		margin-right: 40px;
+		margin-top: -150px;
+	}
+	.zxl-1 {
+		width: 100%;
+		height: 100px;
+		color: #f51f4c;
+		font-size: 25px;
+	}
+	.zxl-2 {
+		color: #1296DB;
+		font-size: 80px;
+	}
+	.zxl>span {
+		font-size: 25px;
+		color: #666;
+	}
+	.ye-2 {
+		margin-top: 30px;
+	}
+	.you-xi {
+		width: 400px;
+		height: 400px;
+		border-radius: 30px;
+		background-size: 100% 100%;
+		float: left;
+		margin-left: 50px;
+		margin-top: 50px;
+	}
+	.bjsc {
+		background: url(../img/TIM_11.png)no-repeat;
+		
+	}
+	.xyft {
+		background: url(../img/TIM_10.png)no-repeat;
+	}
+	.pc28 {
+		background: url(../img/TIM_06.png)no-repeat;
+	}
+	.jld28 {
+		background: url(../img/TIM_08.png)no-repeat;
+	}
+	.you-xi a{
+		display: block;
+		text-decoration: none;
+		color: #000;
+	}
+	
+	.yx-ming {
+		text-align: center;
+		margin-top: 150px;
+		color: white;
+		font-size: 50px;
+	}
+	.yx-ming span {
+		color: #DAA23E;
+	}
+	.jr-yx {
+		border: 1px solid #999;
+		border-radius: 25px;
+		width: 250px;
+		height: 60px;
+		margin: 300px auto;
+		text-align: center;
+		line-height: 60px;
+		font-size: 34px;
+		font-weight: bold;
+		background: rgba(237, 237, 237, 0.63);
+	}
+	
+	*/

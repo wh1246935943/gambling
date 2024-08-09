@@ -1,0 +1,659 @@
+html {
+	height: 100%;
+	font-size: 13.3333vw;
+}
+
+body {
+	height: 100%;
+	font-size: .16rem;
+}
+
+#content-wrap {
+	height: 100%;
+	background: #151e34;
+}
+
+/* 弹出层title   样式*/
+
+.layui-layer-title {
+	background-color: #009f95 !important;
+	color: #fff !important;
+	border: none !important;
+}
+
+.layui-layer-content {
+	background-color: #F2F2F2 !important;
+}
+
+.layui-layer-tips .layui-layer-content {
+	background-color: #010101 !important;
+}
+
+/* common */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, "Lantinghei SC", "Microsoft YaHei", "微软雅黑", "黑体";
+	font-size: 12px;
+	line-height: 24px;
+	background: #f8f8f8 url(../images/base-bg.jpg) repeat-x center top;
+	background-size: auto 400px;
+}
+
+/* layout */
+.clear {
+	clear: both;
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	width: 100%;
+}
+
+.row:after,
+.clearfix:after,
+.clearfix::after {
+	clear: both;
+	content: '';
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	width: 100%;
+}
+
+.row {
+	position: relative;
+	padding-bottom: 1px;
+	zoom: 1;
+}
+
+.column {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.tp-ui-mask {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: rgba(0, 0, 0, .3);
+}
+
+/* tp-ui-icon */
+.tp-ui-icon {
+	width: 0.48rem;
+	height: 0.48rem;
+	position: absolute;
+}
+
+.tp-ui-button-base a,
+.tp-ui-button-base input,
+.tp-ui-button-base button,
+.tp-ui-text-base input,
+.tp-ui-textarea-base textarea,
+.tp-ui-select-value a,
+.tp-ui-number-refer input,
+.tp-ui-number-option button {
+	border: none;
+	background: none;
+	box-sizing: border-box;
+	outline: 0;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.tp-ui-text-base input,
+.tp-ui-textarea-base textarea,
+.tp-ui-select-head,
+.tp-ui-button-base a,
+.tp-ui-button-base input,
+.tp-ui-button-base button,
+.tp-ui-number-refer input {
+	width: 100%;
+}
+
+/* tp-ui-form-base */
+.tp-ui-button,
+.tp-ui-text,
+.tp-ui-textarea,
+.tp-ui-select-head,
+.tp-ui-select-content-list,
+.tp-ui-number,
+.tp-ui-number-option,
+.tp-ui-switch-refer {}
+
+.tp-ui-button-base a,
+.tp-ui-button-base input,
+.tp-ui-button-base button,
+.tp-ui-text-base input,
+.tp-ui-textarea-base textarea,
+.tp-ui-select-value a,
+.tp-ui-number-refer input,
+.tp-ui-number-option button {
+	height: 38px;
+}
+
+.tp-ui-button-base a,
+.tp-ui-select-head .tp-ui-select-value a {
+	line-height: 38px;
+}
+
+.tp-ui-select-head .tp-ui-select-value a {
+	padding-right: 38px;
+}
+
+.tp-ui-text-base input {
+	padding: 0 8px;
+}
+
+/* form-table */
+.form-row,
+.form-sub,
+.form-build {
+	height: .8rem;
+}
+
+.tp-ui-switch.tp-ui-active span.tp-ui-switch-color-off {
+	left: 16px;
+	top: 8px;
+}
+
+.tp-ui-active .tp-ui-switch-handle a {
+	left: 17px;
+}
+
+.tp-ui-button .tp-ui-icon,
+.tp-ui-text .tp-ui-icon {
+	top: 3px;
+}
+
+.tp-ui-button .tp-ui-icon-base,
+.tp-ui-button .tp-ui-icon-before,
+.tp-ui-text .tp-ui-icon-base,
+.tp-ui-text .tp-ui-icon-before {
+	left: .24rem;
+}
+
+/* vercode */
+
+.vercode>.tp-ui-text,
+.vercode>a {
+	display: inline-block;
+	vertical-align: top;
+	font-size: 12px;
+}
+
+.vercode>.tp-ui-text input {
+	width: 98px;
+}
+
+.vercode a {
+	height: 40px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.vercode a.image img {
+	width: 100%;
+	height: 100%;
+}
+
+/* tp-ui-icon */
+.tp-ui-icon i {
+	display: none;
+}
+
+.tp-ui-iconat-base,
+.tp-ui-iconat-before {
+	padding-left: 32px;
+}
+
+.tp-ui-iconat-after {
+	padding-right: 32px;
+}
+
+#sp-login .tp-ui-button-submit input {
+	cursor: pointer;
+}
+
+/* tp-ui-button */
+.tp-ui-button {
+	border: none;
+	background-color: #09f;
+}
+
+.tp-ui-button.tp-ui-button-submit {
+	background: #27ae60;
+}
+
+/* input-in-option */
+.input-in-option {
+	display: block;
+	width: 32px;
+	height: 32px;
+	position: absolute;
+}
+
+.input-in-option i {
+	display: none;
+}
+
+/* sign-panel */
+.sign-panel {}
+
+.sign-panel .logo {
+	position: relative;
+}
+
+.sign-panel .logo,
+.sign-panel .logo span {
+	display: block;
+	font-size: 0;
+	width: 195px;
+	height: 80px;
+	overflow: hidden;
+}
+
+.sign-panel .logo span {
+	background-image: url(../images/logo-top.png);
+	background-image: -webkit-image-set(url(../images/logo-top.png) 1x, url(../images/new-kc@2x.png) 2x);
+	background-repeat: no-repeat;
+}
+
+.sign-panel .tab-box {
+	position: relative;
+	margin-top: 10px;
+}
+
+.sign-panel .tb-nav li a {
+	color: #999;
+	display: inline-block;
+	width: 112px;
+	line-height: 32px;
+	font-size: 14px;
+	text-align: center;
+	background: #fff;
+	border: 1px #ddd solid;
+	border-bottom-color: #fff;
+	padding-top: 4px;
+	border-radius: 5px 5px 0 0;
+	box-shadow: inset 0 -2px 5px -2px #ddd;
+}
+
+.sign-panel .tb-nav li.active a {
+	color: #e74c3c;
+	box-shadow: none;
+}
+
+.sign-panel .guest-tip {
+	height: 32px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #333;
+	border-radius: 32px;
+	color: #fff;
+	overflow: hidden;
+}
+
+.sign-panel .guest-tip i,
+.sign-panel .guest-tip a,
+.sign-panel .guest-tip span {
+	display: inline-block;
+	vertical-align: top;
+	overflow: hidden;
+}
+
+.sign-panel .guest-tip a,
+.sign-panel .guest-tip span {
+	font-size: 14px;
+	white-space: nowrap;
+	line-height: 32px;
+}
+
+.sign-panel .guest-tip i {
+	width: 32px;
+	height: 32px;
+	background: url(../images/kc-icon.png) no-repeat -384px -32px;
+}
+
+.sign-panel .guest-tip a {
+	color: #fff;
+	padding: 0px 4px;
+	text-decoration: underline;
+	margin-right: 12px;
+}
+
+.sign-panel .guest-tip a:hover {
+	color: #e74c3c;
+}
+
+.sign-panel .panel {}
+
+.sign-panel .column,
+.sign-panel .form-row {
+	position: relative;
+}
+
+.sign-panel .column {}
+
+.sign-panel .form-table {}
+
+/* sign-panel-login */
+
+#sp-login .form-row {
+	width: 6.5rem;
+	margin-bottom: .24rem;
+}
+
+#sp-login input {}
+
+#sp-login .tp-ui-text input {
+	font-size: 14px;
+	line-height: 40px !important;
+}
+
+#sp-login .tp-ui-button-submit {
+	display: block;
+}
+
+#sp-login .tp-ui-button-submit input {
+	color: #fff !important;
+	font-size: 16px !important;
+}
+
+#sp-login .tp-ui-icon {
+	background: url('../images/kc-agent-base.png') no-repeat 0px 0px;
+}
+
+#sp-login .icon-sigin-user {
+	background-position: -64px 0px;
+}
+
+#sp-login .icon-sigin-password {
+	background-position: -96px 0px;
+}
+
+#sp-login .icon-sigin-vercode {
+	background-position: -128px 0px;
+}
+
+#sp-login .login-options {
+	bottom: 10px;
+	color: #e74c3c;
+	font-size: 14px;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+}
+
+#sp-login .login-options a,
+#sp-login .login-options em,
+#sp-login .login-options span {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#sp-login .login-options .lo-mobile-token a {
+	color: #e74c3c;
+	line-height: 22px;
+	border: 1px #e74c3c solid;
+	font-style: normal;
+	padding: 0px 4px;
+	border-radius: 2px;
+	margin-left: 4px;
+}
+
+#sp-login .login-options .lo-mobile-token a:hover {
+	background: #e74c3c;
+	color: #fff;
+}
+
+#show-password-text {
+	background: url(../images/kc-icon.png) no-repeat -320px -32px;
+	right: 4px;
+	top: 4px;
+}
+
+#show-password-text.spt-show {
+	background-position: -352px -32px;
+}
+
+#repassword-pop {
+	background: url(../images/kc-icon.png) no-repeat -387px -32px;
+	right: 36px;
+	top: 4px;
+}
+
+/*注册界面背景  */
+.register {}
+
+/* 找回密码 */
+.tp-ui-button i {
+	display: none;
+}
+
+.tp-ui-button,
+.tp-ui-number,
+.tp-ui-radio,
+.tp-ui-checkbox,
+.tp-ui-switch,
+.tp-ui-select,
+.tp-ui-file,
+.tp-ui-file-handle,
+.tp-ui-progress {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.tp-ui-button-base a,
+.tp-ui-button-base input,
+.tp-ui-button-base button {
+	padding: 0px 16px;
+}
+
+/* applayout */
+.main {
+	min-height: 100%;
+	background-color: revert;
+	background: url("/static/images/login/top_bg.png") no-repeat;
+	background-size: contain;
+	padding-top: 25%;
+	box-sizing: border-box;
+}
+
+.tp-ui-button * {
+	color: #fff;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+}
+
+/* step-nav */
+.step-nav {
+	position: relative;
+	text-align: center;
+	padding: 5px;
+	background: #eee;
+	box-shadow: inset 0 1px 0 #ddd, 0 1px 0 #fff;
+	border-radius: 48px;
+}
+
+.step-nav ul,
+.step-nav ul li {
+	display: inline-block;
+	font-size: 0;
+	line-height: 0;
+}
+
+.step-nav a,
+.step-nav span {
+	display: block;
+	font-size: 14px;
+	line-height: 32px;
+}
+
+.step-base {
+	margin: 20px 100px !important;
+}
+
+.step-base ul {
+	width: 100%;
+	display: table;
+}
+
+.step-base ul li {
+	display: table-cell;
+	position: relative;
+}
+
+.step-base ul li span {
+	background: #fafafa;
+	text-align: center;
+	color: #999;
+	line-height: 28px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+}
+
+.step-base ul li.created span {
+	color: #fff;
+	background: #c00;
+}
+
+.step-base ul li.active span {
+	color: #fff;
+	background: #f50;
+}
+
+.step-base ul li:after {
+	display: block;
+	width: 16px;
+	height: 16px;
+	content: '';
+	background: #f50;
+	position: absolute;
+	right: -10px;
+	top: 50%;
+	margin-top: -10px;
+	z-index: 99;
+	border: 2px #fff solid;
+	border-radius: 50%;
+}
+
+.step-base ul li:last-child:after {
+	display: none;
+}
+
+.step-base ul li.created:after {
+	border-color: #f50;
+}
+
+.signin-cont .cont-head h2,
+.signin-cont .cont-head h4 {
+	font-weight: normal;
+	padding: 0px 10px 0px 42px;
+	position: relative;
+}
+
+.signin-cont .cont-head h2 {
+	height: 32px;
+	line-height: 32px;
+	font-size: 24px;
+	color: #e74c3c;
+}
+
+.signin-cont .cont-head h4 {
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color: #d7d7d7;
+}
+
+.signin-cont .cont-head h2 span {
+	display: block;
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0 !important;
+}
+
+.signin-cont .form-table .tp-ui-button input {
+	font-size: 16px;
+}
+
+/* repassword-panel */
+
+#repassword-panel {
+	padding: 20px;
+}
+
+#repassword-panel .cont-head h2 span {
+	background: url(../images/kc-icon.png) no-repeat -160px -32px;
+}
+
+#repassword-panel .form-table {
+	width: 480px;
+	margin: 0px auto;
+	font-size: 0;
+	line-height: 0;
+}
+
+#repassword-panel .form-title,
+#repassword-panel .form-input {
+	display: inline-block;
+	font-size: 12px;
+	line-height: 40px;
+	vertical-align: top;
+}
+
+#repassword-panel .form-title {
+	width: 80px;
+}
+
+#repassword-panel .form-title label {
+	line-height: 24px;
+}
+
+#repassword-panel .form-input {
+	width: 400px;
+}
+
+.step-nav ul li:after {
+	background-color: #eee;
+	background: -webkit-radial-gradient(center -50%, #fff, #eee);
+	background: -moz-radial-gradient(center -50%, #fff, #eee);
+	background: -ms-radial-gradient(center -50%, #fff, #eee);
+	background: radial-gradient(center -50%, #fff, #eee);
+}
+
+.step-base ul li.active span,
+.card-bind-step ul li.active span {
+	background-color: #f90;
+	background: -webkit-linear-gradient(top, #fc0, #f90);
+	background: -moz-linear-gradient(top, #fc0, #f90);
+	background: -ms-linear-gradient(top, #fc0, #f90);
+	background: linear-gradient(top, #fc0, #f90);
+}
+
+/* extend NET APP */
+.cont {
+	background: #fff;
+	border: 1px #ddd solid;
+	border-radius: 3px;
+}
+
+.step-base ul li:first-child span {
+	border-radius: 24px 0px 0px 24px;
+}

@@ -1,0 +1,45 @@
+﻿.activity-container { padding-top: 10px; width: 1010px; }
+.activity-site { position: relative; /*height:875px;*/ overflow: hidden; }
+.activity-nav { width: 100%; /*height:841px;*/ overflow-y: auto; min-height: 47px; }
+.activity-nav li { line-height: 45px; font-size: 14px; text-align: center; }
+.activity-content { margin-left: 200px; }
+
+.ui-acitive-box { padding: 15px 0; }
+/*.activity-box-body,.activity-box-header{padding-bottom:20px;}*/
+
+.activitystate { padding-top: 367px; width: 717px; text-align: right; }
+.activitystate .tit { font-size: 16px; float: left; line-height: 36px; width: 370px; text-indent: 8px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; text-align: left; }
+.activitystate a { display: inline-block; width: 163px; height: 36px; margin: 0 5px 10px 0; }
+.activity-box-body { padding-top: 20px; overflow: hidden; }
+.activity-container .activity-site .activity-box .infobox .info h4 { font-size: 15px; margin-bottom: 4px; }
+.activity-container .activity-site .activity-box .infobox .info p { font-size: 14px; margin-bottom: 4px; line-height: 20px; }
+.activity-container .activity-site .activity-box .infobox .info table { margin-bottom: 10px; width: 90%; border-spacing: 0; border-collapse: collapse; }
+.activity-container .activity-site .activity-box .infobox .info table th,
+.activity-container .activity-site .activity-box .infobox .info table td { height: 25px; text-align: center; }
+.activity-container .activity-site .activity-box .infobox .info .activitystate span { line-height: 26px; }
+.activity-container .activity-site .activity-box .infobox .info .activityimg { height: 139px; width: 449px; float: left; }
+.tab_list div { float: left; height: 100%; }
+.activity-box-body ul { font-size: 0; text-align: center; }
+.activity-box-body li { width: 170px; height: 163px; display: inline-block; *display: inline; *zoom: 1; margin: 5px 6px; }
+.activity-box-body li a { width: 156px; height: 30px; display: block; margin: 120px 7px 10px; }
+
+div.mq .mq-mask { display: none; }
+
+body { background-color: #0b0e15; }
+.activitybar { width: 182px; float: left; padding: 19px 0; /*height:857px;*/ overflow: hidden; position: relative;background: url(/Content/mapping/jingpinyule/home/images/activitybar.png?1fbcdf5e4e) no-repeat; }
+.activitybar .ui-up-box { width: 100%; height: 20px; position: absolute; top: 0; left: 0; z-index: 10; background-position: left top; }
+.activitybar .ui-down-box { width: 100%; height: 20px; position: absolute; bottom: 0; z-index: 10; background: url(/Content/mapping/jingpinyule/home/images/activitybar.png?1fbcdf5e4e) no-repeat left -19px; }
+.activity-nav { background-color: #000000; }
+.activity-nav li { background: #000; border-bottom: 1px solid #282626; border-top: 1px solid #d0b950; }
+.activity-nav li a:active { color: #fca644; }
+.activity-nav li a { color: #fff; }
+.activity-nav .active a { color: #fca644; }
+.activity-list { border-radius: 5px; padding: 0px 40px; min-height: 480px;border: 1px solid #071217; background: #071217; }
+.activitystate a { background: url(/Content/mapping/jingpinyule/home/images/activity-btn.png?33321ff0cc) no-repeat; }
+.activitystate .activity-join-btn { background-position: left top; }
+.activitystate .activity-show-btn { background-position: right top; }
+.activity-container .activity-site .activity-box .infobox .info { color: #fff;padding-bottom: 20px; }
+.activity-container .activity-site .activity-box .infobox .info table { color: #fff; }
+.activity-container .activity-site .activity-box .infobox .info table th,
+.activity-container .activity-site .activity-box .infobox .info table td { background: rgba(255, 255, 255, 0.1); border: 1px solid #d9d9d9; }
+.activity-container .activity-site .activity-box .infobox .info .activityimg { border: 5px solid rgba(0, 0, 0, 0.2); }

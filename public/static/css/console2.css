@@ -1,0 +1,1036 @@
+@charset "UTF-8";
+
+/* ------------------------------------- 
+ * 楚才团队后台框架
+ * author Anyon <zoujingli@qq.com>
+ * date 2017/02/13 14:15
+ * --------------------------------------- */
+body{font-size:12px;line-height:24px;font-family:'微软雅黑',"Microsoft YaHei","Helvetica Neue", "Luxi Sans", "DejaVu Sans", "Hiragino Sans GB",serif}
+/** 表格样式 */
+.table{background:#FFF;font-size:12px;border-top:1px solid #e1e6eb;border:1px solid #e1e6eb}
+.table-center{text-align:center}
+.table-center td, .table-center th{text-align:center}
+.table-bordered{border:1px solid #EBEBEB}
+.table-bordered > thead > tr > td{background-color:#F5F5F6;border-bottom-width:1px}
+.table-bordered > thead > tr > th, .table-bordered > tbody > tr > th.table-bordered > thead > tr > td, .table-bordered > tbody > tr > td{border:1px solid #e7e7e7}
+.table > thead > tr > th{border-bottom:1px solid #DDDDDD;vertical-align:bottom;font-weight:normal;color:#999;background-color:#F5F6FA}
+.table > thead > tr > th, .table > tbody > tr > th, .table > thead > tr > td, .table > tbody > tr > td{border-top:1px solid #e7eaec;line-height:1.42857;padding:8px;vertical-align:middle}
+.form-control{background-color:#FFFFFF;background-image:none;border:1px solid #e5e6e7;border-radius:1px;color:inherit;display:block;padding:6px 12px;transition:border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;width:100%;font-size:14px;box-shadow:none}
+.form-control:focus{outline:none;box-shadow:none}
+.hr-line-dashed{border-top:1px dashed #e7eaec;color:#ffffff;background-color:#ffffff;height:1px;margin:20px 0}
+.hr-line-solid{border-bottom:1px solid #e7eaec;background-color:rgba(0, 0, 0, 0);border-style:solid !important;margin-top:15px;margin-bottom:15px}
+/* 翻页按钮样式 */
+.text-center{text-align:center}
+ .pagination>li{display:inline}
+ .pagination>li>a,.pagination>li>span{position:relative;float:left;padding:6px 12px;margin-left:-1px;line-height:1.42857143;color:#1AA194;text-decoration:none;background-color:#fff;border:1px solid #ddd}
+ .pagination>li:first-child>a,.pagination>li:first-child>span{margin-left:0;border-top-left-radius:4px;border-bottom-left-radius:4px}
+ .pagination>li:last-child>a,.pagination>li:last-child>span{border-top-right-radius:4px;border-bottom-right-radius:4px}
+ .pagination>li>a:focus,.pagination>li>a:hover,.pagination>li>span:focus,.pagination>li>span:hover{z-index:2;color:#23527c;background-color:#eee;border-color:#ddd}
+ .pagination>.active>a,.pagination>.active>a:focus,.pagination>.active>a:hover,.pagination>.active>span,.pagination>.active>span:focus,.pagination>.active>span:hover{z-index:3;color:#fff;cursor:default;background-color:#1AA194;border-color:#1AA194}
+ .pagination>.disabled>a,.pagination>.disabled>a:focus,.pagination>.disabled>a:hover,.pagination>.disabled>span,.pagination>.disabled>span:focus,.pagination>.disabled>span:hover{color:#777;cursor:not-allowed;background-color:#fff;border-color:#ddd}
+ .pagination-lg>li>a,.pagination-lg>li>span{padding:10px 16px;font-size:18px;line-height:1.3333333}
+.pull-right{float:right!important}
+
+/* 站内信对象选择checkbx样式 */
+.piaochecked {
+	width: 20px;
+	height: 20px;
+	float: left;
+	cursor: pointer;
+	margin-left: 10px;
+	text-align: center;
+	background-image: url(/static/images/checkbox_01.gif);
+	background-repeat: no-repeat;
+	background-position: 0 -21px;
+	 
+}
+.on_check {
+	background-position: 0 0;
+}
+  .radioclass {
+	opacity: 0;
+	cursor: pointer;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+}
+/* 弹出层title   样式*/
+.layui-layer-title {
+	    background-color: #009f95 !important;
+	    color: #fff !important;
+	    border: none !important;
+	}
+	.layui-layer-content {
+		background-color: #F2F2F2 !important;
+	}
+	.layui-layer-tips .layui-layer-content{
+		background-color:#010101 !important;
+	}
+ 
+	
+	
+/* 牛牛选择 */	 
+ 
+ 
+.tp-ui-button,
+.tp-ui-text,
+.tp-ui-textarea,
+.tp-ui-file,
+.tp-ui-select,
+.tp-ui-select-head,
+.tp-ui-select-group-head,
+.tp-ui-select-sub,
+.tp-ui-select-value,
+.tp-ui-number,
+.tp-ui-switch,
+.tp-ui-switch-refer,
+.tp-ui-progress,
+.tp-ui-progress-refer {
+	position: relative;
+}
+.tp-ui-select-content,
+.tp-ui-select-arrow,
+.tp-ui-select-group-arrow,
+.tp-ui-select-checker,
+.tp-ui-number-option,
+.tp-ui-file-handle,
+.tp-ui-switch-refer em,
+.tp-ui-switch-refer span,
+.tp-ui-switch-handle,
+.tp-ui-switch-handle a,
+.tp-ui-progress-refer span {
+	position: absolute;
+}
+.tp-ui-select .tp-ui-icon,
+.tp-ui-select-content,
+.tp-ui-switch-color-on {
+	z-index: 1;
+}
+.tp-ui-select-value,
+.tp-ui-select-head,
+.tp-ui-switch-color-off {
+	z-index: 2;
+}
+.tp-ui-select-arrow,
+.tp-ui-select-group-arrow,
+.tp-ui-select-checker,
+.tp-ui-switch-refer em {
+	z-index: 3;
+}
+.tp-ui-switch-handle {
+	z-index: 4;
+}
+.tp-ui-file-base,
+.tp-ui-radio-base,
+.tp-ui-checkbox-base,
+.tp-ui-switch-base,
+.tp-ui-select-base,
+.tp-ui-progress-base {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+.tp-ui-radio-handle a,
+.tp-ui-radio-handle em,
+.tp-ui-checkbox-handle a,
+.tp-ui-checkbox-handle em,
+.tp-ui-select-content,
+.tp-ui-number-option .tp-ui-switch-refer,
+.tp-ui-switch-refer em,
+.tp-ui-switch-refer span,
+.tp-ui-switch-handle a {
+	overflow: hidden;
+}
+.tp-ui-select-content-list {
+	overflow: auto;
+}
+.tp-ui-radio-handle em,
+.tp-ui-checkbox-handle em,
+.tp-ui-select-checker {
+	visibility: hidden;
+}
+.tp-ui-radio.tp-ui-active .tp-ui-radio-handle em,
+.tp-ui-checkbox.tp-ui-active .tp-ui-checkbox-handle em,
+.tp-ui-select-sub.tp-ui-active .tp-ui-select-checker {
+	visibility: visible;
+}
+.tp-ui-button-base a,
+.tp-ui-button-base input,
+.tp-ui-button-base button,
+.tp-ui-text-base input,
+.tp-ui-textarea-base textarea,
+.tp-ui-select-value a,
+.tp-ui-number-refer input,
+.tp-ui-number-option button,
+.tp-ui-select-value a,
+.tp-ui-select-value span,
+.tp-ui-select-arrow a,
+.tp-ui-select-checker a,
+.tp-ui-select-group-arrow a,
+.tp-ui-radio-handle a,
+.tp-ui-radio-handle em,
+.tp-ui-checkbox-handle a,
+.tp-ui-checkbox-handle em,
+.tp-ui-switch-refer em,
+.tp-ui-switch-refer span,
+.tp-ui-switch-handle a,
+.tp-ui-progress-refer span {
+	display: block;
+}
+.tp-ui-button i {
+	display: none;
+}
+.tp-ui-button,
+.tp-ui-number,
+.tp-ui-radio,
+.tp-ui-checkbox,
+.tp-ui-switch,
+.tp-ui-select,
+.tp-ui-file,
+.tp-ui-file-handle,
+.tp-ui-progress {
+	display: inline-block;
+	vertical-align: middle;
+}
+.tp-ui-button-base a,
+.tp-ui-button-base input,
+.tp-ui-button-base button,
+.tp-ui-text-base input,
+.tp-ui-textarea-base textarea,
+.tp-ui-select-value a,
+.tp-ui-number-refer input,
+.tp-ui-number-option button {
+	border: none;
+	background: none;
+	box-sizing: border-box;
+	outline: 0;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.tp-ui-button-base a,
+.tp-ui-button-base input,
+.tp-ui-button-base button,
+.tp-ui-text-base input,
+.tp-ui-select-value a,
+.tp-ui-number-refer input {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.tp-ui-text-base input,
+.tp-ui-textarea-base textarea,
+.tp-ui-select-head,
+.tp-ui-button-base a,
+.tp-ui-button-base input,
+.tp-ui-button-base button,
+.tp-ui-number-refer input {
+	width: 100%;
+}
+.tp-ui-button-base a,
+.tp-ui-button-base input,
+.tp-ui-button-base button {
+	text-align: center;
+}
+.tp-ui-form-readonly,
+.tp-ui-form-disabled {
+	cursor: default;
+}
+.tp-ui-select-android .tp-ui-select-base,
+.tp-ui-select-android .tp-ui-select-base select {
+	height: 100%;
+	width: 100%;
+}
+.tp-ui-select-android .tp-ui-select-base {
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	z-index: 999;
+}
+.tp-ui-number-depart .tp-ui-number-refer input,
+.tp-ui-number-stack .tp-ui-number-refer input {
+	text-align: center;
+}
+.tp-ui-password-strength-progress .tp-ui-password-strength-progress-box {
+	width: 128px;
+}
+.tp-ui-password-strength-progress .tp-ui-password-strength-progress-box,
+.tp-ui-password-strength-progress .tp-ui-password-strength-progress-bar {
+	height: 8px;
+}
+.tp-ui-password-strength-progress .tp-ui-password-strength-tag-box span,
+.tp-ui-password-strength-progress .tp-ui-password-strength-score span {
+	height: 24px;
+}
+/* line-height */
+.tp-ui-number-stack .tp-ui-number-option,
+.tp-ui-number-stack .tp-ui-number-option button {
+	line-height: 8px;
+}
+.tp-ui-select-option .tp-ui-select-value a,
+.tp-ui-select-option .tp-ui-select-value span,
+.tp-ui-tab-base .tp-ui-tab-nav-list > .tp-ui-sub a,
+.tp-ui-tab-vertical .tp-ui-tab-nav-list > .tp-ui-sub a,
+.tp-ui-accordion-base .tp-ui-accordion-title a,
+.tp-ui-dialog-title span {
+	line-height: 32px;
+}
+
+/* common */
+.tips{color:#6cc030};
+.bof-count {
+	color: #A87549;
+}
+a:hover {
+	color: #6cc030;
+}
+a {
+	shape-rendering: optimizeSpeed;
+}
+a,
+a * {
+	cursor: pointer !important;
+}
+hr {
+	border-color: #eee;
+}
+ 
+/* bc-sub */
+
+.bc-sub {
+    margin: 4px 10px;
+    position: relative;
+}
+
+.bc-sub .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+}
+
+.bc-sub .title span {
+    display: block;
+    width: 70px;
+    text-align: center;
+    color: #999;
+}
+
+.bc-sub .button {
+    margin-left: 64px;
+}
+
+.bc-sub .button ul,
+.bc-sub .button ul li {
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
+}
+
+.bc-sub .button ul {
+    width: 100%;
+}
+
+.bc-sub .button ul li {
+    position: relative;
+    vertical-align: middle;
+}
+
+.bc-sub .button ul li a,
+.bc-sub .button ul li i,
+.bc-sub .button ul li em,
+.bc-sub .button ul li span {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.bc-sub .button ul li a {
+    text-align: center;
+    line-height: 100%;
+    position: relative;
+}
+
+.bc-sub .button ul li em {
+    font-size: 12px;
+    line-height: 24px;
+    font-weight: normal;
+}
+
+.bc-sub .button ul li span {
+    line-height: 38px;
+    font-size: 20px;
+}
+
+.bc-sub .option {
+    height: 26px;
+    position: absolute;
+    right: 4px;
+    top: 12px;
+}
+.optimize-control {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.optimize-control ul,
+.optimize-control ul li {
+    display: inline-block;
+    font-size: 0;
+}
+
+.optimize-control ul {
+    padding: 5px;
+    background: #e74c3c;
+    height: 24px;
+    border-radius: 3px;
+}
+
+.optimize-control ul li label {
+    display: block;
+    margin: 0px 5px;
+    padding-left: 24px;
+    height: 32px;
+    position: relative;
+}
+
+.optimize-control ul li label h4 {
+    color: #fff;
+    padding: 0px 5px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.optimize-control ul li .tp-ui-checkbox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+}
+
+.optimize-control ul li .tp-ui-checkbox .tp-ui-checkbox-handle {
+    margin: -4px;
+}
+
+.button.option-large,
+.optimize.option-large {
+    margin-right: 172px !important;
+}
+ul.ball-rectangle li > a,
+ul.ball-round li > a {
+    color: #666;
+    background: #fff;
+    margin: 2px;
+    border: 1px #ddd solid;
+    overflow: hidden;
+    behavior: url(./styles/PIE.htc);
+}
+ul.ball-rectangle li > a:hover,
+ul.ball-round li > a:hover,
+ul.ball-rectangle li.active > a,
+ul.ball-round li.active > a {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, .1);
+    box-shadow: none \;
+}
+ul.ball-rectangle li > a:hover,
+ul.ball-round li > a:hover {
+    border-color: #d9c9b9;
+    background: #fcf8e3;
+}
+ul.ball-rectangle li > a:hover span,
+ul.ball-round li > a:hover span {
+    color: #e74c3c;
+}
+ul.ball-rectangle li.active > a,
+ul.ball-round li.active > a {
+    border-color: #e74c3c;
+    background: #e74c3c;
+    color: #fff;
+}
+
+ul.ball-rectangle li.active > a span,
+ul.ball-round li.active > a span {
+    color: inherit;
+}
+
+ul.ball-rectangle li > a {
+    border-radius: 3px;
+}
+
+ul.ball-round li > a {
+    border-radius: 50%;
+    width: 38px;
+    margin: 5px auto !important;
+}
+
+ul.ball-round-minute li > a {
+    width: 34px;
+    margin: 7px auto !important;
+}
+
+ul.ball-round-minute li > span {
+    line-height: 34px !important;
+}
+
+
+/* b-column */
+
+ul.b-column {
+    width: 100%;
+    text-align: center;
+}
+
+ul.b-column li {
+    position: relative;
+}
+
+ul.b-column-left {
+    text-align: left;
+}
+
+ul.b-column-left li {
+    text-align: center;
+}
+
+ul.b-column-0 li {
+    width: 50%;
+}
+
+ul.b-column-3 li {
+    width: 33.32%;
+}
+
+ul.b-column-4 li {
+    width: 25%;
+}
+
+ul.b-column-5 li {
+    width: 20%;
+}
+
+ul.b-column-6 li {
+    width: 16.55%;
+}
+
+ul.b-column-7 li {
+    width: 14.28%;
+}
+
+ul.b-column-8 li {
+    width: 12.5%;
+}
+
+.bcp-links {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.bcp-links li {
+    height: 34px;
+    padding: 0px 4px;
+}
+
+.bcp-links a {
+    color: #666;
+    display: block;
+    border: 1px #eee solid;
+    line-height: 32px;
+    font-size: 12px;
+    padding: 0px 18px 0px 32px !important;
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.bcp-links a:hover {
+    color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.bcp-links a:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .1);
+}
+
+.bcp-links a i {
+    display: block;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(/images/kc-icon.png) no-repeat 0px 0px;
+}
+
+.bcp-links li.bl-chart i {
+    background-position: -223px 0px;
+}
+
+.bcp-links li.bl-drawing i {
+    background-position: -255px 0px;
+}
+
+.bcp-links li.bl-logs i {
+    background-position: -287px 0px;
+}
+
+.bcp-option {
+    position: relative;
+    text-align: center;
+    margin: 8px 10px 0px;
+}
+
+.bcp-option .statistic em,
+.bcp-option .statistic span {
+    padding: 0px 5px;
+    font-style: normal;
+}
+
+.bcp-option .statistic span {
+    padding: 5px 20px;
+    color: #666;
+}
+
+.bcp-option .statistic em {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.bcp-option .button,
+.bcp-option .button button {
+    display: inline-block;
+    width: 128px;
+    height: 40px;
+    overflow: hidden;
+}
+
+.bcp-option .button {
+    margin: 5px auto;
+    width: 100%;
+    position: relative;
+}
+
+.bcp-option .button button i {
+    display: none;
+}
+
+.bcp-option .button button {
+    border: none;
+    border-radius: 4px;
+    background-color: #f4a62a;
+    background-image: url(../images/kc-icon.png);
+    background-repeat: no-repeat;
+    background-position:-96px -140px;
+    cursor: pointer;
+}
+
+ 
+ 
+.bof-table .body .item > span,
+.bof-table .body .item > span a,
+.bof-table .body .item > span i,
+.bof-table .body .item > span em {
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bof-table .body .item > span {
+    font-size: 0;
+    text-align: center;
+}
+.bof-th-multiple .tp-ui-number {
+    border: none;
+    width: 54px;
+    padding: 0 18px;
+    height: 20px !important;
+    vertical-align: middle;
+    border-radius: 25px;
+    margin: 6px 0px;
+    background: #fafafa;
+}
+
+.bof-th-multiple .tp-ui-number-refer,
+.bof-th-multiple .tp-ui-number-refer input {
+    height: 18px !important;
+}
+
+.bof-th-multiple .tp-ui-number-refer input {
+    font-size: 12px;
+    line-height: 20px !important;
+    padding: 0px 4px;
+}
+
+.bof-th-multiple .tp-ui-number-option,
+.bof-th-multiple .tp-ui-number-option button,
+.bof-th-multiple .tp-ui-number-option button em {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    vertical-align: top;
+}
+
+.bof-th-multiple .tp-ui-number-option {
+    top: 1px;
+    border-radius: 16px;
+}
+
+.bof-th-multiple .tp-ui-number-option button {
+    position: relative;
+    cursor: pointer;
+}
+
+.bof-th-multiple .tp-ui-number-option button em {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 12px;
+    line-height: 16px!important;
+}
+
+.bof-th-multiple .tp-ui-number-addto {
+    right: 1px;
+}
+
+.bof-th-multiple .tp-ui-number-reduce {
+    left: 1px;
+}
+
+
+/* bof-table-base */
+
+#bof-table-base {
+    position: relative;
+}
+
+#bof-table-base .bof-th-mode,
+#bof-table-base .bof-tb-mode {
+    width: 100px;
+}
+
+#bof-table-base .bof-th-number,
+#bof-table-base .bof-tb-number {
+    width: 120px;
+}
+
+#bof-table-base .bof-th-unit-price,
+#bof-table-base .bof-tb-unit-price,
+#bof-table-base .bof-th-total-price,
+#bof-table-base .bof-tb-total-price {
+    width: 56px;
+}
+
+#bof-table-base .bof-th-count,
+#bof-table-base .bof-tb-count {
+    width: 56px;
+}
+
+#bof-table-base .bof-th-multiple,
+#bof-table-base .bof-tb-multiple {
+    width: 96px;
+}
+
+#bof-table-base .bof-th-method,
+#bof-table-base .bof-tb-method,
+#bof-table-base .bof-th-option,
+#bof-table-base .bof-tb-option {
+    width: 48px;
+}
+/* ticket-base */
+
+#ticket-base {
+    position: relative;
+    background: #fff;
+    border-bottom: 1px #d9c9b9 solid;
+    box-shadow: 0 -3px 10px 5px rgba( 180, 122, 60, .3);
+}
+
+#ticket-base .tb-body {
+    display: table;
+    width: 100%;
+}
+
+#ticket-base .tb-body > .tb-b-column {
+    display: table-cell;
+    line-height: 0;
+    vertical-align: top;
+}
+
+#ticket-base .tb-body .tb-sub {
+    height: 56px;
+    line-height: 0;
+    margin: 4px;
+    position: relative;
+    text-align: center;
+}
+
+#ticket-base .tb-body .tb-sub > .sub {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 4px;
+    float: left;
+}
+
+/* cutdown-clock-base */
+
+#cutdown-clock-base {
+    text-align: center;
+}
+
+#cutdown-clock-base ul,
+#cutdown-clock-base ul li {
+    display: inline-block;
+    font-size: 0;
+    height: 48px;
+    vertical-align: middle;
+}
+
+#cutdown-clock-base ul li span {
+    font-family: arial;
+    font-weight: bold;
+    display: block;
+    width: 32px;
+    height: 48px;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    overflow: hidden;
+    margin: 0 2px;
+    background: #fc0;
+    border-radius: 3px;
+    color: #fff;
+    text-shadow: 0 1px 1px rgba(102, 0, 51, .3);
+    box-shadow: 0 1px 0 rgba(102, 0, 51, .1);
+}
+
+
+/* ticket-cutdown */
+
+#ticket-cutdown .tc-refer {
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    color: #C1A689;
+}
+
+#ticket-cutdown .tc-refer i,
+#ticket-cutdown .tc-refer em,
+#ticket-cutdown .tc-refer span {
+    padding: 0px 2px;
+    font-style: normal;
+}
+
+#ticket-cutdown .title span {
+    display: block;
+}
+
+#ticket-cutdown .title em {
+    color: #c00;
+    font-size: 14px;
+}
+/* cont-full */
+
+.cont-full,
+.cont-full .cont-head {
+    position: relative;
+}
+
+.cont-full .cont-head .title a,
+.cont-full .cont-head .title span,
+.cont-full .cont-head .title h2 {
+    font-weight: normal;
+    position: relative;
+}
+
+.cont-full .cont-head .title h2 a {
+    padding: 0;
+    height: 32px;
+}
+
+.cont-full .cont-head .more,
+.cont-full .cont-head .more a {
+    display: block;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+}
+
+.cont-full .cont-head .more {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.cont-full .cont-head .more a {
+    padding: 0;
+}
+
+.cont-full .cont-head .more em {
+    display: none;
+}
+
+.cont-full .cont-body {
+    padding: 1px;
+}
+
+.cont-full .cont-body .module {
+    margin: 10px;
+}
+/* cont */
+
+.cont,
+.cont .cont-head {
+    border: none;
+}
+
+.cont {
+    background: #fff;
+    padding: .01px;
+}
+
+.cont .cont {
+    background: none !important;
+}
+
+.cont .cont-head {
+    background: #fff;
+    border-bottom: 1px #eee solid;
+    padding: 5px;
+}
+
+.cont .cont-head .title {
+    display: inline-block;
+}
+
+.cont .cont-head .title h2 {
+    font-weight: normal;
+    line-height: 32px;
+    position: relative;
+}
+
+.cont .cont-head .title h2 a {
+    display: inline-block;
+}
+
+.cont .cont-head .title em {
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(../images/kc-icon.png) no-repeat -288px -32px;
+}
+/* cont */
+.cont,
+.cont-lite,
+.cont-block {
+	margin: 10px;
+	background: #fff;
+}
+.cont .cont-head,
+.cont .cont-body,
+.cont .cont-body .module {
+	zoom: 1;
+}
+.cont .cont-head,
+.cont .cont-body {
+	position: relative;
+}
+.cont .cont-head {
+	border-bottom: 4px #ddd solid;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 2px 2px 0px 0px;
+}
+.cont .cont-head .title {
+	margin-right: 32px;
+	position: relative;
+}
+.cont .cont-head .icon {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 32px;
+	height: 32px;
+}
+.cont .cont-head .title a,
+.cont .cont-head .title span {
+	color: #666;
+	padding: 0px 32px;
+	/* font-size: 14px; */
+}
+.cont .cont-head .more {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.cont .cont-head .more a {
+	display: block;
+	color: #d69345;
+	font-size: 12px;
+	padding: 0px 8px;
+	line-height: 32px;
+}
+.cont .cont-body .module {
+	margin: 9px;
+}
+.cont .cont-body .module-5 {
+	margin: 5px;
+}
+
+
+ /* 按钮效果 */
+a.button1{background: url(../images/nn.jpg) }
+.bcp-option a{float: left;margin-left: 10px}
+a.button1 {
+	position: relative;
+	color: rgba(255,255,255,1);
+	background-color: rgba(219,87,5,1);
+	font-family: 'Yanone Kaffeesatz';
+	line-height:50px;
+	font-size: 2em;
+	display: block;
+	padding:4px;
+	margin: 10px 10px;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius:50%;
+	overflow:hidden;
+}
+a.button1:active {
+	position: relative;
+	top: 6px;
+	background-color:#333;
+}
+a.active2 {
+	position: relative;
+	top: 6px;
+	background: #333 ;
+}
+
+
+
+
+
+
+
+
+
+
+
+

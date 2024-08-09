@@ -1,0 +1,138 @@
+{include file="public/header2" /}
+    <!-- content -->
+    <div class="reg-content g-min1170">
+        <div class="g-container">
+            <!-- 有推荐人 -->
+            <!-- form -->
+            <form class="layui-form reg-form" name="reg-form" id="reg-form" autocomplete="off">
+                <div class="form-item reg-mobile error">
+                    <label>用户名</label>
+                    <input type="text" name="username" id="username" value="" >
+                    <span class="input-tip" style="display: none;">用户名将作为您的登录账号</span>
+                    <span class="input-msg">请输入用户名</span>
+                    <span class="clear"></span>
+                </div>
+                <!-- password -->
+                <div class="form-item reg-password error">
+                    <label>设置密码</label>
+                    <input type="password" name="password"  placeholder="建议至少使用两种字符组合"  >
+                    <span class="input-tip" style="display: none;">8-20位，请使用数字、字母和符号两种及以上组合</span>
+                    <span class="input-msg" >请输入8~20个字符的密码</span>
+                    <span class="clear"></span>
+                </div>
+                <!-- 图形验证码 -->
+                <div class="form-item form-imgcode error">
+                    <label>验证码</label>
+                    <input type="text" name="captcha"  placeholder="请输入验证码" >
+                    <div class="captcha"><img src="{:captcha_src()}" alt="captche" title='点击切换' onclick="this.src='/captcha?id='+Math.random()" style="cursor: pointer"></div>
+                    <span class="input-tip" style="display: none;">请输入右边图片上显示的验证码</span>
+                    <span class="input-msg" >请输入图形验证码</span>
+                    <span class="clear"></span>
+                </div>
+                <!-- 推荐人 -->
+                <div class="reg-refferee-item">
+                    <div class="reg-refferee-text" >推荐人用户名或手机号（选填）</div>
+                    <div class="form-item reg-refferee" >
+                        <label></label>
+                        <input type="text" value="" name="refferee" placeholder="请输入推荐人用户名（选填）">
+                        <span class="input-tip" style="display:none;">请输入推荐人用户名，如无可不填</span>
+                        <span class="input-msg"></span>
+                        <span class="clear"></span>
+                    </div>
+                </div>
+                <div class="form-check ">
+                    <input type="checkbox" name="agree" checked>                                       <span>我已阅读并同意<a href="javascript:;" >《小牛在线服务协议》</a></span>
+                </div>
+                <span class="input-msg"></span>
+                <button type="button" class="form-btn" lay-submit="" lay-filter="register">立即注册</button>
+                <div class="form-error" style="display:none;" ></div>
+            </form>
+            <!-- form end -->
+            <a href="javascript:;" class="reg-ad reg-ad-bonus" ></a>
+        </div>
+    </div>
+
+    <!-- content end -->
+    <!-- foot -->
+    {include file="public/footer" /}
+    
+</body>
+</html>
+
+<script>
+$(document).ready(function(){
+	$(".input-msg").css("display","none");
+	
+    $(".reg-mobile input").focus(function(){
+    	$(".reg-mobile").addClass("active");
+    	$(".reg-mobile .input-tip").css("display","block");
+        });
+    $(".reg-mobile input").blur(function(){
+        $(".reg-mobile").removeClass("active");
+        $(".reg-mobile .input-tip").css("display","none");
+        });
+    
+    $(".reg-password input").focus(function(){
+    	$(".reg-password").addClass("active");
+    	$(".reg-password .input-tip").css("display","block");
+        });
+    $(".reg-password input").blur(function(){
+        $(".reg-password").removeClass("active");
+        $(".reg-password .input-tip").css("display","none");
+        });
+    
+    $(".form-imgcode input").focus(function(){
+    	$(".form-imgcode").addClass("active");
+    	$(".form-imgcode .input-tip").css("display","block");
+        });
+    $(".form-imgcode input").blur(function(){
+        $(".form-imgcode").removeClass("active");
+        $(".form-imgcode .input-tip").css("display","none");
+        });
+
+    $(".reg-refferee input").focus(function(){
+    	$(".reg-refferee").addClass("active");
+    	$(".reg-refferee .input-tip").css("display","block");
+        });
+    $(".reg-refferee input").blur(function(){
+        $(".reg-refferee").removeClass("active");
+        $(".reg-refferee .input-tip").css("display","none");
+        });
+    });  
+
+/*  */
+if($(".reg-refferee").css("display","none")){
+    $(".reg-refferee-text").click(function(){
+    	$(".reg-refferee-text").addClass("reg-refferee-show");
+    	$(".reg-refferee").css("display","block")
+    	$(".reg-refferee .input-tip").css("display","block");
+    });
+}else{
+    $(".reg-refferee-text").click(function(){
+    	$(".reg-refferee").css("display","none")
+    	$(".reg-refferee-text").removeClass("reg-refferee-show");
+    });
+    
+    
+} 
+/*注册成功返回  */
+function callbackfunc(data){
+    if(data.code == 1){
+        location.href = '{:url("index/index")}';
+    }else{
+        $('.captcha img').attr('src','/captcha?id='+Math.random());
+    }      
+}   
+$(function(){ 
+    layui.use('form',function(){
+        form = layui.form(),jq = layui.jquery; 
+        form.on('submit(register)', function(data){
+        	parent.$.fn.jcb.post('{:url("/index/index/register")}',data.field,false,callbackfunc);
+            return false; 
+        }); 
+    });   
+});   
+
+ 
+
+</script>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="user-scalable=no,width=device-width"/>
+<meta name="baidu-site-verification" content="W8Wrhmg6wj" />
+<meta content="telephone=no" name="format-detection">
+<meta content="1" name="jfz_login_status">
+    <link rel="stylesheet" type="text/css" href="/static/css/user.css?v=1.2" />
+    <link rel="stylesheet" type="text/css" href="/static/css/common_user.css?v=1.2">
+    
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<title>绑定手机号</title>
+<script type="text/javascript">
+    //自定义弹出
+    function zdy_tips(msg){
+        $("#zdy_tips").html(msg);
+        z_tips_w = $("#zdy_tips").outerWidth();
+        $("#zdy_tips").css({"margin-left":-parseInt(z_tips_w/2)+"px"});
+        $("#zdy_tips").show();
+        setTimeout(function(){
+            $("#zdy_tips").hide();
+            $("#zdy_tips").html("");
+        },2000);
+    }
+</script>
+<style>
+#zdy_tips{ max-width:80%;padding:0.6em 1em; font-size:14px;color:#fff;text-align:center;border-radius:5px;line-height:1.8em;display:block;background:rgba(0,0,0,0.7);position:fixed;left:50%;bottom:30%;z-index:999999;}
+.hqyzm{
+	background: #59c365;
+	border-radius: 5px;
+	margin-left: .2rem;
+}
+</style>
+</head>
+<body>
+	
+</body>
+	<div id="zdy_tips" style="display:none;"><!--消息框--></div>
+	<div class="top-title">
+		<a href="javascript:history.back(-1)" title="">返回上页</a>
+	</div>
+	<ul class="use-list">
+		<li>昵称：&nbsp;&nbsp; &nbsp;&nbsp; <em>{$user.username}</em>	</li>
+	</ul>
+	<form action="" name="form2" onsubmit="return check()">
+		<div id="wbd">
+		<ul class="use-list">
+			<li>手机号：&nbsp;&nbsp;<input type="number" placeholder="请输入手机号"  value="{$mobile}" name="mobile" class="iinput mobile"></li>
+			<li>验证码：&nbsp;&nbsp;<input type="number" style="width: 40%" placeholder="请输入验证码" id="code" maxlength="6"  name="code">
+				<input type="button" class="hqyzm" value="获取验证码" style="color: #fff;width: 26%;padding: .5rem .5rem 1rem .5rem;border: none;line-height: 2.1rem;height: 3.1rem;" id="yzmBtn" onclick="sendMsg()">
+			</li>
+		</ul>
+		<input type="submit" value="提交" class="sub-btn" style=" -webkit-appearance: none;">
+		</div>
+		<div id="ybd">
+		<ul class="use-list">
+			<li>已绑定手机号：&nbsp;&nbsp;<span>{$mobile}</span></li>
+		</ul>
+		<input type="button" value="修改" id="xiugai" onclick="changeView()" class="sub-btn" style=" -webkit-appearance: none;">
+		</div>
+	</form>
+<script>
+    function changeView(){
+        $("#wbd").show();
+        $("#ybd").hide();
+    }
+
+	var bdphone = '{$mobile}';
+	if(bdphone){
+		$("#wbd").hide();
+	}else{
+        $("#ybd").hide();
+	}
+    function check(){
+        var phone = $(".mobile").val();
+        var code = $("#code").val();
+        var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+        if(!phone){
+            zdy_tips("请输入手机号");
+            return false;
+        }else if(!code){
+            zdy_tips("请输入验证码");
+            return false;
+		}else if(!myreg.test(phone)){
+            zdy_tips("请输入正确的手机号");
+            return false;
+		}
+        $.ajax({
+            type: "POST",
+            url:"{:url('user/mobile')}",
+            data: "mobile="+phone+"&code="+code,
+            success: function(msg){
+                zdy_tips( msg );
+                if(msg=='绑定成功'){
+                    setTimeout(function(){
+                        window.location.href="/index/user/index.php";
+                    },1000);
+				}
+                //return false;
+            }
+        });
+        return false;
+    }
+
+    //倒计时
+    var countdown=60;
+    function settime() {
+        if (countdown == 0) {
+            $("#yzmBtn").attr("disabled",'');
+            $("#yzmBtn").val("获取验证码");
+            countdown = 60;
+            return false;
+        } else {
+            $("#yzmBtn").attr("disabled",'disabled');
+            $("#yzmBtn").val("重新发送(" + countdown + ")");
+            countdown--;
+        }
+        setTimeout(function() {
+            settime();
+        },1000);
+    }
+
+    function sendMsg(){
+        var phone = $(".mobile").val();
+        var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+        if(phone==""){
+            zdy_tips("请输入手机号");
+            return false;
+        }else if(!myreg.test(phone)){
+            zdy_tips("请输入正确的手机号");
+            return false;
+        }
+        $.ajax({
+            type: "POST",
+            url:"{:url('user/sendMsg')}",
+            data: "mobile="+phone,
+            success: function(msg){
+                console.log(msg);
+                settime();
+            }
+        });
+
+	}
+</script>

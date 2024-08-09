@@ -1,0 +1,161 @@
+@charset "utf-8";
+
+/****头部*****/
+.logo_only, .login-area > span.shua, .login-area > span.topline, .login-area a.contact, .cebainbox, .login-area .btn-detection { display: none; }
+/*****nav*****/
+.menu-box .menu ul li a.home, .preson-info .info span.welcom { display: none; }
+/****banner***/
+.noticesbox { display: none; }
+/*****主要****/
+.hotgame_con .hiddens, .hotgame_con ul li a.qiubtn, .hotgame_con ul li a.qiubtn2, .paybox, .qiubox, .hot_game_play, .more_game_middle .game_kind { display: none; }
+
+* { margin: 0 auto; padding: 0; }
+a { color: #555; text-decoration: none !important; outline: none !important; }
+ul, li, ol { margin: 0; padding: 0; list-style: none; }
+
+body { margin: 0 auto; font: 12px/16px 'Microsoft YaHei', "Microsoft JhengHei UI", "Microsoft JhengHei", Pmingliu, "Segoe UI", "Segoe UI Web Regular", "Segoe UI Symbol", "Helvetica Neue", tahoma, arial, 'Hiragino Sans GB', "\5b8b\4f53", sans-serif; color: #555 !important; min-width: 1338px; }
+body { background-color: #FFF; /*background-position: center top;background-size: 100% 100%;*/ }
+.ui-code-box { margin: 5px 0 0 7px; }
+html{overflow-x:hidden;}
+
+img { border: none; }
+input, button, select, textarea { outline: none; }
+
+/**弹窗**/
+.d-header .d-titleBar .d-title { padding: 10px 15px; text-shadow: none; border-top: none; }
+.official-site .d-inner { overflow: hidden; }
+.official-site .d-outer { border: none; }
+.d-dialog .d-main { }
+.d-titleBar .d-close { width: 26px; height: 26px; top: 10px; right: 12px; font-size: 30px; }
+.d-header .d-close:hover { }
+.d-outer { border: medium none; }
+.d-footer .d-buttons .d-state-highlight { border: none; padding-bottom: 2px; box-shadow: none; }
+
+.clear:before, .clear:after { content: ""; display: table; }
+.clear:after { clear: both; }
+.clear { *zoom: 1; }
+
+.icon, .btn { display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+.main { margin: 0 auto; }
+
+.bar-right .CreditBalance { display: none; }
+.login-area .btn-detection { display: none; }
+.landing-paly, .icon-partner, .icon-arrRight, .icon-browser, .icon-gotop { background: url(../img/home-ico.png) no-repeat; }
+.bar-left span, .play, .bar-right li a, .lang-box,
+.mail-box, .login-area > span,.login-area .btn-login, .preson-info .info,
+.acc-links a, .mq .mq-mask, .winners-head, .login-area .bnt-register { background: url(../img/base-ico2.png) no-repeat; }
+
+/***头部登录区域 start****/
+.login-area input:-webkit-autofill { border: none; background: none; color: #fff; -webkit-box-shadow: 0 0 0px 1170px #0e0d0d inset; -webkit-text-fill-color: #fff; }
+.top-box { position: relative; width: 100%; z-index: 30; padding: 0; height: 48px; background: url(../img/top_bg.png) repeat-x; }
+.top-box .main { width:1170px;height: 48px; margin:0 auto;text-align: center; }
+.top-box .main > * { display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+.bar-left { float:left;width: 260px; height: 48px; font-size: 12px; overflow: hidden; line-height: 48px; color: #fff; }
+.bar-left span { font-size: 14px; display: inline-block; *display: inline; *zoom: 1; font-style: italic; padding-left: 48px; background-position: 0 -173px; }
+.now-time { vertical-align: middle; font-family: "squarefontregular","Helvetica","Verdana","Tahoma",sans-serif; font-size: 16px; font-weight: 500; float: left; margin-right: 10px;  width: 54px; font-style: italic; color: #fff; }
+.bar-right { float:right;padding: 0; width: auto; text-align: left; height: 48px; line-height: 48px; position: relative; vertical-align: middle; }
+.login-area { height: 48px; line-height: 44px; text-align: left; margin: 0; }
+.login-area > span { position: relative; text-align: left; display: inline-block; width: 122px; height: 30px; padding: 6px 2px 2px 36px; line-height: 1; }
+.login-area > span { background-position: 0 -394px; }
+.login-area .login-mane { background-position: 0 -393px; margin-right: 6px; margin-left: 86px; }
+.login-area .tip_form { position: absolute; left: 45px; top: 6px; line-height: 26px; color: #fff; }
+.login-area input { width: 100px; height: 22px; padding: 2px 5px; line-height: 22px; vertical-align: middle; margin-left: 2px; background: none; color: #fff; border: none; }
+.login-area .login-password { background-position: 0 -435px; margin-right: 4px; }
+.login-area .login-code { width: 110px; background-position: 0 -480px; }
+.login-area .tip_forms { position: absolute; left: 16px; top: 6px; }
+.login-area .input_tip_45 { width: 45px; background-position: left bottom; margin-left: -20px; }
+.login-area img { vertical-align: middle;}
+.login-area a { display: inline-block; vertical-align: middle; text-align: center; line-height: 34px; }
+.login-area .btn-login { width: 100px; height: 34px; margin-top: 1px; font-size: 14px; background-position: 0 -334px; color: #fff; }
+.login-area .btn-member { width: 56px; height: 34px; margin-top: 2px; overflow: hidden; line-height: -99999; font-size: 14px; margin-left: 4px; color: #fff; }
+/*免费开户*/
+.login-area .bnt-register { display: inline-block; border-radius: 5px; padding: 0 3px 0 5px; margin: 4px 0 3px 0; width: 95px; height: 34px; background-position: 0 -334px; line-height: 34px; color: #fff; }
+/*免费开户*/
+
+ 
+ 
+/***消息***/
+.bar-right .mail-box { display: none; }
+/***消息***/
+
+/***头部登录区域 end****/
+
+/***导航区域 start***/
+.header .main { z-index: 1009; height: 70px; background: url(../img/header_bg.png) repeat; border-top: 1px solid #4a4530; border-bottom: 1px solid #4a4530; }
+.header-main { width: 1170px; height: 70px; position: relative;margin:0 auto; }
+.fleft { float: left; }
+.logo { margin-left: 0px; position: relative; width: 210px; height: 70px; }
+.logo a { width: 100%; height: 100%; position: absolute; left: 0; top: 0; z-index: 1; display: block; }
+.menu-box {float:right; width: 756px; height: 70px; position: relative; z-index: 1000; }
+.menu-box .menu { overflow: hidden; border-top-right-radius: 10px; border-bottom-right-radius: 10px; }
+.menu ul { list-style: none; font-size: 0; position: relative; white-space: nowrap; overflow: hidden; margin-left: 12px; }
+.menu-box ul { background-image: none; }
+.menu ul li { width: 124px; height: 55px; float: left; font-size: 14px; letter-spacing: normal; word-spacing: normal; line-height: 20px; vertical-align: middle; padding-top: 16px; }
+.menu ul li a { transition: All .3s ease; -webkit-transition: All .3s ease; -moz-transition: All .3s ease; -o-transition: All .3s ease; display: block; text-align: center; width: 124px; height: 55px; line-height: 20px; text-shadow: 0 1px 2px #000; color: #fff; }
+.menu ul li a:hover { color: #ae9c54; }
+.menu ul li a:hover span { color: #ae9c54; }
+.menu ul li a div { font-size: 16px; margin: 0; }
+.menu ul li a span { transform: scale(0.75); font-size: 12px; text-align: center; display: block; width: 100%; margin: 0 auto; color: #ccc; }
+
+.menu-child1 { position: absolute; left: -260px; *min-height: 564px; margin: 0 5px; padding: 1px; z-index: 99999; border-radius: 0 0 8px 8px; zoom: 1; top: 42px; width: 1000px; margin-top: 30px; padding-bottom: 20px; background: url(../img/bg_0909.png) repeat; box-shadow: 0 1px 30px #A9A9A9; }
+.gamelist-1 { padding: 20px 34px 0; }
+.official_play { display: inline-block; width: 464px; zoom: 1; font-size: 0; float: left; border-right: 1px solid #2b2b2b; }
+.gamelist_tit { width: 464px; display: block; margin: 8px 0 0 0; padding-bottom: 8px; border-bottom: 1px solid #2b2b2b; }
+.menu-child1 h1 { width: 70px; height: 20px; font-size: 16px; display: inline-block; margin-left: 26px; margin-top: 2px; float: left; color: #fff; }
+.color { width: 23px; height: 23px; text-align: center; display: inline-block; line-height: 22px; font-size: 15px; margin-left: 12px; margin-top: 0; background: url(../img/red_bg.png) no-repeat; color: #fff; }
+.high_wrap { float: left; width: 464px; }
+.gamelist-1 .gamelist_l { margin-left: 15px; }
+.gamelist-1 .gamelist_r { margin-left: 15px; }
+.menu-child1 ul { padding: 11px; min-height: 62px; width: 432px; float: left; }
+.menu-child1 li a { display: block; width: 94px; height: 28px; color: #fff; width: 76px; padding-right: 12px; }
+.menu-child1 li a img { width: 80%; height: 80%; margin: 10%; display: none; }
+.menu-child1 li span { font-size: 12px; width: 90px; height: 28px; line-height: 28px; display: block; color: #fff; }
+.credit_play { display: inline-block; width: 467px; zoom: 1; font-size: 0; /*margin-left: -4px;*/ float: left; }
+.menu-child1 li { float: left; line-height: 28px; width: 94px; height: 28px; margin: 5px 0; text-align: left; width: 102px; }
+.menu-child1 li:hover { background: url(../img/Wbg_03.png) repeat; }
+.triangles_back { background: url(../img/triangles_back.png) no-repeat; width: 26px; height: 19px; position: absolute; top: -13px; left: 316px; }
+.menu-child1 li span img { margin-left: 6px; line-height: 28px; margin-bottom: -2px; }
+.game_29, .game_51, .game_1, .game_53, .game_4, .game_59, .game_13, .game_45, .game_42, .game_26, .game_39, .game_60, .game_28, .game_48, .game_7, .game_15, .game_6, .game_9, .game_58, .game_11, .game_22, .game_5, .game_40 {background: url(../img/h_bg.png) no-repeat right center;}
+
+.nav-down-jx{width:100%;height:2px;}
+.toubu{background: url(../img/bg1.jpg) !important; background-repeat: no-repeat; }
+
+.loginout .login-xm{color:#FFF;margin-right:10px;}
+.loginout .login-xm:hover{color:#FF0;}
+.loginout .ext:hover{color:#F00;}
+/***导航区域 end***/
+
+.g-o{width:1170px;margin:0 auto}
+.footer{background:#141412;text-align:center;border-top:1px solid #d7d7d7;min-width:1170px}
+.footer ul{height:auto;overflow:hidden;zoom:1;background:url(../img/8a5068f0.ic.png) no-repeat left 29px}
+.footer ul li{height:210px;width:100px;padding:26px 0 0 30px;float:left}
+.footer ul li.last{width:245px;text-align:left;padding-left:42px;background:url(../img/c6c54b08.line.png) no-repeat left top}
+.footer ul li.last span.til{display:block;float:initial}
+.footer ul li.last span.wx,.footer ul li.last span.app,.footer ul li.last span.wb,.footer ul li.last span.post-bar,.footer ul li.last span.community,.footer ul li.last span.wxcs{width:80px;height:22px;padding-top:96px;line-height:22px;text-align:center;display:inline-block;margin-right:30px;color:#777}
+.footer ul li.last span.wx{background:url(../img/5631a4d0.wx.png) no-repeat left 0}
+.footer ul li.last span.app{background:url(../img/5289d0b0.app.png) no-repeat left 0}
+.footer ul li.last span.wb{background:url(../img/188ba739.wb.png) no-repeat left 0}
+.footer ul li.last span.post-bar{background:url(../img/a4504b0c.post-bar.png) no-repeat left 0}
+.footer ul li.last span.community{background:url(../img/d2b4f169.community.jpg) no-repeat left 0}
+.footer ul li.last span.wxcs{background:url(../img/3f889d86.wxcs.jpg) no-repeat left 0}
+.footer ul li a{font-size:12px;height:22px;line-height:22px;color:#888;display:block;text-align:left}
+.footer ul li .til,.footer ul li.last .til-ic{padding-bottom:14px;font-size:18px;color:#ccc}
+.footer ul li.last .til-ic{background:url(../img/8db283e7.foot_link.png) no-repeat -119px -42px;padding-left:30px}
+.footer li.last p{height:26px;line-height:26px;font-size:14px;color:#888}
+.footer li.last p.bd{font-size:35px;height:42px;line-height:42px;color:#ccc}
+.footer ul li.ft-wm{padding:26px 0 0 35px;width:455px}
+.foot-bt{background:#272723;text-align:center;padding:20px 0;color:#939392;min-width:1170px}
+.foot-bt p a{color:#939392}
+.foot-bt p a:hover{color:#ffe4ae;text-decoration:none}
+.foot-bt span{height:39px;width:auto;text-align:center;display:inline-block;padding-top:10px}
+.foot-bt span a{display:inline-block;height:39px;margin-right:4px;width:107px;display:inline-block;background:url(../img/8db283e7.foot_link.png) no-repeat}
+.foot-bt span a.lk07{background-position:0 -39px}
+.foot-bt span a.lk06{background-position:-579px 0}
+.foot-bt span a.lk06 img{display:none}
+.foot-bt span a.lk05{background-position:0 0}
+.foot-bt span a.lk04{background-position:-116px 0}
+.foot-bt span a.lk03{background-position:-232px 0}
+.foot-bt span a.lk02{background-position:-347px 0}
+.foot-bt span a.lk01{background-position:-463px 0}
+.foot-bt .ft-ad{color:#939392}
+body{min-width:1170px}

@@ -1,0 +1,168 @@
+<div
+  style="
+    background: url('/static/images/mine/bg.png');
+    background-position: center;
+    height: 100vh;
+  "
+>
+  <!-- <div class="headertitle" style="background-color: #000">
+    <span style="color: #ffffff; padding-bottom: 0.5rem"> 我的 </span>
+  </div> -->
+  {include file="public/header" /}
+  <style type="text/css" media="all"></style>
+  <div class="wx_cfb_entry_list" style="margin: 0 1.5em">
+    <a
+      href="{:url('user/yongjin')}"
+      data-toggle="modal"
+      data-target="#wxtipsDialog"
+      class="entry_item clearfix"
+    >
+      <div class="entry_name">
+        <span class="ui_ico_size_60 ui_entry_ico ui_entry_ico_1"></span>
+        <div class="icon" style="display: flex; align-items: center">
+          <img
+            src="/static/icon/icon1.png"
+            alt=""
+            style="width: 28px; height: 28px"
+          />
+          <span class="name">佣金转入钱包</span>
+        </div>
+      </div>
+      <div class="entry_tips">
+        <span class="ui_entry_arrow"></span>
+        <span class="tips" style="color: #696d79"
+          >共<em class="num">{$yongjin}</em>元</span
+        >
+      </div>
+    </a>
+    <a
+      href="{:url('user/agent_money')}"
+      data-toggle="modal"
+      data-target="#wxtipsDialog"
+      class="entry_item clearfix"
+    >
+      <div class="entry_name">
+        <span class="ui_ico_size_60 ui_entry_ico ui_entry_ico_4"></span>
+        <div class="icon" style="display: flex; align-items: center">
+          <img
+            src="/static/icon/icon2.png"
+            alt=""
+            style="width: 28px; height: 28px"
+          />
+          <span class="name">我的下线</span>
+        </div>
+      </div>
+      <div class="entry_tips">
+        <span class="ui_entry_arrow"></span>
+        <span class="tips" style="color: #696d79"
+          >共<em class="num">{$agentCount}</em>人</span
+        >
+      </div>
+    </a>
+    <a
+      href="{:url('user/moneygo')}"
+      data-toggle="modal"
+      data-target="#wxtipsDialog"
+      class="entry_item clearfix"
+    >
+      <div class="entry_name">
+        <span class="ui_ico_size_60 ui_entry_ico ui_entry_ico_4"></span>
+        <div class="icon" style="display: flex; align-items: center">
+          <img
+            src="/static/icon/icon3.png"
+            alt=""
+            style="width: 28px; height: 28px"
+          />
+          <span class="name">充值记录</span>
+        </div>
+      </div>
+      <div class="entry_tips">
+        <span class="ui_entry_arrow"></span>
+        <span class="tips" style="color: #696d79">查看</span>
+      </div>
+    </a>
+    <a
+      href="{:url('user/moneymove')}"
+      data-toggle="modal"
+      data-target="#wxtipsDialog"
+      class="entry_item clearfix"
+    >
+      <div class="entry_name">
+        <span class="ui_ico_size_60 ui_entry_ico ui_entry_ico_4"></span>
+        <div class="icon" style="display: flex; align-items: center">
+          <img
+            src="/static/icon/icon4.png"
+            alt=""
+            style="width: 28px; height: 28px"
+          />
+          <span class="name">提现记录</span>
+        </div>
+      </div>
+      <div class="entry_tips">
+        <span class="ui_entry_arrow"></span>
+        <span class="tips" style="color: #696d79">查看</span>
+      </div>
+    </a>
+    <a
+      href="{:url('user/bets')}"
+      class="entry_item clearfix"
+    >
+      <div class="entry_name">
+        <span class="ui_ico_size_60 ui_entry_ico ui_entry_ico_6"></span>
+        <div class="icon" style="display: flex; align-items: center">
+          <img
+            src="/static/icon/icon5.png"
+            alt=""
+            style="width: 28px; height: 28px"
+          />
+          <span class="name">投注明细</span>
+        </div>
+      </div>
+      <div class="entry_tips">
+        <span class="ui_entry_arrow"></span>
+        <span class="tips" style="color: #696d79">查看</span>
+      </div>
+    </a>
+  {if  $isAgent=='1'}
+    <a
+    
+      href="{:url('user/agent')}"
+      class="entry_item clearfix"
+    >
+      <div class="entry_name">
+        <span class="ui_ico_size_60 ui_entry_ico ui_entry_ico_6"></span>
+        <div class="icon" style="display: flex; align-items: center">
+          <img
+            src="/static/icon/icon6.png"
+            alt=""
+            style="width: 28px; height: 28px"
+          />
+          <span class="name">我的推广</span>
+        </div>
+      </div>
+      <div class="entry_tips">
+        <span class="ui_entry_arrow"></span>
+        <span class="tips" style="color: #696d79">查看</span>
+      </div>
+    </a>
+ {/if}
+    <a
+      href="/index/index/login2"
+      style="
+        background: linear-gradient(90deg, #ddbb65, #e7d9b4);
+        margin-top: 4rem;
+        display: flex;
+        justify-content: center;
+        border-radius: 2rem;
+      "
+      class="entry_item clearfix"
+    >
+      <div class="entry_name">
+        <span class="ui_ico_size_60 ui_entry_ico ui_entry_ico_6"></span>
+        <span class="name" style="color: #000">退出登录</span>
+      </div>
+    </a>
+  </div>
+
+  {include file="public/footer" /}
+</div>

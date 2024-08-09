@@ -1,0 +1,457 @@
+<script src="/locales/trans.js"></script>
+<div style=" height: 100vh">
+  <div class="top-title" style="margin: 0;">
+    <a href="javascript:history.back(-1)" title=""></a>
+    <p data-translate="header_withdraw">提现</p>
+  </div>
+  {include file="public/header" /}
+  <style>
+
+    .layer-bg {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 99;
+      width: 100%;
+      height: 9999px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    input,
+    select {
+      -webkit-appearance: none;
+      outline: none;
+    }
+
+    .wx_cfb_entry_list {
+      padding: 15px;
+    }
+
+    .row {
+      display: block;
+      overflow: hidden;
+      margin-bottom: 8px;
+      font-size: 12px;
+      line-height: 36px;
+    }
+
+    .row .row-left {
+      width: 22%;
+      display: inline-block;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    .row .row-right {
+      width: 74%;
+      display: inline-block;
+    }
+
+    .row .row-right select {
+      border: 1px solid #cfcfcf;
+      background: #fff;
+      line-height: 30px;
+      height: 34px;
+      text-indent: 10px;
+      width: 98%;
+    }
+
+    .row .row-right .iinput {
+      border-bottom: 1px solid #ffffff;
+      color: #ffffff;
+      width: 98%;
+
+      margin-bottom: 6px;
+    }
+    .row .row-right .iinput::placeholder {
+      color: #ffffff;
+    }
+    .row .row-right img {
+      width: 63%;
+      margin-bottom: 10px;
+    }
+
+    .row .row-right p {
+      color: red;
+      font-size: 12px;
+      line-height: 24px;
+    }
+
+    .row .sub {
+      background: #59c365;
+      padding: 7px 0;
+      font-size: 14px;
+      border-radius: 4px;
+      display: block;
+      color: #fff;
+      width: 100%;
+    }
+
+    .userinfo {
+      display: none;
+    }
+
+    .wx_cfb_ac_fund_detail .user_info {
+      padding: 0.8rem;
+    }
+
+    .wx_cfb_container .kv_tb_list .val {
+      color: #ffffff;
+      font-size: 1.6rem;
+    }
+
+    .wx_cfb_fixed_btn_wrap .btn {
+      color: #fff;
+    }
+
+    .tip-title {
+      color: #ffffff;
+      font-size: 1.4rem;
+      line-height: 3rem;
+      font-weight: bold;
+      padding-left: 1.2rem;
+    }
+
+    .use-list li {
+      height: 3.6rem;
+      line-height: 3.6rem;
+      color: #888888;
+      font-size: 1.4rem;
+      padding: 0 0.8rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .btn-blue {
+      background: linear-gradient(90deg, #ddbb65, #e7d9b4);
+
+      font-size: 14px;
+      border-radius: 4px;
+      display: block;
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .cont-img1 {
+      display: none;
+      position: absolute;
+      left: 15%;
+      top: 10.8rem;
+      z-index: 888;
+      width: 70%;
+      background: #fff;
+      border-radius: 6px;
+    }
+
+    .cont-img1 h3 {
+      line-height: 4rem;
+      color: #333333;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+
+    .cont-img1 img {
+      display: block;
+      width: 70%;
+      height: 22rem;
+      margin: 0 auto;
+    }
+
+    .demo--label {
+      color: #ffffff;
+    }
+
+    .demo--radio {
+      display: none;
+    }
+
+    .demo--radioInput {
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      border-radius: 100%;
+      display: inline-block;
+      height: 16px;
+      margin-right: 10px;
+      margin-top: -1px;
+      vertical-align: middle;
+      width: 16px;
+      line-height: 1;
+    }
+
+    .demo--radio:checked + .demo--radioInput:after {
+      background-color: #57ad68;
+      border-radius: 100%;
+      content: "";
+      display: inline-block;
+      height: 12px;
+      margin: 2px;
+      width: 12px;
+    }
+
+    .demo--checkbox.demo--radioInput,
+    .demo--radio:checked + .demo--checkbox.demo--radioInput:after {
+      border-radius: 0;
+    }
+  </style>
+
+  <div class="layer-bg" id="test"></div>
+  <div class="cont-img1">
+    <h3>长按二维码识别添加</h3>
+    <img src="{$yuming['lt_weixin']}" alt="" title="" />
+    <h3>联系客服</h3>
+  </div>
+
+  <div class="wx_cfb_entry_list">
+    <div class="tip-title">
+      <span data-translate="tixian_withdraw_account">提现账号：</span>
+      <span>{$user.username}</span>
+    </div>
+    <div class="row">
+      <span class="row-left" data-translate="tixian_collection_type">收款类型</span>
+      <span class="row-right">
+        {foreach $qudao as $k=>$v}
+        <label class="demo--label">
+          {if $k=='wx'}
+          <input
+            type="radio"
+            name="xfqd"
+            class="paytype demo--radio"
+            value="{$k}"
+            checked="checked"
+          />
+          {else}
+          <input
+            type="radio"
+            name="xfqd"
+            class="paytype demo--radio"
+            value="{$k}"
+          />
+          {/if}
+          <span class="demo--radioInput"></span><span id="{$k}">{$v}</span>
+        </label>
+        {/foreach}
+      </span>
+    </div>
+    <div class="row">
+      <div class="wxpay xuanzheshiji">
+        <span class="row-left" data-translate="tixian_withdraw_amount">提现金额</span>
+        <span class="row-right">
+          <input
+            type="number"
+            placeholder=""
+            id="wxmoney"
+            class="iinput money"
+            data-translate-attr="placeholder:tixian_withdraw_amount"
+          />
+        </span>
+        <span class="row-left" data-translate="tixian_wechat_account">微信账号</span>
+        <span class="row-right">
+          <input
+            type="text"
+            placeholder=""
+            id="wxcard"
+            class="iinput card"
+            data-translate-attr="placeholder:tixian_wechat_account"
+          />
+        </span>
+      </div>
+      <div class="alipay xuanzheshiji" style="display: none">
+        <span class="row-left" data-translate="tixian_withdraw_amount">提现金额 </span>
+        <span class="row-right">
+          <input
+            type="number"
+            id="zfbmoney"
+            class="iinput money"
+            data-translate-attr="placeholder:tixian_withdraw_amount"
+          />
+        </span>
+        <span class="row-left" data-translate="tixian_alipay_account">支付宝账号</span>
+        <span class="row-right">
+          <input
+            type="text"
+            id="zfbcard"
+            class="iinput card"
+            data-translate-attr="placeholder:tixian_alipay_account"
+          />
+        </span>
+      </div>
+      <div class="bank_card xuanzheshiji" style="display: none">
+        <span class="row-left" data-translate="tixian_withdraw_amount">提现金额</span>
+        <span class="row-right">
+          <input
+            type="number"
+            id="bankmoney"
+            class="iinput money"
+            data-translate-attr="placeholder:tixian_withdraw_amount"
+          />
+        </span>
+        <span class="row-left" data-translate="tixian_bank_account">收款账号</span>
+        <span class="row-right">
+          <input
+            type="number"
+            id="bankcard"
+            class="iinput card"
+            data-translate-attr="placeholder:tixian_bank_account"
+          />
+        </span>
+        <span class="row-left" data-translate="tixian_bank_name">开户行</span>
+        <span class="row-right">
+          <input
+            type="text"
+            name="khh"
+            class="iinput khh"
+            data-translate-attr="placeholder:tixian_bank_name"
+          />
+        </span>
+        <span class="row-left" data-translate="tixian_recipient">收款人</span>
+        <span class="row-right">
+          <input
+            type="text"
+            name="skr"
+            class="iinput skr"
+            data-translate-attr="placeholder:tixian_recipient"
+          />
+        </span>
+      </div>
+    </div>
+
+    <div class="row">
+      <input
+        class="sub"
+        type="button"
+        data-translate-attr="value:tixian_submit"
+        style="
+          width: 80%;
+          margin: 0 auto 3rem;
+          background: linear-gradient(90deg, #ddbb65, #e7d9b4);
+          height: 5rem;
+          border-radius: 2em;
+          margin-top: 2em;
+          text-align: center;
+          font-weight: 550;
+        "
+      />
+    </div>
+    <script>
+      $(".btn-blue").click(function () {
+        $(".layer-bg").css({ display: "block" });
+        $(".cont-img1").css({ display: "block" });
+      });
+      $(".layer-bg").click(function () {
+        $(this).css({
+          display: "none",
+        });
+        $(".cont-img1").css({
+          display: "none",
+        });
+      });
+      $(".layer-bg, .cont-img1").bind("touchmove", function (e) {
+        e.preventDefault();
+      });
+      $(function () {
+        $(".paytype").change(function () {
+          if ($(this).val() == "wx") {
+            $(".xuanzheshiji").hide();
+            $(".wxpay").show();
+          } else if ($(this).val() == "alipay") {
+            $(".xuanzheshiji").hide();
+            $(".alipay").show();
+          } else if ($(this).val() == "bank") {
+            $(".xuanzheshiji").hide();
+            $(".bank_card").show();
+          }
+        });
+
+        $(".paytype")[0].click();
+      });
+
+      $(".sub").click(function () {
+        var xfqd = $("input[name='xfqd']:checked").val();
+        var xfqdname = $("#" + xfqd).html();
+        var money, card;
+        var khh = $(".khh").val();
+        var skr = $(".skr").val();
+        if (xfqd == "wx") {
+          money = $("#wxmoney").val();
+          card = $("#wxcard").val();
+        } else if (xfqd == "alipay") {
+          money = $("#zfbmoney").val();
+          card = $("#zfbcard").val();
+        } else {
+          money = $("#bankmoney").val();
+          card = $("#bankcard").val();
+        }
+
+        console.log(
+          "money:" +
+            money +
+            ",xfqd:" +
+            xfqd +
+            ",card:" +
+            card +
+            ",khh:" +
+            khh +
+            ",skr:" +
+            skr
+        );
+        if (money == "") {
+          zdy_tips(i18next.getTranslation('tixian_amount_empty'));
+          return false;
+        }
+        if (money < 1) {
+          zdy_tips(i18next.getTranslation('tixian_amount_less_than_min'));
+          return false;
+        }
+        if (card == "") {
+          zdy_tips(i18next.getTranslation('tixian_account_empty'));
+          return false;
+        }
+        if (xfqd == "bank") {
+          if (khh == "") {
+            zdy_tips(i18next.getTranslation('tixian_bank_name_empty'));
+            return false;
+          }
+          if (skr == "") {
+            zdy_tips(i18next.getTranslation('tixian_payee_empty'));
+            return false;
+          }
+        }
+
+        layer.open({
+          content: i18next.getTranslation('tixian_confirm_message', {
+            xfqdname: xfqdname,
+            money: money,
+            card: card,
+            bankDetails: xfqd == "bank" ? `<br>${i18next.getTranslation('tixian_bank_name')}：` + khh + `<br>${i18next.getTranslation('tixian_recipient')}：` + skr : ""
+          }),
+          btn: [i18next.getTranslation('tixian_confirm'), i18next.getTranslation('tixian_cancel')],
+          yes: function (index) {
+            var sendData = {
+              xfqd: xfqd,
+              money: money,
+              card: card,
+              khh: khh,
+              skr: skr,
+            };
+            $.ajax({
+              type: "POST",
+              url: "{:url('user/tx')}",
+              data: sendData,
+              success: function (msg) {
+                if (msg == "操作成功") {
+                  zdy_tips(i18next.getTranslation('tixian_submission_success'));
+                } else {
+                  zdy_tips(msg);
+                  return false;
+                }
+              },
+            });
+            layer.close(index);
+          },
+        });
+      });
+    </script>
+  </div>
+</div>

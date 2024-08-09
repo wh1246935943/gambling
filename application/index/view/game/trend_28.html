@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="user-scalable=no,width=device-width"/>
+<meta name="baidu-site-verification" content="W8Wrhmg6wj" />
+<meta content="telephone=no" name="format-detection">
+<meta content="1" name="jfz_login_status">
+    <link rel="stylesheet" type="text/css" href="/static/css/H-ui.min.css" />
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<title>{if isset($title)}{$title}{/if}</title>
+<style>
+.pk_01, .pk_02, .pk_03, .pk_04, .pk_05, .pk_06, .pk_07, .pk_08, .pk_09, .pk_10, .pk{   
+width: 40px;
+height: 40px;
+float:left;
+line-height:40px;
+color:#e1e1e1;
+font-weight:normal;
+font-size:26px;
+text-align:center;
+font-weight:bold;
+border-radius:5px;
+margin:0 2px 2px 0;
+text-align:center;
+text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+-webkit-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+-moz-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+*filter: Glow(color=#000, strength=1);
+}
+.pk{ color: #333;font-size:33px;font-weight: normal;font-weight: bold;color:#8E3D20;}
+.pk_01{ background:#FFFF00;}
+.pk_02{ background:#0099FF;}
+.pk_03{ background:#666666;}
+.pk_04{ background:#FF9900;}
+.pk_05{ background:#66CCCC;}
+.pk_06{ background:#3300FF;}
+.pk_07{ background:#CCCCCC;}
+.pk_08{ background:#FF0000;}
+.pk_09{ background:#CC0000;}
+.pk_10{ background:#009900;}
+.pk_he{ color: #CC0000;}
+.pk_dan{ color: #0099FF;}
+.pk_shuang{color: #CC0000;}
+.pk ,.pk_he,.pk_dan,.pk_shuang{
+    text-shadow:none;
+    -webkit-text-shadow:none;
+    -moz-text-shadow:none;
+    font-weight: bold;
+    font-size: 26px;
+}
+.pagination{display: flex;}
+.pagination li{flex: 1;}
+.pagination li .active span{color: red;}
+
+.table-border.table-bordered thead tr{background: #e7e7e7;border-left: 1px solid #333;}
+
+/* .table-border.table-bordered thead tr th{border-left: 1px solid #333;} */
+
+.dan{background: #e7e7e7;}
+.shuang{ background: #FFF;}
+.text-c th,.yanse{ color:#8E3D20;}
+.table > thead > tr > th{text-align: center;}
+</style>
+
+
+<style>
+.pk_28{
+width:35px;
+height:35px;
+display:inline-block;
+line-height:35px;
+color:#000;
+font-weight:normal;
+font-size:20px;
+text-align:center;
+font-weight:bold;
+color:#fff;
+border-radius:5px;
+margin:0 10px 2px 0;
+text-align:center;
+<!--
+text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+-webkit-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;
+-moz-text-shadow:#000 1px 0 0,#000 0 1px 0,#000 -1px 0 0,#000 0 -1px 0;-->
+*filter: Glow(color=#000, strength=1);
+border-radius: 50%;
+}
+.bg_red{
+	background-color: #e60012;
+}
+.bg_blue{
+	background-color: #00a0e9;
+}
+.duo{
+	width:70px;
+	border-radius: 17px;
+}
+.table th{
+	font-weight:100;
+}
+.sum{
+	color: #000;
+    font-size: 25px;
+}
+</style>
+<body>
+    <div class="mt-20">
+        <table class="table table-border table-bordered table-bg table-hover">
+            <thead>
+                <tr class="text-c" style="background: #e7e7e7;">
+                    <th style="font-size:34px;    width: 50px;">期号</th>
+                    <th style="font-size:34px;" >值</th>
+                    <th style="font-size:34px;">大</th>
+                    <th style="font-size:34px;">小</th>
+                    <th style="font-size:34px;">单</th>
+                    <th style="font-size:34px;">双</th>
+                    <th style="font-size:34px;">大单</th>
+                    <th style="font-size:34px;">大双</th>
+                    <th style="font-size:34px;">小单</th>
+                    <th style="font-size:34px;">小双</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $a=0; ?>
+                {volist name="list" id="vo"}
+                    <tr class="text-c {if $a%2 == 1} dan {else/} shuang {/if}">
+                        <td style="font-size:20px;"><div style="margin:0 auto;width:200px;font-size:26px;">{$vo.sequencenum}期</div></td>
+                                <td>
+                                    <?php 
+                                        $tmp_arr = explode('-',$vo['outcome']); 
+                                        $k=count($tmp_arr);
+                                        $sum = $tmp_arr[$k-1];
+                                        echo "<span class='pk_28 sum'>".$sum."</span>";
+                                        
+                                        
+                                        /*for($i=0;$i<$k;$i++){
+                                            if($i==0){
+                                                echo "<span class='pk_28 sum'>".$tmp_arr[$i]."</span>";
+                                            }else if($i == $k-1){
+                                                echo "=<span class='pk_28 sum'>".$tmp_arr[$i]."</span>";
+                                            }else{
+                                               echo "+<span class='pk_28 sum'>".$tmp_arr[$i]."</span>";
+                                            }
+                                        }*/
+                                    ?>
+                                    </span>
+                                </td>
+                                <?php if(14<=$sum && $sum<=27){ ?>
+                                    <td style="font-size:20px;"><span class="bg_red pk_28">大</span></td>
+                                    <td style="font-size:20px;"></td>
+                                <?php }else{ ?>
+                                    <td style="font-size:20px;"></td>
+                                    <td style="font-size:20px;"><span class="bg_blue pk_28">小</span></td>
+                                <?php } ?>
+                                <?php if($sum%2==1){ ?>
+                                    <td style="font-size:20px;"><span class="bg_blue pk_28">单</span></td>
+                                    <td style="font-size:20px;"></td>
+                                <?php }else{ ?>
+                                    <td style="font-size:20px;"></td>
+                                    <td style="font-size:20px;"><span class="bg_red pk_28">双</span></td>
+                                <?php } ?>
+                                <?php if(14<=$sum && $sum<=27){ ?>
+                                    <?php if($sum%2==1){ ?>
+                                        <td style="font-size:20px;"><span class="bg_blue pk_28 duo">大单</span></td>
+                                        <td style="font-size:20px;"></td>
+                                        <td style="font-size:20px;"></td>
+                                        <td style="font-size:20px;"></td>
+                                    <?php }else{ ?>
+                                        <td style="font-size:20px;"></td>
+                                        <td style="font-size:20px;"><span class="bg_red pk_28 duo">大双</span></td>
+                                        <td style="font-size:20px;"></td>
+                                        <td style="font-size:20px;"></td>
+                                    <?php } ?>
+                                <?php }else{ ?>
+                                    <?php if($sum%2==1){ ?>
+                                        <td style="font-size:20px;"></td>
+                                        <td style="font-size:20px;"></td>
+                                        <td style="font-size:20px;"><span class="bg_blue pk_28 duo">小单</span></td>
+                                        <td style="font-size:20px;"></td>
+                                    <?php }else{ ?>
+                                        <td style="font-size:20px;"></td>
+                                        <td style="font-size:20px;"></td>
+                                        <td style="font-size:20px;"></td>
+                                        <td style="font-size:20px;"><span class="bg_red pk_28 duo">小双</span></td>
+                                    <?php } ?>
+                                <?php } ?>
+                        
+                        
+                        
+                        
+                        
+      
+                    </tr>
+                {/volist}
+            </tbody>
+            <tbody>
+                <tr class="text-c">
+                    <td colspan="10" style="font-size:32px;">
+                        {$list->render()}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

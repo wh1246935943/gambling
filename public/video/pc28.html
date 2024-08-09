@@ -1,0 +1,729 @@
+<style>
+  .list_div_28 {
+    width: 6.4rem;
+    padding: 0 2% 0.2rem;
+    /*background: url('/static/images/切图 3@3x.png') no-repeat center;*/
+    background: #202a41;
+    background-size: cover;
+    box-sizing: border-box;
+  }
+
+  .list_div_28 .list_a {
+    overflow: hidden;
+  }
+
+  .list_div_28 .div_li_user .xinxi {
+    display: block;
+    font-size: 0.2rem;
+  }
+
+ 
+  .list_div_28 .list_b {
+    font-size: 0.15rem;
+    position: relative;
+    background: url("/static/images/101.png") no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    padding: 0.2rem 0.15rem;
+    height: 1.2rem;
+    display: flex;
+    align-items: center;
+    margin: 0.1rem 0;
+  }
+
+  .list_b .result-wrapper {
+    /* overflow:auto; */
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 0.5rem;
+  }
+
+  .list_b .result-wrapper .p_a {
+    font-size: 0.2rem;
+    color: #fff;
+  }
+
+  .list_b .result-wrapper .result-num {
+    display: inline-block;
+  }
+
+  .list_b .result-wrapper .result-num .number {
+    display: inline-block;
+    width: 0.92rem;
+    height: 0.97rem;
+    line-height: 0.97rem;
+    background: url(/static/images/the_lottery1.png) no-repeat;
+    background-size: 0.92rem 0.97rem;
+    color: #fff;
+    font-weight: bolder;
+  }
+
+  .list_b .result-wrapper .result-num .sum {
+    width: 1.32rem;
+    height: 0.97rem;
+    background: url(/static/images/the_lottery1.png) no-repeat;
+    background-size: 1.32rem 0.97rem;
+  }
+
+  .list_b .result-wrapper .result-num .result-all {
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    line-height: 0.9rem;
+    background-color: #13b5b1;
+    margin: 0 1px 0 0;
+    color: #fff;
+    border-radius: 50%;
+  }
+
+  .list_b .result-wrapper .result-num .result-all:first-child {
+    margin-left: 0.2rem;
+  }
+
+  .list_b .result-wrapper .result-num .big-or-small {
+    background-color: #00a0e9;
+  }
+
+  .list_b .result-wrapper .result-num .bg-red,
+  .list_b .result-wrapper .result-num .single-or-double {
+    background-color: #e60012;
+  }
+
+  .list_b .result-wrapper .result-num .bg-blue {
+    background-color: #00a0e9;
+  }
+
+  .list_b .result-wrapper .result-num .xiala {
+    background: url(/static/images/xiangxiajiantou.png) center center no-repeat;
+    background-size: 0.32rem 0.18rem;
+  }
+
+  .list_b .result-wrapper .result-num .div_p_1 span {
+    color: #f2a253;
+  }
+
+  .list_b .result-wrapper .result-num .div_p_2 {
+    color: #fff;
+    font-size: 0.24rem;
+  }
+
+  .list_b .result-wrapper .result-num span {
+    display: inline-block;
+    width: 0.26rem;
+    height: 0.26rem;
+    background: url(/static/images/symbol2.png) no-repeat;
+    background-size: 0.26rem 0.26rem;
+  }
+
+  .list_b .result-wrapper .result-num .dengyu {
+    width: 0.26rem;
+    height: 0.15rem;
+    background: url(/static/images/symbol3.png) no-repeat;
+    background-size: 0.26rem 0.15rem;
+  }
+
+  .list_c {
+    display: flex;
+    justify-content: space-between;
+    padding: .1rem 0;
+  }
+
+  .list_c .money {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.24rem;
+    margin-left: 0.72rem;
+  }
+
+  .list_c .a {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+
+  .list_c a {
+    display: inline-block;
+    height: 0.4rem;
+    padding: 3px 4px;
+    color: #000;
+    font-size: 0.24rem;
+    text-align: center;
+    line-height: 0.4rem;
+    border-radius: 0.05rem;
+    border: 1px solid #dcdcde;
+    background-size: contain;
+    margin-left: 4px;
+    background: linear-gradient(
+          30deg,
+          rgba(234, 200, 142, 0.97),
+          rgba(255, 232, 200, 0.97)
+        );
+  }
+
+  .list {
+    position: absolute;
+    z-index: 100;
+    background: #fff;
+    width: 96%;
+    padding: 0 2%;
+  }
+
+  .odometer-inside {
+    white-space: nowrap;
+  }
+
+  /*  其他style */
+
+  .chat_box .chat_button .anjian {
+    background: url(/static/images/the_lottery4.png) center center no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .poim {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 0.1rem;
+    border-radius: 5px;
+    left: 0.2rem;
+    bottom: 5px;
+    position: absolute;
+  }
+
+  #wrap ul li {
+    width: 96%;
+    float: left;
+    padding: 1%;
+  }
+
+  #wrap ul li:last-child {
+    padding-bottom: 0.4rem;
+  }
+
+  .country-select {
+    right: 0.15rem;
+    left: inherit;
+  }
+
+  /* #wrap ul li .right .username {
+        color: #9c9c9c;
+    } */
+
+  #wrap ul li .me_left {
+    width: 60%;
+  }
+
+  /* #wrap ul li .me_left .username {
+        color: #9c9c9c;
+        text-align: right;
+    } */
+
+  /* #wrap ul li .me_left .chat_info {
+        text-align: left;
+        background: #ffffff;
+        border: 0;
+        box-shadow: none;
+        color: #333333;
+
+        background: #fff;
+        border: 0;
+        box-shadow: none;
+        padding: 0.4em;
+        color: #333;
+    } */
+
+  .list_a ul {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    padding-top: 0.2rem;
+  }
+
+  .list_a ul li {
+    color: #fff;
+    font-size: 0.24rem;
+  }
+
+  .list_a ul li:nth-of-type(1) .top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .list_a ul li img {
+    display: block;
+    width: 1.5rem;
+    height: 0.36rem;
+    margin-top: 0.3rem;
+  }
+
+  .list_a .p_a {
+    color: #fff5da;
+    font-size: 0.16rem;
+    text-align: left;
+    line-height: 0.48rem;
+  }
+
+  .list_a .p_a span {
+    color: #f3475c;
+  }
+
+  .bg-blc {
+    width: 2rem;
+    height: 0.56rem;
+  }
+
+  .bg-blc span {
+    background: url("/static/images/组 14@3x.png") no-repeat;
+    background-size: cover;
+    color: #000;
+    display: block;
+    width: 0.7rem;
+    height: 0.7rem;
+    text-align: center;
+    line-height: 0.7rem;
+  }
+
+  .bg-blc p {
+    font-size: 0.3rem;
+    line-height: 0.56rem;
+    text-align: center;
+    display: flex;
+  }
+
+  .list_a ul li p em {
+    font-size: 0.24rem;
+  }
+
+  .record-bar li {
+    position: relative;
+    float: left;
+    width: 0.9rem;
+    height: 0.46rem;
+    background: url(/static/images/the_lottery3.png) no-repeat;
+    background-size: 0.9rem 0.46rem;
+    color: #fff;
+    font-size: 0.24rem;
+    line-height: 0.46rem;
+    margin: 0.1rem 0.2rem 0 0.16rem;
+  }
+
+  .record-bar li:nth-child(1) {
+    margin-left: 0.1rem;
+  }
+
+  .record-bar li em {
+    position: absolute;
+    font-size: 0.16rem;
+    color: #c6af7e;
+    right: -0.24rem;
+    top: 0.06rem;
+  }
+
+  .record-bar li:nth-child(4) {
+    width: 0.9rem;
+    height: 0.46rem;
+    background: url(/static/images/the_lottery3.png) no-repeat;
+    background-size: 0.9rem 0.46rem;
+  }
+
+  .record-bar li:nth-child(5) {
+    margin-right: 0;
+    width: 0.9rem;
+    height: 0.46rem;
+    background: url(/static/images/the_lottery3.png) no-repeat;
+    background-size: 0.9rem 0.46rem;
+  }
+
+  .bg-mar {
+    height: auto;
+    background: #fff;
+  }
+
+  .nuber-scroll-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nuber-scroll {
+    height: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .nuber-scroll .odometer {
+    margin-right: 0;
+    font-size: 0.36rem;
+  }
+  .nuber-scroll em{
+      color: #fff;
+  }
+
+  /* .nuber-scroll em {
+        position: absolute;
+        color: #8a7657;
+        top: 0.08rem;
+        z-index: 11;
+    } */
+
+  /* .add1 {
+        left: 1.35rem;
+    }
+
+    .add2 {
+        left: 2.75rem;
+    }
+
+    .add3 {
+        left: 4.2rem;
+    } */
+
+  .title {
+    color: #0e0d0d;
+    font-size: 0.3rem;
+    text-align: center;
+    padding: 0.1rem 0;
+    background-color: #ffffff;
+    position: relative;
+  }
+
+  .title a {
+    position: absolute;
+    width: 0.3rem;
+    height: 0.3rem;
+    display: block;
+    background: url(/static/images/fanhui.png) no-repeat;
+    background-size: cover;
+    top: 50%;
+    left: 0.2rem;
+    transform: translateY(-50%);
+  }
+</style>
+<div class="bg-mar">
+  <div class="list_div_28">
+    <div class="list_c">
+      <div class="money" data-translate="romeone_balance">余额：<em id="user_jine"></em></div>
+      <div class="a">
+        <a href="" data-translate="romeone_refresh">刷新</a>
+        <a href="/index/user/recharge.php" data-translate="romeone_recharge">充值</a>
+        <a href="/index/user/tx.php" data-translate="romeone_withdraw">提现</a>
+      </div>
+    </div>
+
+    <div class="list_b">
+      <div class="result-wrapper" id="result-wrapper">
+        <p class="p_a">&nbsp;<span id="sequencenum_span"></span>&nbsp;<span data-translate="romeone_period">期</span></p>
+        <div class="nuber-scroll-box">
+          <div class="nuber-scroll">
+            <div class="odometer1"></div>
+            <em class="add1">+</em>
+            <div class="odometer2"></div>
+            <em class="add2">+</em>
+            <div class="odometer3"></div>
+            <em class="add3">=</em>
+            <div class="odometer4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="list_a">
+      <ul class="clearfix">
+        <li>
+          <div class="top">
+            <p><span data-translate="romeone_online">在线：</span><em id="zxrs"></em><span data-translate="romeone_people">人</span></p>
+          </div>
+          <p style="font-size: 0.26rem"><div><span id="nextqi"></span><span data-translate="romeone_period">期</span></div></p>
+          <div class="bottom">
+            <p><em id="nexttime"></em></p>
+          </div>
+        </li>
+        <li class="li_a" style="width: 33%">
+          <div class="bg-blc">
+            <p class="time_span">
+              <span id="hours">-</span>
+              <span id="minute">-</span>
+              <span id="seconds">-</span>
+            </p>
+            <p class="time_tingz" data-translate="romeone_drawing">正在开奖...</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function () {
+    choose_user();
+    setInterval("choose_user()", 3000);
+    setTimeout(() => {
+      getsequencenum();
+    }, 1000)
+  });
+  var xinm = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+  var count = xinm.length;
+  var t;
+  function startNum() {
+    num1 = Math.floor(Math.random() * count);
+    num2 = Math.floor(Math.random() * count);
+    num3 = Math.floor(Math.random() * count);
+    num4 = Math.floor(Math.random() * count);
+    $(".odometer1").html(xinm[num1]);
+    $(".odometer2").html(xinm[num2]);
+    $(".odometer3").html(xinm[num3]);
+    $(".odometer4").html(xinm[num4]);
+    t = setTimeout(startNum, 700);
+  }
+  function choose_user() {
+    var timestamp = new Date().valueOf();
+
+    $.ajax({
+      type: "POST",
+      url: "/index/game/choose_user.php?time=" + timestamp,
+      success: function (msg) {
+        if (msg) {
+          $("#headImg").attr("src", msg["headimgurl"]);
+          $("#user_jine").html(msg["money"]);
+          $("#user_yingkui").html(msg["win_or_lose"]);
+        }
+      },
+    });
+  }
+  Date.prototype.format = function (format) {
+    var date = {
+      "M+": this.getMonth() + 1,
+      "d+": this.getDate(),
+      "h+": this.getHours(),
+      "m+": this.getMinutes(),
+      "s+": this.getSeconds(),
+      "q+": Math.floor((this.getMonth() + 3) / 3),
+      "S+": this.getMilliseconds(),
+    };
+    if (/(y+)/i.test(format)) {
+      format = format.replace(
+        RegExp.$1,
+        (this.getFullYear() + "").substr(4 - RegExp.$1.length)
+      );
+    }
+    for (var k in date) {
+      if (new RegExp("(" + k + ")").test(format)) {
+        format = format.replace(
+          RegExp.$1,
+          RegExp.$1.length == 1
+            ? date[k]
+            : ("00" + date[k]).substr(("" + date[k]).length)
+        );
+      }
+    }
+    return format;
+  };
+  function getsequencenum() {
+    var qu_sequencenum_span = $("#sequencenum_span").html();
+    if (qu_sequencenum_span != "null" && qu_sequencenum_span != "") {
+      qu_sequencenum_span = parseInt(qu_sequencenum_span) + 1;
+    }
+    $.ajax({
+      type: "get",
+      async: false,
+      dataType: "json",
+      contentType: "application/json",
+      url:
+        "/index/game/ajax_sequencenum/video_both/<?php echo $iframe_address; ?>/sequencenum_span/" +
+        qu_sequencenum_span,
+      success: function (data) {
+        if (data.length >= 1) {
+          clearInterval(t);
+          t = 0;
+          var sequencenum_span = parseInt(data[0]["sequencenum"]);
+          $("#sequencenum_span").html(sequencenum_span);
+          var data_outcome = data[0]["outcome"];
+          var outcome = data_outcome.split("-");
+          $("#result-wrapper #sequencenum").html(data[0]["sequencenum"]);
+
+          var el1 = document.querySelector(".odometer1");
+          od1 = new Odometer({
+            el: el1,
+            format: "d",
+          });
+          el1.innerHTML = outcome[0];
+          var el2 = document.querySelector(".odometer2");
+          od2 = new Odometer({
+            el: el2,
+            format: "d",
+          });
+          el2.innerHTML = outcome[1];
+          var el3 = document.querySelector(".odometer3");
+          od3 = new Odometer({
+            el: el3,
+            format: "d",
+          });
+          el3.innerHTML = outcome[2];
+          var el4 = document.querySelector(".odometer4");
+          od4 = new Odometer({
+            el: el4,
+            format: "d",
+          });
+          el4.innerHTML = outcome[3];
+          $("#nextqi").html(parseInt(data[0]["sequencenum"]) + 1);
+          $(".qihao").html(i18next?.getTranslation?.("romeone_period_number") + parseInt(data[0]["sequencenum"]) + 1);
+          var nexttime = parseInt(data[0]["nexttime"]);
+          var newDate = new Date();
+          newDate.setTime(nexttime * 1000);
+          var year = newDate.getFullYear();
+          var month = (newDate.getMonth() + 1 < 10 ? "0" + (newDate.getMonth() + 1) : newDate.getMonth() + 1);
+          var day = (newDate.getDate() < 10 ? "0" + newDate.getDate() : newDate.getDate());
+          var hours = (newDate.getHours() < 10 ? "0" + newDate.getHours() : newDate.getHours());
+          var minutes = (newDate.getMinutes() < 10 ? "0" + newDate.getMinutes() : newDate.getMinutes());
+          var seconds = (newDate.getSeconds() < 10 ? "0" + newDate.getSeconds() : newDate.getSeconds());
+          $("#nexttime").html(i18next?.getTranslation?.("romeone_drawing_time") + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds);
+          $("#jdx").html("-<em>*</em>");
+          if (outcome[3] <= 5) {
+            $("#jdx").html(i18next?.getTranslation?.("romeone_extreme_small") + "<em>*</em>");
+          }
+          if (outcome[3] >= 22) {
+            $("#jdx").html(i18next?.getTranslation?.("romeone_extreme_large") + "<em>*</em>");
+          }
+          $("#bds").html("-");
+          if (outcome[0] == outcome[1] && outcome[1] == outcome[2]) {
+            $("#bds").html(i18next?.getTranslation?.("romeone_triple"));
+          } else if (outcome[0] == outcome[1] || outcome[1] == outcome[2] || outcome[0] == outcome[2]) {
+            $("#bds").html(i18next?.getTranslation?.("romeone_pair"));
+          } else if (
+            (parseInt(outcome[0]) == parseInt(outcome[1]) - 1 && parseInt(outcome[1]) == parseInt(outcome[2]) - 1) ||
+            (parseInt(outcome[0]) == 2 && parseInt(outcome[1]) == 0 && parseInt(outcome[2]) == 1) ||
+            (parseInt(outcome[0]) == 7 && parseInt(outcome[1]) == 6 && parseInt(outcome[2]) == 5)
+          ) {
+            $("#bds").html(i18next?.getTranslation?.("romeone_straight"));
+          }
+
+          var result = "(";
+          if (outcome[3] >= 14) {
+            result += i18next?.getTranslation?.("romeone_large");
+            $("#daxiao").html(i18next?.getTranslation?.("romeone_large") + "<em>*</em>");
+          } else {
+            result += i18next?.getTranslation?.("romeone_small");
+            $("#daxiao").html(i18next?.getTranslation?.("romeone_small") + "<em>*</em>");
+          }
+          if (outcome[3] % 2 == 1) {
+            result += "," + i18next?.getTranslation?.("romeone_odd");
+            $("#danshuang").html(i18next?.getTranslation?.("romeone_odd") + "<em>*</em>");
+          } else {
+            result += "," + i18next?.getTranslation?.("romeone_even");
+            $("#danshuang").html(i18next?.getTranslation?.("romeone_even") + "<em>*</em>");
+          }
+          result += ")";
+          $(".time_span").show();
+          $(".time_tingz").hide();
+
+          $("#result-wrapper #result").html(result);
+          daojishu(data[0]["sealing_plate"]);
+          var sequencenum_list = "";
+          for (var i = 1; i < data.length; i++) {
+            data_outcome = data[i]["outcome"];
+            outcome = data_outcome.split("-");
+            result = "(";
+            if (outcome[3] >= 14) {
+              result += i18next?.getTranslation?.("romeone_large");
+            } else {
+              result += i18next?.getTranslation?.("romeone_small");
+            }
+            if (outcome[3] % 2 == 1) {
+              result += "," + i18next?.getTranslation?.("romeone_odd");
+            } else {
+              result += "," + i18next?.getTranslation?.("romeone_even");
+            }
+            result += ")";
+
+            sequencenum_list +=
+              '<div class="result-wrapper">' +
+              '<div class="result-num">' +
+              '<p class="div_p_1">' + i18next?.getTranslation?.("romeone_phase") + '<span>' + data[i]["sequencenum"] + "</span></p>" +
+              "</div>" +
+              '<div class="result-num">' +
+              '<div class="number">' + outcome[0] + "</div> " +
+              "<span>+</span>" +
+              "</div>" +
+              '<div class="result-num">' +
+              '<div class="number">' + outcome[1] + "</div>" +
+              "<span>+</span>" +
+              "</div>" +
+              '<div class="result-num">' +
+              '<div class="number">' + outcome[2] + "</div>" +
+              "</div>" +
+              '<div class="result-num"><span>=</span></div>' +
+              '<div class="result-num">' +
+              '<div class="number sum">' + outcome[3] + "</div>" +
+              "</div>" +
+              '<div class="result-num">' +
+              '<p class="div_p_2">' + result + "</p>" +
+              "</div>" +
+              "</div>";
+          }
+          $(".list").html(sequencenum_list);
+
+        } else {
+          setTimeout(getsequencenum, 3000);
+        }
+      },
+      error: function (e) {
+        console.log(e);
+      },
+    });
+  }
+
+  function daojishu(starttime) {
+    var starttime = new Date(parseInt(starttime) * 1000);
+    var xxxz = setInterval(function () {
+      var nowtime = new Date();
+      var time = starttime - nowtime;
+
+      var minute = parseInt((time / 1000 / 60) % 60);
+      var seconds = parseInt((time / 1000) % 60);
+      var hours = parseInt(time / 1000 / 60 / 60);
+      if (hours < "10") {
+        if (hours < "0") {
+          hours = "";
+        } else {
+          hours = "0" + hours;
+          if (hours >= 0) {
+            $("#hours").html(hours);
+          }
+        }
+      } else {
+        $("#hours").html(hours);
+      }
+      if (minute < "10") {
+        if (minute < "0") {
+          minute = "";
+        } else {
+          minute = "0" + minute;
+          if (seconds >= 0) {
+            $("#minute").html(minute);
+          }
+        }
+      } else {
+        $("#minute").html(minute);
+      }
+      if (seconds < "10") {
+        if (seconds < "0") {
+          seconds = "";
+          $(".time_span").hide();
+          $(".time_tingz").show();
+          getsequencenum();
+          clearInterval(xxxz);
+          startNum();
+          clickState = 1;
+        } else {
+          seconds = "0" + seconds;
+          $("#seconds").html(seconds);
+        }
+      } else {
+        clickState = 0;
+        $("#seconds").html(seconds);
+      }
+      $("#time_span").html(":");
+    }, 1000);
+  }
+</script>

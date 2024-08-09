@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xml:lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit" title="360浏览器强制开启急速模式-webkit内核">
+    <title>找回密码</title>
+     <link rel="stylesheet" href="/static/css/login.css">
+ 	<!--jquery-->  
+	    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+ 	<!--自定义js-->  
+	    <script type="text/javascript" src="/static/js/jquery.extend.js?t=<?php echo date('Y-m-d H:i:s')?>"></script>        
+	    <script type="text/javascript" src="/static/js/listen.js?t=<?php echo date('Y-m-d H:i:s')?>"></script>
+ 	 <!--layui-->
+	    <link rel="stylesheet" href="/static/layui/css/layui.css">
+	 	<script type="text/javascript" src="/static/layui/layui.js"></script>
+</head>
+<body>
+    <div id="content-wrap">
+        <div class="main" id="content">
+			<div class="row">
+			    <div class="layout-base cont signin-cont" id="repassword-panel">
+			        <div class="cont-head" style="height: 60px">
+			            <div class="title">
+			                <h2>找回密码<span>&nbsp;</span></h2>
+			                <h4>Forget Password</h4>
+			            </div>
+			        </div>
+			        <div class="cont-body">
+			
+			            <!--step1 start-->
+			            <div id="divStep1">
+			                <div id="divStep1_Confirm">
+			                    <!--step-nav start-->
+			                    <div class="module step-nav step-base">
+			                        <ul>
+			                            <li class="active"><span>1.填写用户名</span></li>
+			                            <li class="head2"><span>2.回答问题</span></li>
+			                            <li class="head3"><span>3.设置新密码</span></li>
+			                        </ul>
+			                    </div>
+			                    <div class="form-table layui-form">
+			                    
+			                        <div id="divSecurityQuestionInfo"  >
+			                            <!--用户名t-->
+			                            <div class="form-row user">
+			                                <div class="form-title">
+			                                    <label>用户名：</label>
+			                                </div>
+			                                <div class="form-input">
+			                                    <div class="tp-ui-item tp-ui-forminput tp-ui-text tp-ui-text-base" style="margin-bottom: 10px"><div class="tp-ui-sub tp-ui-text-base"><input type="text" id="username"  placeholder="请填写您的用户名" class="signin-form-text username"></div></div>
+			                                    <div class="tp-ui-item tp-ui-forminput tp-ui-button-noselect tp-ui-button tp-ui-button-default"><div class="tp-ui-sub tp-ui-button-base"><input type="button" value="获取设置安全问题" class="tpui-button" onclick="question()" style="cursor:pointer"></div></div>
+			                                </div>
+			                            </div>
+			                            <!--用户名tend-->
+			                            <div id="question"  style="display:none ;margin-top: 20px" >
+			                                <!--安全问题1 start-->
+			                                <div class="form-row">
+			                                    <div class="form-title">
+			                                        <label>问题：</label>
+			                                    </div>
+			                                    <div class="form-input">
+			                                        <div class="tp-ui-item tp-ui-forminput tp-ui-text tp-ui-text-base"><div class="tp-ui-sub tp-ui-text-base"><input type="text" id="lblQuestion" class="signin-form-text" readonly="readonly"></div></div>
+			                                    </div>
+			                                </div>
+			                                <div class="form-row">
+			                                    <div class="form-title">
+			                                        <label>答案：</label>
+			                                    </div>
+			                                    <input type="hidden" class="userid" value="">
+			                                    <div class="form-input">
+			                                        <div class="tp-ui-item tp-ui-forminput tp-ui-text tp-ui-text-base"><div class="tp-ui-sub tp-ui-text-base"><input type="text" id="answer" placeholder="请输入问题答案" class="signin-form-text"></div></div>
+			                                    </div>
+			                                    <div class="form-input" style="margin-left: 80px;margin-top: 10px">
+				                                    <div class="tp-ui-item tp-ui-forminput tp-ui-button-noselect tp-ui-button tp-ui-button-default"><div class="tp-ui-sub tp-ui-button-base"><input type="button" value="提交答案" class="tpui-button" style="cursor:pointer" onclick="tijiao()"></div></div>
+				                                </div>
+			                                </div>
+			                                <!--安全问题1 end-->
+			                            </div>
+			                            <!-- 设置密码 -->
+			                            <div id="password"  style="display:none ;margin-top: 20px">
+			                                 
+			                                <div class="form-row">
+			                                    <div class="form-title">
+			                                        <label>新密码：</label>
+			                                    </div>
+			                                    <div class="form-input">
+			                                        <div class="tp-ui-item tp-ui-forminput tp-ui-text tp-ui-text-base"><div class="tp-ui-sub tp-ui-text-base"><input type="text" id="password" placeholder="请输入新密码长度4-16位,数字、字母、字符" class="password"></div></div>
+			                                    </div>
+			                                </div>
+			                                <!--row start-->
+					                        <div class="form-row" id="divSubmitButton">
+					                            <div class="form-title">&nbsp;</div>
+					                            <div class="form-input">
+					                                <div class="tp-ui-item tp-ui-forminput tp-ui-button-noselect tp-ui-button tp-ui-button-submit">
+						                                <div class="tp-ui-sub tp-ui-button-base">
+						                                	<input type="submit" class="signin-form-submit" data-type="submit" lay-submit="" lay-filter="getpwd" value="找回密码" style="cursor:pointer">
+						                                </div>
+					                                </div>
+					                                 <input type="hidden" class="id" value="">
+					                                <div class="tp-ui-item tp-ui-forminput tp-ui-button-noselect tp-ui-button tp-ui-button-default">
+					                            </div>
+					                        </div>
+					                        <!--row end-->
+			                            </div>
+			                             <!-- 设置密码 -->
+			                        </div>
+			                    </div>
+			                    <!--form end-->
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<!--register end-->
+     </div>
+</div>
+</body>
+</html>
+<script>
+function callbackfunc(data){
+    if(data.code == 1){
+        location.href = '{:url("index/index")}';
+    }     
+}    
+$(function(){
+	    layui.use('form',function(){
+	        form = layui.form(),jq = layui.jquery; 
+	        form.on('submit(getpwd)', function(data){
+	        	 var answer = $('#answer').val();//答案  
+	       		 var userid = $('.id').val();//userid  
+	       		 var password = $('.password').val();//password  
+	        	$.fn.jcb.post('{:url("/index/index/fontpwd")}',{'answer':answer,'userid':userid,'password':password},false,callbackfunc);
+	            return false; 
+	        }); 
+	    });   
+});
+//查询问题
+function question(){
+	 var username = $('#username').val();//用户名  
+	   $.ajax({           
+         type:"POST",           
+         url: '{:url("/index/index/user")}',           
+         data:{'username':username},           
+         datatype: "html", 
+         success:function(data){
+        	 if(data.code==0){
+        		 layer.alert(data.msg, {icon:2, title:'系统提示', skin: 'layui-layer-molv',closeBtn: 0}); 
+        	 }else{
+    			$('#question').css('display','block');
+    			$('.user').css('display','none');
+    			$('#lblQuestion').val(data.question);
+    			$('.head2').addClass('active');
+    			$('.userid').val(data.userid);
+        	 }
+         },
+     }); 
+}
+//提交答案
+function tijiao(){
+	 var answer = $('#answer').val();//答案  
+	 var userid = $('.userid').val();//userid  
+	   $.ajax({           
+         type:"POST",           
+         url: '{:url("/index/index/answer")}',           
+         data:{'answer':answer,'userid':userid},           
+         datatype: "html", 
+         success:function(data){
+        	 if(data.code==0){
+        		 layer.alert(data.msg, {icon:2, title:'系统提示', skin: 'layui-layer-molv',closeBtn: 0}); 
+        	 }else{
+    			$('#password').css('display','block');
+    			$('#question').css('display','none');
+    			$('.head3').addClass('active')
+    			$('.id').val(data.userid);
+        	 }
+         },
+     }); 
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

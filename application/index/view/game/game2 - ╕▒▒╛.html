@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>{$youxi['title']}</title>
+<link href="/static/css/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="/static/js/js.js"></script>
+<script type="text/javascript" src="/static/js/winScale.js"></script>
+</head>
+<body>
+
+    <div class="content">
+            <div class="country-select">
+		<a href="{:url('game/index')}" class="country xyft" ></a>
+            </div>
+
+        <div class="game_era">
+           <?php include_once('video/pc28.html');?>
+        </div>
+        <div id="wrap">
+            <ul class="fc jq-create-ul" id='chat'>
+                {volist name="chat_info" id="vo"}
+                    {if condition=" $vo.role eq 1 "}
+                        <!-- 管理员 -->
+                        {if condition=" $vo.distinguish eq 1 "}
+                            <li>
+                                <div class="distinguish">
+                                    <p class="chat_info">{$vo.content}</p> 
+                                    <p class="username"><span>{$vo.addtime|date="Y-m-d H:i:s",###}</span></p>
+                                </div>    
+                            </li>
+                        {elseif  condition=" $vo.distinguish eq 0 "/}
+                            <li>
+                                <div class="center">
+                                    <p class="chat_info">{$vo.content}</p> 
+                                    <p class="username"><span>{$vo.addtime|date="Y-m-d H:i:s",###}</span>{$vo.username}</p>
+                                </div>  
+                            </li>								
+                        {/if}  
+
+                    {elseif condition=" $vo.userid eq $userid "/}
+                        <!-- 自己 -->
+                        <li>
+                            <div class="me_right">
+                                {neq name="vo['headimgurl']" value=""}
+                                    <img src="{$vo.headimgurl}">
+				{else/}	
+                                    <img src="/static/images/default.png">
+                                {/neq}
+                            </div>
+                            <div class="me_left">
+                                <p class="username"><span>{$vo.addtime|date="Y-m-d H:i:s",###}</span>{$vo.username}</p>
+                                <p class="chat_info">{$vo.sequencenum}期<br/>投注类容：&nbsp;{$vo.content}</p> 
+                            </div>
+                        </li> 
+                    {else/}
+
+                        <!-- 其他人 -->
+                        <li>
+                            <div class="left">
+                                {neq name="vo['headimgurl']" value=""}
+                                    <img src="{$vo.headimgurl}">
+                                {else/}	
+                                    <img src="/static/images/default.png">
+                                {/neq}
+                            </div>
+                            <div class="right">
+                                <p class="username">{$vo.username}<span>{$vo.addtime|date="Y-m-d H:i:s",###}</span></p>
+                                <p class="chat_info">{$vo.sequencenum}期<br/>投注类容：&nbsp;{$vo.content}</p>
+                            </div>
+                        </li>
+                    {/if}
+                {/volist}
+            </ul>        
+        </div>
+        <div class="chat_box">
+            <form name="form2" action="" method="post" target="formsubmit">
+                <div class="chat_button">
+                    <div class="list_a">
+                        <a href="{:url('user/service')}"></a>
+                    </div>
+                    <input type="text" class="input_box" id="input_box" maxlength="50"  placeholder='玩法金额' value=""/>
+                    <input type="submit" class="anjian" id="sendbtn" value="发送" onClick="return validate2();"/>
+					<a href="javascript:;" id="menu_list" class="menu_list_a"></a>
+                </div>
+            </form>
+			<div class="menu_list">
+				<ul>
+					<li>
+						<a href="{:url('game/trend',array('type'=>$iframe_address))}"  target="window" class="lw-c-1 lw-c">
+							<img src="/static/images/index/sharemore_pic@2x.png"/>
+							<span class="content">历史</span>
+						</a>
+					</li>
+					<li>
+						<a href="{:url('user/recharge')}" class="lw-c-2 lw-c">
+							<img src="/static/images/index/sharemorePay@2x.png"/>
+							<span class="content">加油站</span>
+						</a>
+					</li>
+					<li>
+						<a href="{:url('user/index')}"  class="lw-c-3 lw-c">
+							<img src="/static/images/index/sharemore_friendcard@2x.png"/>
+							<span class="content">个人名片</span>
+						</a>
+					</li>
+					<li>
+						<a href="{:url('user/service')}"  class="lw-c-4 lw-c">
+							<img src="/static/images/index/sharemore_wxtalk@2x.png"/>
+							<span class="content">接待处</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			
+        </div>
+    </div>
+<style>
+#zdy_tips{ 
+    max-width:80%;
+    padding:0.6em 1em; 
+    font-size:14px; 
+    color:#fff; 
+    text-align:center; 
+    border-radius:5px;
+    line-height:1.8em;
+    display:block;
+    background:rgba(0,0,0,0.7); 
+    position:fixed;
+    left:50%;
+    bottom:30%;
+    z-index:999999;
+}
+</style>
+<div id="zdy_tips" style="display:none;"><!--消息框--></div>
+</body>
+<script type="text/javascript">
+$(function(){
+    var H = $(window).height();
+    var W = $(window).width();
+
+    $("body").width(W).css("min-height",H);
+    var game_era_h = $('.game_era').height();
+    var wrap_h = $(window).height()-game_era_h;
+    $('.game_era').height(game_era_h);
+    $("#wrap").height(wrap_h);
+    
+    //$(".menu_list").width($('.list_a').width());
+
+    //定时请求刷新
+    setInterval(getmsg,1500);
+    
+    $('#menu_list').click(function(){
+        if($(".menu_list").css("display")=="none"){
+            $(".menu_list").show();
+        }else{
+            $(".menu_list").hide();
+        }
+    });
+});
+
+function validate2(){
+    if(document.form2.input_box.value==''){
+        zdy_tips( '投注内容不能为空' );
+        document.form2.input_box.focus();
+        return false;
+    }
+    return true;
+}
+
+
+$('form[name=form2]').submit(function(){
+    $.ajax({
+        type: "POST",
+        url:"{:url('game/choose_chat')}",
+        data: "submit=submit&data="+$('#input_box').val()+"&video_both={$iframe_address}",
+        success: function(msg){
+            $('#input_box').val('');
+            if(msg != 'chat'){
+                if(msg == 'return_index'){
+                    window.location.href = "{:url('game/index')}";
+                }else{
+                   zdy_tips( msg ); 
+                }
+            }
+        }
+    });
+    return false;
+});
+
+//自定义弹出
+function zdy_tips(msg){
+    $("#zdy_tips").html(msg);
+    z_tips_w = $("#zdy_tips").outerWidth();
+    $("#zdy_tips").css({"margin-left":-parseInt(z_tips_w/2)+"px"});
+    $("#zdy_tips").show();
+    setTimeout(function(){
+        $("#zdy_tips").hide();
+        $("#zdy_tips").html("");
+    },2000);
+}
+
+function getmsg(){
+    var userid={$userid};
+    $.get("{:url('game/ajax_chat',array('video_both'=>$iframe_address,'lastId'=>$lastId))}",function(data){
+        if(data){
+            if(data == 'status'){
+                    window.location.href="index/error_index";
+            }
+            if(data.length>5){
+                    data_array = array(date['0'],date['1'],date['2'],date['3'],date['4']);
+            }else{
+                    data_array	= data;
+            }
+            $.each(data_array,function(i,item){
+                //alert(item.id);
+                console.log("item.id:"+item.id);
+				//console.log(item);
+                if(item.role == 1){
+                    if(item.distinguish == 1){
+                        var $li ='<li>'+
+                            '<div class="distinguish">'+
+                                    '<p class="chat_info">'+item.content+'</p>'+ 
+                                    '<p class="username"><span>'+item.addtime+'</span></p>'+
+                            '</div>'+        
+                        '</li>';   
+
+                    }else if(item.distinguish == 0){
+                        var $li ='<li>'+
+                            '<div class="center">'+
+                                '<p class="chat_info">'+item.content+'</p>'+ 
+                                '<p class="username"><span>'+item.addtime+'</span>'+item.username+'</p>'+
+                            '</div>'+        
+                        '</li>';   
+                    }
+                }else if(item.userid == userid){
+                    var $li = '<li>'+
+                            '<div class="me_right">';
+                            if(item.headimgurl){
+                                $li += '<img src="'+item.headimgurl+'">';
+                            }else{
+				$li += '<img src="/static/images/default.png">';
+                            }
+                        $li += '</div>'+
+                            '<div class="me_left">'+
+                                '<p class="username"><span>'+item.addtime+'</span>'+item.username+'</p>'+
+                                '<p class="chat_info">'+item.sequencenum+'期<br/>投注类容：&nbsp;'+item.content+'</p>'+ 
+                            '</div>'+
+                        '</li>';  
+                }else{
+                    var $li = '<li>'+
+                    '<div class="left">';
+                    if(item.headimgurl){
+                        $li += '<img src="'+item.headimgurl+'">';
+                    }else{
+                        $li += '<img src="/static/images/default.png">';
+                    }
+                    $li += '</div>'+
+                        '<div class="right">'+
+                            '<p class="username">'+item.username+'<span>'+item.addtime+'</span></p>'+
+                            '<p class="chat_info">'+item.sequencenum+'期<br/>投注类容：&nbsp;'+item.content+'</p>'+ 
+                        '</div>'+
+                    '</li>';  
+
+                }
+                if($li!=''){
+                        $("#chat").prepend($li);
+                }
+                
+            });
+        }
+    });
+    $("li:gt(100)").remove();
+}
+</script>
+</html>

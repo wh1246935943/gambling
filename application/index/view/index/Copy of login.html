@@ -1,0 +1,105 @@
+{include file="public/header2" /}
+    <!-- content -->
+    <div class="login-content g-min1170" id="login-content">
+        <div class="login-gg" id="login-gg">
+            <div class="login-gg-nr">
+                <div data-href="undefined"></div>
+                <div class="g-container" id="login-container">
+		            <div class="login-main">
+		               <form class="layui-form login-form">
+		                    <p class="login-title"><a href="{:url('index/register')}" class="login-reg">免费注册</a>登录平台</p>
+		                    <!-- username -->
+		                    <div class="form-item login-username">
+		                        <label></label>
+		                        <input type="text" name="username" class="username"  value="{:session('check.username')}" placeholder="用户名" autocomplete="off">
+		                        <span class="clear"></span>
+		                    </div>
+		                    <!-- password -->
+		                    <div class="form-item login-password">
+		                        <label></label>
+		                        <input type="password" name="password" value="{:session('check.password')}" placeholder="密码"   autocomplete="off"/>
+		                        <span class="clear"></span>
+		                    </div>
+		                    <!-- imgcode -->
+		                    <div class="form-item  form-imgcode">
+		                        <input type="text" name="captcha"  placeholder="验证码" autocomplete="off" maxlength="6" />
+		                        <div class="captcha"><img src="{:captcha_src()}" alt="captche" title='点击切换' onclick="this.src='/captcha?id='+Math.random()"></div>
+		                        <span class="clear"></span>
+		                    </div>
+		                    <div class="form-msg" id="msg"></div>
+		                    <p class="login-remember">
+		                        <a href="">忘记密码？</a>
+		                        <input type="checkbox" name="check" value="1" checked /><span>记住账号</span>
+		                    </p>
+		                     <button class="layui-btn form-btn" lay-submit="" lay-filter="login">登陆</button>
+		                    <p class="login-hezuo"><span>使用合作网站账号登录小牛在线：</span><a class="qq" href="">QQ登录</a></p>
+		                </form>
+		                <a href="" class="login-main-bottom">资金交易过程盗转盗用风险由保险公司提供保障</a>
+		            </div>
+		            <div class="login-gg-link" ></div>
+		        </div>
+            </div>
+        </div>
+        
+    </div>
+    <!-- content end -->
+    <!-- foot -->
+    {include file="public/footer" /}
+</body>
+</html>
+<script type="text/javascript">
+$(function(){
+    $(".login-username input").focus(function(){
+        $(".login-username").addClass("active");
+        $(".login-username label").addClass("username-active-label");
+        });
+    $(".login-username input").blur(function(){
+        $(".login-username").removeClass("active");
+        $(".login-username label").removeClass("username-active-label");
+        });
+    $(".login-password input").focus(function(){
+        $(".login-password").addClass("active");
+        $(".login-password label").addClass("password-active-label");
+        });
+    $(".login-password input").blur(function(){
+        $(".login-password").removeClass("active");
+        $(".login-password label").removeClass("password-active-label");
+        });
+    $(".form-imgcode input").focus(function(){
+        $(".form-imgcode").addClass("form-imgcode-active");
+        });
+    $(".form-imgcode input").blur(function(){
+        $(".form-imgcode").removeClass("form-imgcode-active");
+        });
+	 });
+ 
+function callbackfunc(data){
+    if(data.code == 1){
+        location.href = '{:url("personarl/index")}';
+    }else{
+        $('.captcha img').attr('src','/captcha?id='+Math.random());
+    }      
+}   
+$(function(){ 
+    layui.use('form',function(){
+        form = layui.form(),jq = layui.jquery; 
+        form.on('submit(login)', function(data){
+        	parent.$.fn.jcb.post('{:url("index")}',data.field,false,callbackfunc);
+            return false; 
+        }); 
+    });  
+}); 
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

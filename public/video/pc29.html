@@ -1,0 +1,927 @@
+<link rel="stylesheet" href="/static/css/swiper3.07.min.css">
+<link href="https://cdn.bootcdn.net/ajax/libs/Swiper/0.9.0-beta.12/swiper-bundle.css" rel="stylesheet">
+<style>
+    .list_div_28 {
+        width: 6.4rem;
+        padding: 0 2% 0.2rem;
+        /*background: url('/static/images/切图 3@3x.png') no-repeat center;*/
+        background: #202a41;
+        background-size: cover;
+        box-sizing: border-box;
+    }
+
+    .list_div_28 .list_a {
+        overflow: hidden;
+    }
+
+    .list_div_28 .div_li_user .xinxi {
+        display: block;
+        font-size: 0.2rem;
+    }
+  .nuber-scroll em{
+      color: #fff;
+  }
+
+    /* .list_div_28 .div_li_user .xinxi .jine {} */
+
+    .list_div_28 .list_b {
+        font-size: 0.15rem;
+        position: relative;
+        background: url("/static/images/101.png") no-repeat;
+        background-size: 100% 100%;
+        box-sizing: border-box;
+        padding: .2rem .15rem;
+        height: 1.2rem;
+        display: flex;
+        align-items: center;
+        margin: .1rem 0;
+    }
+
+    .list_b .result-wrapper {
+        /* overflow:auto; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        font-size: 0.5rem;
+
+    }
+
+    .list_b {
+        position: relative;
+    }
+
+    .list_b .result-wrapper .p_a {
+        font-size: .22rem;
+        color: #fff;
+    }
+
+    .list_b .result-wrapper .result-num {
+        display: inline-block;
+    }
+
+    .list_b .result-wrapper .result-num .number {
+        display: inline-block;
+        width: 0.92rem;
+        height: 0.97rem;
+        line-height: 0.97rem;
+        background: url(/static/images/the_lottery1.png) no-repeat;
+        background-size: 0.92rem 0.97rem;
+        color: #fff;
+        font-weight: bolder;
+    }
+
+    .list_b .result-wrapper .result-num .sum {
+        width: 1.32rem;
+        height: 0.97rem;
+        background: url(/static/images/the_lottery1.png) no-repeat;
+        background-size: 1.32rem 0.97rem;
+    }
+
+    .list_b .result-wrapper .result-num .result-all {
+        display: inline-block;
+        width: 0.9rem;
+        height: 0.9rem;
+        line-height: 0.9rem;
+        background-color: #13b5b1;
+        margin: 0 1px 0 0;
+        color: #fff;
+        border-radius: 50%
+    }
+
+    .list_b .result-wrapper .result-num .result-all:first-child {
+        margin-left: 0.2rem
+    }
+
+    .list_b .result-wrapper .result-num .big-or-small {
+        background-color: #00a0e9
+    }
+
+    .list_b .result-wrapper .result-num .bg-red,
+    .list_b .result-wrapper .result-num .single-or-double {
+        background-color: #e60012
+    }
+
+    .list_b .result-wrapper .result-num .bg-blue {
+        background-color: #00a0e9
+    }
+
+    .list_b .result-wrapper .result-num .xiala {
+        background: url(/static/images/xiangxiajiantou.png) center center no-repeat;
+        background-size: 0.32rem 0.18rem;
+    }
+
+    .list_b .result-wrapper .result-num .div_p_1 span {
+        color: #f2a253;
+    }
+
+    .list_b .result-wrapper .result-num .div_p_2 {
+        color: #fff;
+        font-size: 0.24rem;
+    }
+
+    .list_b .result-wrapper .result-num span {
+        display: inline-block;
+        width: 0.26rem;
+        height: 0.26rem;
+        background: url(/static/images/symbol2.png) no-repeat;
+        background-size: 0.26rem 0.26rem;
+    }
+
+    .list_b .result-wrapper .result-num .dengyu {
+        width: 0.26rem;
+        height: 0.15rem;
+        background: url(/static/images/symbol3.png) no-repeat;
+        background-size: 0.26rem 0.15rem;
+    }
+
+    .list_c {
+        display: flex;
+        justify-content: space-between;
+        padding: .1rem 0;
+    }
+
+    .list_c .money {
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.24rem;
+        margin-left: .72rem;
+    }
+
+    .list_c .a {
+        display: flex;
+        justify-content: space-between;
+        width: 3rem;
+    }
+
+    .list_c a {
+        display: block;
+        width: .8rem;
+        height: 0.4rem;
+        color: #000;
+        font-size: 0.24rem;
+        text-align: center;
+        line-height: 0.4rem;
+        border-radius: .05rem;
+        border: 1px solid #dcdcde;
+        background-size: contain;
+            background: linear-gradient(
+          30deg,
+          rgba(234, 200, 142, 0.97),
+          rgba(255, 232, 200, 0.97)
+        );
+
+    }
+
+    .list {
+        position: absolute;
+        z-index: 100;
+        background: #fff;
+        width: 96%;
+        padding: 0 2%;
+    }
+
+
+    /*  其他style */
+
+    .chat_box .chat_button .anjian {
+        background: url(/static/images/the_lottery4.png) center center no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .poim {
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-right: 0.1rem;
+        border-radius: 5px;
+        left: .2rem;
+        bottom: 5px;
+        position: absolute;
+    }
+
+    #wrap ul li {
+        width: 96%;
+        float: left;
+        padding: 1%;
+    }
+
+
+
+    #wrap ul li:last-child {
+        padding-bottom: 0.4rem;
+    }
+
+    .country-select {
+        right: 0.15rem;
+        left: inherit;
+    }
+
+
+    #wrap ul li .me_left {
+        width: 60%;
+    }
+
+    /* #wrap ul li .me_left .username {
+        color: #9c9c9c;
+        text-align: right;
+    } */
+
+    /* #wrap ul li .me_left .chat_info {
+        text-align: left;
+        background: #ffffff;
+        border: 0;
+        box-shadow: none;
+        color: #333333;
+
+        background: #fff;
+        border: 0;
+        box-shadow: none;
+        padding: 0.4em;
+        color: #333;
+    } */
+
+    .list_a ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: .2rem;
+    }
+
+    .list_a ul li {
+        color: #fff;
+        font-size: 0.24rem;
+    }
+
+
+    .list_a ul li:nth-of-type(1) .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .list_a ul li img {
+        display: block;
+        width: 1.5rem;
+        height: 0.36rem;
+        margin-top: 0.3rem;
+    }
+
+    .list_a .p_a {
+        color: #fff5da;
+        font-size: 0.16rem;
+        text-align: left;
+        line-height: 0.48rem;
+    }
+
+    .list_a .p_a span {
+        color: #f3475c;
+    }
+
+    .bg-blc {
+        width: 2rem;
+        height: 0.56rem;
+    }
+
+    .bg-blc span {
+        background: url('/static/images/组 14@3x.png') no-repeat;
+        background-size: cover;
+        color: #000;
+        display: block;
+        width: .7rem;
+        height: .7rem;
+        text-align: center;
+        line-height: .7rem;
+    }
+
+    .bg-blc p {
+        font-size: 0.3rem;
+        line-height: 0.56rem;
+        text-align: center;
+        display: flex;
+    }
+
+    .list_a ul li p em {
+        font-size: .24rem;
+    }
+
+    .record-bar li {
+        position: relative;
+        float: left;
+        width: 0.9rem;
+        height: 0.46rem;
+        background: url(/static/images/the_lottery3.png) no-repeat;
+        background-size: 0.9rem 0.46rem;
+        color: #fff;
+        font-size: 0.24rem;
+        line-height: 0.46rem;
+        margin: 0.1rem 0.2rem 0 0.16rem;
+    }
+
+    .record-bar li:nth-child(1) {
+        margin-left: 0.1rem;
+    }
+
+    .record-bar li em {
+        position: absolute;
+        font-size: 0.16rem;
+        color: #c6af7e;
+        right: -0.24rem;
+        top: 0.06rem;
+    }
+
+    .record-bar li:nth-child(4) {
+        width: 0.9rem;
+        height: 0.46rem;
+        background: url(/static/images/the_lottery3.png) no-repeat;
+        background-size: 0.9rem 0.46rem;
+    }
+
+    .record-bar li:nth-child(5) {
+        margin-right: 0;
+        width: 0.9rem;
+        height: 0.46rem;
+        background: url(/static/images/the_lottery3.png) no-repeat;
+        background-size: 0.9rem 0.46rem;
+    }
+
+    .bg-mar {
+        height: auto;
+        background: #fff;
+    }
+
+    .nuber-scroll-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 1rem;
+    }
+
+    .nuber-scroll {
+        width: 100%;
+        height: .54rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .nuber-scroll .odometer {
+        margin-right: 0;
+        font-size: .28rem;
+    }
+
+    .nuber-scroll img {
+        width: .54rem;
+        height: .54rem;
+        transform: translateY(-0.02rem);
+    }
+
+    .nuber-scroll .odometer .text {
+        font-size: .18rem;
+        white-space: nowrap;
+        transform: translateY(-.05rem);
+    }
+
+    /* .nuber-scroll em {
+        position: absolute;
+        color: #8a7657;
+        top: 0.08rem;
+        z-index: 11;
+    } */
+
+    /* .add1 {
+        left: 1.35rem;
+    }
+
+    .add2 {
+        left: 2.75rem;
+    }
+
+    .add3 {
+        left: 4.2rem;
+    } */
+
+    /* .list_a .clearfix {} */
+
+    .nuber-scroll .odometer {
+        font-size: .3rem;
+        transform: scale(.7);
+    }
+
+    .odometer-inside {
+        white-space: nowrap;
+    }
+
+    .title {
+        color: #333;
+        font-size: .3rem;
+        text-align: center;
+        padding: .1rem 0;
+        position: relative;
+        background: #fff;
+    }
+
+    .title a {
+        position: absolute;
+        width: .3rem;
+        height: .3rem;
+        display: block;
+        background: url(/static/images/fanhui.png) no-repeat;
+        background-size: cover;
+        top: 50%;
+        left: .2rem;
+        transform: translateY(-50%);
+    }
+
+    .nuber {
+        width: .54rem;
+        height: .54rem;
+    }
+
+    .nuber .swiper-wrapper {
+        width: .54rem;
+        height: .54rem;
+    }
+
+    .swiper-slide-next {
+        visibility: hidden;
+    }
+
+    .swiper-slide-prev {
+        visibility: hidden;
+    }
+</style>
+<div class="bg-mar">
+    <div class="list_div_28">
+<div class="list_c">
+
+
+            <div class="money">余额：<em id="user_jine"></em></div>
+            <div class="a">
+                <a href="">刷新</a>
+                <a href="/index/user/recharge.php">充值</a>
+                <a href="/index/user/tx.php">提现</a>
+                <!-- <a class="bg4">记录</a>
+                <a class="bg5">走势</a>
+                <a class="bg6"> 规则</a>
+                <a class="bg8" onclick="replaceDoc()">刷新</a> -->
+            </div>
+
+        </div>
+     
+        <div class="list_b">
+            <div class="result-wrapper" id="result-wrapper">
+                <p class="p_a">&nbsp;<span id="sequencenum_span"></span>&nbsp;期
+                </p>
+                <div class="nuber-scroll-box">
+                    <div class="nuber-scroll">
+                        <div class="odometer1 nuber">
+
+                        </div>
+                        <div class="odometer2 nuber">
+
+                        </div>
+                        <div class="odometer3 nuber">
+
+                        </div>
+                        <div class="odometer4 nuber">
+
+                        </div>
+                        <div class="odometer5 nuber">
+
+                        </div>
+                        <div class="odometer6 nuber">
+
+                        </div>
+                        <div class="odometer7 nuber">
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <ul class="record-bar clearfix">
+                    <li id="daxiao">-<em>*</em></li>
+                    <li id="danshuang">-<em>*</em></li>
+                    <li>庄<em>*</em></li>
+                    <li id="jdx">-<em>*</em></li>
+                    <li id="bds">-</li>
+                </ul> -->
+
+            </div>
+
+        </div>
+           <div class="list_a">
+            <ul class="clearfix">
+                <li>
+                    <div class="top">
+                        <p>在线：<em id="zxrs"></em>人</p>
+                        <p style="font-size: .26rem;"><em id="nextqi"></em>期</p>
+                    </div>
+                    <div class="bottom">
+                        <p><em id="nexttime"></em></p>
+                    </div>
+                </li>
+                <li class="li_a">
+                    <div class="bg-blc">
+                        <p class="time_span">
+                            <span id="hours">-</span>
+                            <span id="minute">-</span>
+                            <!-- <span id="time_span">-</span> -->
+                            <span id="seconds">-</span>
+                        </p>
+                        <p class="time_tingz">正在开奖...</p>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/Swiper/0.9.0-beta.12/swiper-bundle.min.js"></script>
+<script>
+
+    // let params = new URLSearchParams(location.href);
+    // console.log(params);
+    // let name = params.get("name");
+    // $('.title').append('<p>' + name + '</p>');
+    /*    $(".result-wrapper").click(function(){
+            if($(".list").css("display")=="none"){
+                $(".list").show();
+            }else{
+                $(".list").hide();
+            }   
+        });
+        $(".list").click(function(){
+            if($(this).css("display")=="none"){
+                $(this).show();
+            }else{
+                $(this).hide();
+            }   
+        });*/
+
+    $(function () {
+        choose_user()
+        setInterval("choose_user()", 3000);
+        getsequencenum();
+    });
+    var xinm = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9');
+    var count = xinm.length;
+    var t, t2;
+    var list = [{ swiper: null, t: null }, { swiper: null, t: null }, { swiper: null, t: null }, { swiper: null, t: null }, { swiper: null, t: null }, { swiper: null, t: null }, { swiper: null, t: null }];
+
+    function randomNum() {
+        return Math.floor(Math.random() * 49) + 1;
+    }
+    function chooseImg(val, time, index) {
+        $(val).html(`<div class="swiper-wrapper">
+                             <div class="swiper-slide">
+                                    <img src="/static/qiuimg/hua/${randomNum()}.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/static/qiuimg/hua/${randomNum()}.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/static/qiuimg/hua/${randomNum()}.png" alt="">
+                                </div>
+                            </div>`)
+
+        list[index].swiper = new Swiper(val, {
+            loop: true,
+            direction: 'vertical',
+            centeredSlides: true,
+            parallax: true,
+            effect: 'cube',
+            autoplay: {
+                delay: time,
+                disableOnInteraction: false,
+            },
+        })
+        list[index].t = setInterval(() => {
+            changeImg(val);
+        }, time);
+    }
+
+    function chooseImg1(val, time) {
+        $(val).html(`<div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                    <img src="/static/qiuimg/chun/${randomNum()}.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/static/qiuimg/chun/${randomNum()}.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/static/qiuimg/chun/${randomNum()}.png" alt="">
+                                </div>
+                            </div>`)
+
+        list[0].swiper = new Swiper(val, {
+            loop: true,
+            direction: 'vertical',
+            spaceBetween: 0,
+            centeredSlides: true,
+            parallax: true,
+            effect: 'cube',
+            autoplay: {
+                delay: time,
+                disableOnInteraction: false,
+            },
+        })
+        list[0].t = setInterval(() => {
+            changeImg1(val);
+        }, time);
+    }
+    function changeImg(val) {
+        $(`${val} .swiper-slide-prev`).html(`<img src="/static/qiuimg/hua/${randomNum()}.png" alt="">`);
+    }
+    function changeImg1(val) {
+        $(`${val} .swiper-slide-prev`).html(`<img src="/static/qiuimg/chun/${randomNum()}.png" alt="">`);
+    }
+    function foundSwiper() {
+
+    }
+    function startNum() {
+        let num1 = Math.floor(Math.random() * 800) + 50;
+        let num2 = Math.floor(Math.random() * 800) + 50;
+        let num3 = Math.floor(Math.random() * 800) + 50;
+        let num4 = Math.floor(Math.random() * 800) + 50;
+        let num5 = Math.floor(Math.random() * 800) + 50;
+        let num6 = Math.floor(Math.random() * 800) + 50;
+        let num7 = Math.floor(Math.random() * 800) + 50;
+        chooseImg('.odometer1', 50, 0);
+        chooseImg('.odometer2', 100, 1);
+        chooseImg('.odometer3', 180, 2);
+        chooseImg('.odometer4', 190, 3);
+        chooseImg('.odometer5', 240, 4);
+        chooseImg('.odometer6', 250, 5);
+        chooseImg1('.odometer7', 240, 6);
+        // t = setTimeout(startNum, 700);
+    }
+
+    function choose_user() {
+        var timestamp = (new Date()).valueOf();
+        $.ajax({
+            type: "POST",
+            url: "/index/game/choose_user.php?time=" + timestamp,
+            success: function (msg) {
+                if (msg) {
+                    $("#headImg").attr("src", msg['headimgurl']);
+                    //$('.touxiang').html("<img src='"+msg['headimgurl']+"'>");
+                    //$('.xinxi .div_name').html(msg['username']);
+                    $('#user_jine').html(msg['money']);
+                    $('#user_yingkui').html(msg['win_or_lose']);
+                }
+            }
+        });
+    }
+    Date.prototype.format = function (format) {
+        var date = {
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds(),
+            "q+": Math.floor((this.getMonth() + 3) / 3),
+            "S+": this.getMilliseconds()
+        };
+        if (/(y+)/i.test(format)) {
+            format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+        }
+        for (var k in date) {
+            if (new RegExp("(" + k + ")").test(format)) {
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1
+                    ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+            }
+        }
+        return format;
+    }
+    var chooseFlag = false;
+    function getsequencenum() {
+        var qu_sequencenum_span = $('#sequencenum_span').html();
+        if (qu_sequencenum_span != 'null' && qu_sequencenum_span != '') {
+            qu_sequencenum_span = parseInt(qu_sequencenum_span) + 1;
+        }
+        $.ajax({
+            type: "get",
+            async: false,
+            dataType: "json",
+            contentType: "application/json",
+            url: "/index/game/ajax_sequencenum/video_both/<?php echo $iframe_address; ?>/sequencenum_span/" + qu_sequencenum_span,
+            success: function (data) {
+                if (data.length >= 1) {
+
+                    var sequencenum_span = parseInt(data[0]['sequencenum']);
+                    $('#sequencenum_span').html(sequencenum_span);
+
+                    var data_outcome = data[0]['outcome'];
+                    var hasDash = /-/.test(data_outcome);
+
+                    if (hasDash) {
+                        var outcome = data_outcome.split("-");
+                    } else {
+                        var outcome = data_outcome.split("+");
+                    }
+                    outcome.map((item, index) => {
+                        chooseBackground(item, index);
+                    })
+                    // if (chooseFlag) {
+                    //     list.map(item => {
+                    //         clearInterval(item.t);
+                    //         item.swiper = null;
+                    //         item.t = null;
+                    //     })
+                    //     outcome.map((item, index) => {
+                    //         chooseBackground(item, index);
+                    //     })
+                    // } else {
+                    //     chooseFlag = true;
+                    //     setTimeout(() => {
+                    //         list.map(item => {
+                    //             clearInterval(item.t);
+                    //             item.swiper = null;
+                    //             item.t = null;
+                    //         })
+                    //         outcome.map((item, index) => {
+                    //             chooseBackground(item, index);
+                    //         })
+                    //     }, 3000);
+                    // }
+
+                    $('#result-wrapper #sequencenum').html(data[0]['sequencenum']);
+                    //            $('#result-wrapper #first').html(outcome[0]);
+                    //            $('#result-wrapper #second').html(outcome[1]);
+                    //            $('#result-wrapper #third').html(outcome[2]);
+                    //            $('#result-wrapper #sum').html(outcome[3]);
+                    $("#nextqi").html(parseInt(data[0]['sequencenum']) + 1);
+                    $(".qihao").html('期号：' + parseInt(data[0]['sequencenum']) + 1);
+                    var nexttime = parseInt(data[0]['nexttime']);
+                    var newDate = new Date();
+                    newDate.setTime(nexttime * 1000);
+
+                    var year = newDate.getFullYear();
+                    var month = newDate.getMonth() + 1 < 10 ? '0' + (newDate.getMonth() + 1) : newDate.getMonth() + 1; // getMonth() 方法返回的月份从 0 开始，因此需要加 1  
+                    var day = newDate.getDate() < 10 ? '0' + newDate.getDate() : newDate.getDate();
+                    var hours = newDate.getHours() < 10 ? '0' + newDate.getHours() : newDate.getHours();
+                    var minutes = newDate.getMinutes() < 10 ? '0' + newDate.getMinutes() : newDate.getMinutes();
+                    var seconds = newDate.getSeconds() < 10 ? '0' + newDate.getSeconds() : newDate.getSeconds();
+                    $("#nexttime").html('开奖时间：' + year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds);
+                    $("#jdx").html("-<em>*</em>")
+                    if (outcome[3] <= 5) {
+                        $("#jdx").html("极小<em>*</em>")
+                    }
+                    if (outcome[3] >= 22) {
+                        $("#jdx").html("极大<em>*</em>")
+                    }
+                    $("#bds").html("-");
+                    if (outcome[0] == outcome[1] && outcome[1] == outcome[2]) {
+                        $("#bds").html("豹子")
+                    } else if (outcome[0] == outcome[1] || outcome[1] == outcome[2] || outcome[0] == outcome[2]) {
+                        $("#bds").html("对子")
+                    } else if (parseInt(outcome[0]) == (parseInt(outcome[1]) - 1) && parseInt(outcome[1]) == (parseInt(outcome[2]) - 1) || (parseInt(outcome[0]) == 2 && parseInt(outcome[1]) == 0 && parseInt(outcome[2]) == 1) || (parseInt(outcome[0]) == 7 && parseInt(outcome[1]) == 6 && parseInt(outcome[2]) == 5)) {
+                        $("#bds").html("顺子")
+                    }
+
+                    var result = "(";
+                    if (outcome[3] >= 14) {
+                        result += "大";
+                        $("#daxiao").html("大<em>*</em>");
+                    } else {
+                        result += "小";
+                        $("#daxiao").html("小<em>*</em>");
+                    }
+                    if (outcome[3] % 2 == 1) {
+                        result += ",单";
+                        $("#danshuang").html("单<em>*</em>");
+                    } else {
+                        result += ",双";
+                        $("#danshuang").html("双<em>*</em>");
+                    }
+                    result += ")";
+                    $(".time_span").show();
+                    $(".time_tingz").hide();
+
+                    $('#result-wrapper #result').html(result);
+
+                    daojishu(data[0]['sealing_plate']);
+
+                    var sequencenum_list = '';
+                    for (var i = 1; i < data.length; i++) {
+
+                        data_outcome = data[i]['outcome'];
+                        outcome = data_outcome.split("-");
+                        result = "(";
+                        if (outcome[3] >= 14) {
+                            result += "大";
+                        } else {
+                            result += "小";
+                        }
+                        if (outcome[3] % 2 == 1) {
+                            result += ",单";
+                        } else {
+                            result += ",双";
+                        }
+                        result += ")";
+
+                        sequencenum_list += '<div class="result-wrapper">'
+                            + '<div class="result-num">'
+                            + '<p class="div_p_1">第<span>' + data[i]['sequencenum'] + '</span>期</p>'
+                            + '</div>'
+                            + '<div class="result-num">'
+                            + '<div class="number">' + outcome[0] + '</div> '
+                            + '<span>+</span>'
+                            + '</div>'
+                            + '<div class="result-num">'
+                            + '<div class="number">' + outcome[1] + '</div>'
+                            + '<span>+</span>'
+                            + '</div>'
+                            + '<div class="result-num">'
+                            + '<div class="number">' + outcome[2] + '</div>'
+                            + '</div>'
+                            + '<div class="result-num"><span>=</span></div>'
+                            + '<div class="result-num">'
+                            + '<div class="number sum">' + outcome[3] + '</div>'
+                            + '</div>'
+                            + '<div class="result-num">'
+                            + '<p class="div_p_2">' + result + '</p>'
+                            + '</div>'
+                            + '</div>';
+                    }
+                    $('.list').html(sequencenum_list);
+
+                } else {
+                    setTimeout(getsequencenum, 3000);
+                }
+            },
+            error: function (e) {
+                console.log(e)
+            }
+        });
+    }
+    function chooseBackground(item, index) {
+        if (item.charAt(0) === '0') {
+            item = item.slice(1);
+        }
+        // 根据随机数字获取对应的颜色  
+        let hua = `/static/qiuimg/hua/${item}.png`;
+        let chun = `/static/qiuimg/chun/${item}.png`;
+        if (index == 6) {
+            $(`.odometer${index + 1}`).html('<img src="' + chun + '" alt="">');
+
+        } else {
+            $(`.odometer${index + 1}`).html('<img src="' + hua + '" alt="">');
+        }
+    }
+    function daojishu(starttime) {
+        var starttime = new Date(parseInt(starttime) * 1000);
+        var xxxz = setInterval(function () {
+            var nowtime = new Date();
+            var time = starttime - nowtime;
+            var minute = parseInt(time / 1000 / 60 % 60);
+            var seconds = parseInt(time / 1000 % 60);
+            var hours = parseInt(time / 1000 / 60 / 60);
+            if (hours < "10") {
+                if (hours < "0") {
+                    hours = "";
+                } else {
+                    hours = "0" + hours;
+                    if (hours >= 0) {
+                        $("#hours").html(hours);
+                    }
+                }
+            } else {
+                $("#hours").html(hours);
+            }
+            if (minute < "10") {
+                if (minute < "0") {
+                    minute = "";
+                } else {
+                    minute = "0" + minute;
+                    if (seconds >= 0) {
+                        $("#minute").html(minute);
+                    }
+                }
+            } else {
+                $("#minute").html(minute);
+            }
+            if (seconds < "10") {
+                if (seconds < "0") {
+                    seconds = "";
+                    $(".time_span").hide();
+                    $(".time_tingz").show();
+                    getsequencenum();
+                    clearInterval(xxxz);
+                    // startNum();
+                    clickState = 1;
+                } else {
+                    seconds = "0" + seconds;
+                    $("#seconds").html(seconds);
+                }
+            } else {
+                clickState = 0;
+                $("#seconds").html(seconds);
+            }
+            $("#time_span").html(':')
+        }, 1000);
+    }
+</script>

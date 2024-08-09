@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="user-scalable=no,width=device-width"/>
+<meta name="baidu-site-verification" content="W8Wrhmg6wj" />
+<meta content="telephone=no" name="format-detection">
+<meta content="1" name="jfz_login_status">
+    <link rel="stylesheet" type="text/css" href="/static/css/user.css?v=1.2" />
+    <link rel="stylesheet" type="text/css" href="/static/css/common_user.css?v=1.2">
+     <link rel="stylesheet" type="text/css" href="/static/LCalendar/css/index.css" />
+     <link rel="stylesheet" type="text/css" href="/static/LCalendar/css/LCalendar.min.css" />
+    <title>{if isset($title)}{$title}{/if}</title>
+    <script type="text/javascript" src="/static/js/jquery.min.js"></script>
+
+
+<style>
+li{list-style:none;}
+td, th {
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 3rem;
+}
+.pagination{
+    display: flex;
+}
+.pagination li{
+    flex: 1;
+}
+.disabled{
+    
+}
+
+.wx_cfb_entry_list table tbody tr{
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 1rem;
+}
+.wx_cfb_entry_list table thead th{
+    line-height: 3rem;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fff;
+}
+.tab-list {
+    height: 5rem;
+    background: #fff;
+    padding-left: 1.2rem;
+     border-bottom: 1px solid #e5e5e5;
+       -webkit-display:flex;
+        display:flex;
+        -webkit-align-items:center;
+        align-items:center;
+        -webkit-justify-content:center;
+        justify-content:center;
+}
+.tab-list li{
+    flex:1;
+    width: 5.8rem;
+    height: 3rem;
+    background: #59c365;
+    color: #fff;
+    text-align: center;
+    line-height: 3rem;
+    border-radius: 4px;
+    margin-right: .7rem;
+    font-size: 1.3rem;
+
+}
+.total-lis{
+    padding: 0 1.2rem;
+    color: #333;
+     font-size: 1.3rem;
+     line-height: 2.6rem;
+}
+.total-lis li{
+    float: left;
+    margin-right: 0.8rem;
+}
+.total-lis li em{
+    color: #d12c25;
+
+}
+.porate-im{
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0 auto;
+    background: red;
+}
+.touzu-link a{
+    display: block;
+    color: #59c365;
+}
+</style>
+<body>
+
+    <div class="top-title">
+        <a href="javascript:history.back(-1)" title="">返回上页</a>
+    </div>
+    <div class="top-tip">
+        |&nbsp;&nbsp; XX下线列表
+    </div>
+<div class="wx_cfb_entry_list">
+        <div class="main_page">
+            
+            <div class="select_start_date">
+                <div class="start_date_left">
+                    开始时间
+                </div>
+                <div class="start_date_right">
+                    <input type="text" name="start_date" id="start_date" placeholder="选择开始日期" readonly="readonly" />
+                </div>
+            </div>
+            <div class="select_start_date">
+                <div class="start_date_left">
+                    结束时间
+                </div>
+                <div class="start_date_right">
+                    <input type="text" name="end_date" id="end_date" placeholder="选择开始日期" readonly="readonly" />
+                </div>
+            </div>
+            
+        </div>
+     <ul class="tab-list ">
+        <li>今天</li>
+        <li>昨天</li>
+        <li>最近一周</li>
+        <li>最近一月</li>
+        <li>搜索</li>
+    </ul>  
+        <div class="space_10"></div>
+    <div class="space_10"></div>
+    <table align="center" width="100%" border="1" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr align="left">
+                <th width="100">头像</th>
+                <th width="100">用户<br> 名</th>
+                <th width="100">注册<br>时间</th>
+                <th width="100">所得<br>佣金</th>
+                <th width="100">进项<br>流水</th>
+                 <th width="100">出项<br>流水</th>
+                <th width="100">客户<br>输赢</th>
+                <th width="200">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {volist name='list' id='vo'}
+            <tr>
+                <td><img src="" alt="" title="" class="porate-im"></td>
+                <td>{$vo.username}</td>
+                <td>{$vo.agent_list.money_z}</td>
+                <td>{$vo.agent_list.money_f}</td>
+                <td>{$vo.agent_list.agent_money}</td>
+                <td>0</td>
+                <td>{$vo.user_zjls - $vo.user_tzls}</td>
+                <td class="touzu-link"><a href="" title="">投注记录</a><a href="" title="">上提现记录</a><a href="" title="">查看下线</a></td>
+  
+       
+            </tr>
+            {/volist}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4">{$page}</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="total-lis clearfix">
+        <li>所得总佣金：&nbsp;<em>100</em></li>
+        <li>总充值：&nbsp;<em>100</em></li>
+        <li>总提现：&nbsp;<em>100</em></li>
+    </div>
+        <div class="total-lis clearfix">
+        <li>三级下级所得总佣金：&nbsp;<em>100</em></li>
+    </div>
+        <div class="total-lis clearfix">
+        <li>三级下级总充值：&nbsp;<em>100</em></li>
+    </div>
+    <div class="total-lis clearfix">
+        <li>三级下级总提现：&nbsp;<em>100</em></li>
+    </div>
+    <div class="total-lis clearfix">
+        <li>三级下级总进项流水：&nbsp;<em>100</em></li>
+    </div>
+        <div class="total-lis clearfix">
+        <li>三级下级总出项流水：&nbsp;<em>100</em></li>
+    </div>
+        <div class="total-lis clearfix">
+        <li>三级下级总客户输赢：&nbsp;<em>100</em></li>
+    </div>
+</div>
+    <script type="text/javascript" src="/static/LCalendar/js/LCalendar.js"></script>
+    
+    <script type="text/javascript">
+        var calendar = new LCalendar();
+        calendar.init({
+            'trigger': '#start_date', //标签id
+            'type': 'date', //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择,
+            'minDate': (new Date().getFullYear()-3) + '-' + 1 + '-' + 1, //最小日期
+            'maxDate': (new Date().getFullYear()+3) + '-' + 12 + '-' + 31 //最大日期
+        });
+        var calendar = new LCalendar();
+        calendar.init({
+            'trigger': '#end_date', //标签id
+            'type': 'date', //date 调出日期选择 datetime 调出日期时间选择 time 调出时间选择 ym 调出年月选择,
+            'minDate': (new Date().getFullYear()-3) + '-' + 1 + '-' + 1, //最小日期
+            'maxDate': (new Date().getFullYear()+3) + '-' + 12 + '-' + 31 //最大日期
+        });
+        //      $(function() {
+        //          $('#start_date').date();
+        //          $('#end_date').date();
+        //      });
+    </script>
+</body>
+</html>
