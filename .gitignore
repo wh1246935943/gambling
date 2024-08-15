@@ -2,4 +2,6 @@
 *.log
 public/file.txt
 
+runtime\temp\
+
 aaaa.back.sql.sql
